@@ -45,7 +45,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .inv-hero-split {
   display: grid; grid-template-columns: 1.15fr 1fr; gap: 60px; align-items: center;
 }
-.inv-hero h1 { margin-bottom: 22px; }
+.inv-hero h1 { margin-bottom: 14px; }
+/* quieter resolution line under the headline — deliberately smaller than h1
+   so it does not compete with "hold one in your hands" */
+.inv-hero .hero-tag {
+  font-size: clamp(19px, 2.1vw, 26px); font-weight: 600;
+  letter-spacing: -0.01em; color: var(--text); margin-bottom: 26px;
+}
 .inv-hero .positioning {
   font-size: 19px; color: var(--muted); max-width: 540px; margin-bottom: 36px;
 }

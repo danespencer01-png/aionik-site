@@ -112,6 +112,23 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   opacity: 0.55;
 }
 
+/* ---------- Mission band (purpose statement, sits below the hero) ---------- */
+.mission {
+  padding: 88px 0; border-bottom: 1px solid var(--line);
+  background: radial-gradient(ellipse at 82% 120%, rgba(34, 211, 238, 0.07), transparent 55%);
+}
+.mission .container { max-width: 880px; }
+.mission .kicker { margin-bottom: 22px; }
+.mission-lead {
+  font-size: clamp(21px, 2.3vw, 27px); line-height: 1.45;
+  letter-spacing: -0.01em; color: var(--text); font-weight: 500;
+  text-wrap: balance;
+}
+.mission-sub {
+  margin-top: 24px; font-size: 17px; line-height: 1.6; color: var(--muted);
+  max-width: 640px;
+}
+
 /* ---------- Team photo avatars ----------
    Real headshots replace the placeholder SVGs. Keep the violet->cyan ring
    from the placeholder as a gradient border, with a thin surface-colored

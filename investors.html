@@ -31,7 +31,7 @@
       <a href="index.html" class="home-link">Main site</a>
       <a href="#ask">The ask</a>
       <a href="#team">Team</a>
-      <a href="https://docs.google.com/forms/d/1-rKCsga_Png1Tm3dc06Siotlk73QByeuj05QLUqIR3o/viewform" target="_blank" rel="noopener" class="nav-cta" data-cta="book-call-nav">Book a call</a>
+      <a href="#book" class="nav-cta" data-cta="book-call-nav">Book a call</a>
     </div>
     <button class="nav-toggle" aria-label="Menu">☰</button>
   </div>
@@ -46,7 +46,7 @@
       <p class="hero-tag">We're bridging that gap.</p>
       <p class="positioning">A post-process for standard and specialized SLA printers that replaces IPA chemical washing entirely, enabling rapid prototyping and manufacturing of high quality, biocompatible microfluidic chips.</p>
       <div class="btn-row">
-        <a href="https://docs.google.com/forms/d/1-rKCsga_Png1Tm3dc06Siotlk73QByeuj05QLUqIR3o/viewform" target="_blank" rel="noopener" class="btn btn-primary" data-cta="book-call-hero">Book a call</a>
+        <a href="#book" class="btn btn-primary" data-cta="book-call-hero">Book a call</a>
       </div>
       <div class="round-status">
         <span class="rs-item"><b>Stage:</b> <span class="todo">TODO stage</span></span>
@@ -422,10 +422,58 @@
       <div class="kicker">Let's talk</div>
       <h2>See the process <span class="grad">for yourself</span></h2>
       <p class="muted" style="max-width: 520px; margin: 0 auto 40px;">The fastest way in is a short call. Leave your details and a note, and we will reach out. We will show you what is built and walk you through the milestones this round buys.</p>
-      <!-- CONTACT: opens the "Aionik - Investor Inquiry" Google Form in a new tab.
-           Responses land in the form's linked Google Sheet. -->
-      <a href="https://docs.google.com/forms/d/1-rKCsga_Png1Tm3dc06Siotlk73QByeuj05QLUqIR3o/viewform" target="_blank" rel="noopener" class="btn btn-primary" data-cta="book-call-closing">Book a call</a>
-      <p class="cta-note">Opens a short form in a new tab. We follow up by email.</p>
+      <!-- CONTACT: native form posting straight to the "Aionik - Investor Inquiry"
+           Google Form. Responses land in the same linked Google Sheet as before.
+           Entry IDs verified against the live form on 29 August 2026. Google returns
+           an opaque response by design, so js/investors.js validates before sending
+           and falls back to the hosted form if the request cannot be delivered. -->
+      <form class="inv-form" id="inquiry-form" novalidate>
+        <div class="if-grid">
+          <div class="field">
+            <label for="if-name">Name <span class="req" aria-hidden="true">*</span></label>
+            <input id="if-name" name="name" type="text" autocomplete="name" required aria-required="true">
+            <p class="field-err" id="if-name-err" hidden>Please enter your name.</p>
+          </div>
+          <div class="field">
+            <label for="if-email">Email <span class="req" aria-hidden="true">*</span></label>
+            <input id="if-email" name="email" type="email" autocomplete="email" required aria-required="true">
+            <p class="field-err" id="if-email-err" hidden>Please enter a valid email address.</p>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="if-firm">Firm or organization <span class="req" aria-hidden="true">*</span></label>
+          <input id="if-firm" name="firm" type="text" autocomplete="organization" required aria-required="true">
+          <p class="field-err" id="if-firm-err" hidden>Please enter your firm or organization.</p>
+        </div>
+
+        <div class="field">
+          <label for="if-discuss">What would you like to discuss? <span class="opt">Optional</span></label>
+          <textarea id="if-discuss" name="discuss" rows="4"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="if-amount">Starting capital injection amount <span class="opt">Optional</span></label>
+          <input id="if-amount" name="amount" type="text" inputmode="numeric" placeholder="Dollar amount">
+        </div>
+
+        <!-- honeypot: hidden from people, tempting to bots. Submissions that fill
+             it are dropped silently. The form has no captcha. -->
+        <div class="if-hp" aria-hidden="true">
+          <label for="if-website">Website</label>
+          <input id="if-website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+
+        <button type="submit" class="btn btn-primary if-submit" data-cta="book-call-closing">Send inquiry</button>
+        <p class="if-status" id="if-status" role="status" aria-live="polite"></p>
+        <p class="cta-note if-privacy">We follow up by email. Your details go to the Aionik team only.</p>
+      </form>
+
+      <div class="if-done" id="if-done" hidden>
+        <div class="if-done-mark" aria-hidden="true">✓</div>
+        <h3>Thanks. Your inquiry is in.</h3>
+        <p class="muted">We read every one and follow up by email, usually within two business days.</p>
+      </div>
 
       <!-- Deck request removed: the pitch deck is not ready yet. Restore a request form when it is. -->
       <p class="cta-note" style="margin-top:18px;"><span class="todo">TODO deck</span> The full pitch deck is on the way. A request option will appear here once it is ready.</p>

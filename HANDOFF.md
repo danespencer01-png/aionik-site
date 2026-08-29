@@ -3,7 +3,7 @@
 Paste this whole file as your first message in a new Claude Code session on the other PC
 (after cloning the repo), or save it as HANDOFF.md and say "read HANDOFF.md and continue."
 
-_Last updated: 29 Aug 2026, current with commit `0b829f2` on `main`._
+_Last updated: 29 Aug 2026, current with the native inquiry form on `main`._
 
 ## What this is
 A single investor landing page added to the existing Aionik marketing site. It argues from
@@ -22,6 +22,7 @@ filled in; these stay on the page on purpose until Dane says it is ready to go p
 - `investors.html`      — the page (standalone, not linked from main nav; unlinked on purpose)
 - `css/investors.css`   — new components only; reuses tokens from `css/styles.css`
 - `js/investors.js`     — CTA click tracking stub (no analytics provider wired yet)
+                          PLUS the inquiry form: validation, honeypot, Google Forms POST
 - Reuses existing `js/main.js` (its canvas/network code self-guards and stays dormant here)
 - `assets/` — hero-device.jpg, proof-droplets.jpg, team-{dane,gongchen,henry,guillermo,gabriel}.jpg
 
@@ -56,19 +57,32 @@ filled in; these stay on the page on purpose until Dane says it is ready to go p
 - Evidence IP row (REAL): "US 2026/0131529 A1 — patent pending", filed July 2025, published
   May 2026, assigned to University of Texas System, exclusive license to Aionik, terms in final
   negotiation. Origin row now points to the droplet figure above.
-- Contact: all three "Book a call" CTAs (nav, hero, closing) open the Google Form in a new tab;
-  responses land in the form's linked Google Sheet. Tested end to end — a labeled test row was
-  submitted successfully (delete it when convenient). Firm-field label typo was fixed by Dane.
+- Contact: a NATIVE styled form in the closing CTA band posts straight to the Google Form.
+  Nav and hero "Book a call" now scroll to `#book` instead of opening a new tab. Responses
+  still land in the same linked Google Sheet. Fields, validation, honeypot, and the success
+  panel live in `js/investors.js` and the `.inv-form` block in `css/investors.css`.
+  Tested end to end on 29 Aug 2026: validation, honeypot, and a real browser submit all pass.
+  THREE labeled test rows are in the sheet now ("ZZ TEST DELETE ME ..."), one from the earlier
+  hosted-form test and two from this build. Delete them when convenient.
+  Firm-field label typo was fixed by Dane.
 
 ## KEY DECISIONS MADE
-- Contact = Google Form, NOT Calendly and NOT a form backend (Formspree/etc). Form is
-  "Aionik - Investor Inquiry":
-  https://docs.google.com/forms/d/1-rKCsga_Png1Tm3dc06Siotlk73QByeuj05QLUqIR3o/viewform
+- Contact = Google Form as the BACKEND, NOT Calendly and NOT a form backend (Formspree/etc),
+  but the page now presents its own native styled form rather than sending people to Google.
+  Form is "Aionik - Investor Inquiry". Responses -> its linked Google Sheet (Dane owns it).
   Fields: Name*, Email*, Firm/organization*, "What would you like to discuss?", capital amount.
-  Responses -> the form's linked Google Sheet (Dane owns it). If ever rebuilding a native
-  styled form, the entry IDs are: Name entry.1305723353, Email entry.278522877,
-  Firm entry.1516766862, Discuss entry.1270242905, Amount entry.423035212;
-  POST to .../formResponse.
+  Entry IDs, re-verified against the live form on 29 Aug 2026: Name entry.1305723353,
+  Email entry.278522877, Firm entry.1516766862, Discuss entry.1270242905,
+  Amount entry.423035212.
+  POST endpoint (published alias, this is what the page uses):
+  https://docs.google.com/forms/d/e/1FAIpQLSfZdrmqg4KDKS1ceFqaoDpt4alQLhv_4Y3kGxPw32bfBXSxwg/formResponse
+  Editing URL: https://docs.google.com/forms/d/1-rKCsga_Png1Tm3dc06Siotlk73QByeuj05QLUqIR3o/viewform
+  CAUTION: reordering questions keeps the IDs valid, but DELETING and recreating a question
+  changes its ID and that field then stops recording silently. Re-read the IDs from the live
+  form's FB_PUBLIC_LOAD_DATA_ after editing it.
+  Google sends no CORS headers on formResponse, so the browser cannot read the reply. A
+  resolved request means "delivered", not "accepted" — hence validation happens client side
+  before sending, and a failed request falls back to a link to the hosted form.
 - Team will NOT have LinkedIn links. The four dead placeholders were removed.
 - Pitch deck is coming, not ready. The deck-request form was removed and replaced with a
   "deck on the way" note. Revisit (second Google Form, or just link the file) when it exists.
@@ -98,7 +112,11 @@ filled in; these stay on the page on purpose until Dane says it is ready to go p
 - Optional "What we're still figuring out" section — keep with 2-3 real open questions, or cut.
 
 ## NON-CONTENT TOUCH-UPS before going public (not amber chips)
-- Analytics: pick provider (Plausible/GA4/Fathom); wire into js/investors.js (hooks are ready).
+- Analytics: pick provider (Plausible/GA4/Fathom); wire into js/investors.js (hooks are ready;
+  the form already pushes a `form_submit` event alongside the `cta_click` ones).
+- The inquiry form has NO captcha, only a honeypot field. That is right for a page shared by
+  direct link; revisit if the URL goes public and spam starts landing in the sheet.
+- Delete the three "ZZ TEST DELETE ME" rows from the responses sheet.
 - OG/Twitter preview image: assets/og-investors.png is referenced but does NOT exist —
   forwarded links show a blank preview card. Generate a branded 1200x630.
 - Footer "Last updated ..." date is stale — refresh at launch.
@@ -117,6 +135,9 @@ filled in; these stay on the page on purpose until Dane says it is ready to go p
   mobile at 500px, not narrower.
 
 ## SUGGESTED NEXT STEP
-Content gaps are all that's left. Highest-leverage is Batch 5 (the ask numbers) plus the
-hero round-status line. Everything else (functional links, contact form, photos, proof
-figures, mission + why-now copy) is done and live.
+Batch 5 (the ask numbers) and the hero round-status line are DEFERRED by Dane's call on
+29 Aug 2026: the numbers get specific once the UT System licensing terms finalize, so both
+stay as amber chips until then. That leaves Batches 2 and 3 (what exists today, scope and
+beachhead), the team assembly line, and evidence rows as the content worth doing next.
+On the non-content side the OG preview image is the highest-leverage fix, since forwarded
+links currently show a blank card.

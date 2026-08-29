@@ -291,6 +291,94 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .deck-form input::placeholder { color: var(--muted); }
 .deck-form button[disabled] { opacity: 0.5; cursor: not-allowed; }
 
+/* ---------- Investor inquiry form ----------
+   Native styled form in the closing CTA band. Posts to Google Forms.
+   The band is centered; the form itself is left aligned so labels and
+   fields read as a normal column. */
+.inv-form {
+  max-width: 620px; margin: 40px auto 0; text-align: left;
+}
+.if-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.field { margin-bottom: 18px; }
+.if-grid .field { margin-bottom: 0; }
+.if-grid + .field { margin-top: 18px; }
+
+.field label {
+  display: block; margin-bottom: 8px;
+  font-size: 13px; font-weight: 600; color: var(--text); letter-spacing: 0.01em;
+}
+.field .req { color: var(--uv); }
+.field .opt {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); margin-left: 6px;
+}
+
+.field input, .field textarea {
+  width: 100%; font-family: inherit; font-size: 15px; color: var(--text);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--line); border-radius: 10px;
+  padding: 13px 15px; line-height: 1.5;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+.field textarea { resize: vertical; min-height: 96px; }
+.field input::placeholder, .field textarea::placeholder { color: var(--muted); }
+.field input:hover, .field textarea:hover { border-color: rgba(139, 92, 246, 0.4); }
+.field input:focus, .field textarea:focus {
+  outline: none;
+  border-color: var(--violet);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.18);
+}
+/* the shared focus-visible rule adds an outline for keyboard users; the ring
+   above is the pointer-and-keyboard resting state */
+.field input:focus-visible, .field textarea:focus-visible { outline-offset: 2px; }
+
+.field input.invalid, .field textarea.invalid {
+  border-color: #F5734E; background: rgba(245, 115, 78, 0.06);
+}
+.field input.invalid:focus, .field textarea.invalid:focus {
+  box-shadow: 0 0 0 3px rgba(245, 115, 78, 0.18);
+}
+.field-err {
+  margin-top: 7px; font-size: 12.5px; color: #F5906E; letter-spacing: 0.01em;
+}
+
+/* honeypot: kept in the layout but out of sight and out of the tab order */
+.if-hp {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+}
+
+.if-submit {
+  border: none; cursor: pointer; font-family: inherit; margin-top: 8px;
+  width: 100%;
+}
+.if-submit[disabled] { opacity: 0.6; cursor: progress; transform: none; box-shadow: 0 0 32px rgba(139, 92, 246, 0.4); }
+
+/* the notes under the button sit centered with the rest of the band,
+   even though the fields above them are a left aligned column */
+.if-status, .if-privacy { text-align: center; }
+.if-status { margin-top: 14px; font-size: 13.5px; min-height: 1px; }
+.if-status.err { color: #F5906E; }
+.if-status.err a { color: var(--uv); text-decoration: underline; text-underline-offset: 3px; }
+.if-privacy { margin-top: 12px; }
+
+/* success panel replaces the form in place */
+.if-done { max-width: 620px; margin: 44px auto 0; }
+.if-done-mark {
+  width: 52px; height: 52px; margin: 0 auto 20px;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 24px; color: #fff;
+  background: linear-gradient(135deg, var(--violet), var(--cyan));
+  box-shadow: 0 0 28px rgba(139, 92, 246, 0.45);
+}
+.if-done h3 { font-size: 21px; margin-bottom: 10px; }
+
+@media (max-width: 560px) {
+  .if-grid { grid-template-columns: 1fr; gap: 0; }
+  .if-grid .field { margin-bottom: 18px; }
+}
+
 /* ---------- Legal / footer ---------- */
 .updated { text-align: center; font-size: 12px; color: var(--muted); letter-spacing: 0.08em; margin-top: 30px; }
 .legal {

@@ -67,14 +67,84 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   background: var(--cyan); box-shadow: 0 0 8px var(--cyan);
 }
 
-.hero-proof {
-  border-radius: 16px; min-height: 360px;
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.12), rgba(34, 211, 238, 0.08));
-  border: 1px dashed rgba(139, 92, 246, 0.4);
-  display: flex; flex-direction: column; gap: 14px;
-  align-items: center; justify-content: center; text-align: center;
-  color: var(--muted); font-size: 13px; letter-spacing: 0.08em; padding: 40px;
+/* Product stage: the photo is cropped tight to the device, then the
+   "surface" it sits on is built here — a glossy floor reflection below,
+   a hairline light horizon at the contact point, and a soft backlight.
+   The photo's near-black backdrop lighten-blends into --bg, so the device
+   reads as physically resting on a dark reflective surface in the page. */
+.hero-photo { position: relative; margin: 0; }
+.hero-photo .stage-img {
+  position: relative; z-index: 1;
+  display: block; width: 100%; height: auto;
+  mix-blend-mode: lighten;
+  filter: contrast(1.07) saturate(1.06) brightness(1.03);
 }
+/* backlight rising behind the device */
+.stage-glow {
+  position: absolute; z-index: 0;
+  left: 4%; right: 4%; top: -10%; height: 105%;
+  background: radial-gradient(ellipse 62% 55% at 50% 55%,
+    rgba(139, 92, 246, 0.30), rgba(34, 211, 238, 0.10) 55%, transparent 75%);
+  filter: blur(34px);
+}
+/* the surface edge: a hairline of light where the device meets the floor */
+.stage-horizon {
+  position: relative; z-index: 2;
+  height: 2px; margin: 0 6%;
+  background: linear-gradient(90deg,
+    transparent, rgba(167, 139, 250, 0.8) 20%, rgba(231, 231, 242, 1) 50%, rgba(34, 211, 238, 0.8) 80%, transparent);
+  box-shadow: 0 0 18px rgba(139, 92, 246, 0.8), 0 0 46px rgba(34, 211, 238, 0.4);
+}
+/* glossy floor: mirrored copy clipped to a shallow strip, fading out fast
+   like polished black acrylic */
+.stage-floor {
+  position: relative; z-index: 0;
+  overflow: hidden; aspect-ratio: 970 / 190;
+  -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,0.85), rgba(0,0,0,0.25) 55%, transparent 92%);
+  mask-image: linear-gradient(180deg, rgba(0,0,0,0.85), rgba(0,0,0,0.25) 55%, transparent 92%);
+  pointer-events: none;
+}
+.stage-floor .stage-reflection {
+  display: block; width: 100%; height: auto;
+  transform: scaleY(-1);
+  mix-blend-mode: lighten;
+  filter: blur(3px) saturate(0.9) brightness(0.8);
+  opacity: 0.55;
+}
+
+/* ---------- Team photo avatars ----------
+   Real headshots replace the placeholder SVGs. Keep the violet->cyan ring
+   from the placeholder as a gradient border, with a thin surface-colored
+   gap so the photo reads as framed rather than bleeding into the ring. */
+.team-card .avatar {
+  width: 104px; height: 104px; margin: 0 auto 24px;
+  border-radius: 50%; padding: 2px;
+  background: linear-gradient(135deg, var(--violet), var(--cyan));
+}
+.team-card .avatar img {
+  box-sizing: border-box;
+  width: 100%; height: 100%; display: block;
+  border-radius: 50%; object-fit: cover; object-position: center top;
+  border: 3px solid var(--surface);
+}
+.team-card:hover .avatar {
+  box-shadow: 0 0 22px rgba(139, 92, 246, 0.4);
+}
+
+/* ---------- Comparative proof figure (patent micrographs) ---------- */
+.proof-figure {
+  margin: 50px auto 0; max-width: 1020px;
+  border-radius: 16px; overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: 0 24px 60px -32px rgba(0, 0, 0, 0.65);
+}
+.proof-figure img { display: block; width: 100%; height: auto; }
+.proof-figure figcaption {
+  padding: 18px 24px; font-size: 14px; line-height: 1.6;
+  color: var(--muted); border-top: 1px solid var(--line);
+}
+.proof-figure figcaption strong { color: var(--text); font-weight: 600; }
 
 /* ---------- Generic section lead prose ---------- */
 .lead { max-width: 680px; }

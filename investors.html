@@ -58,10 +58,14 @@
     </div>
 
     <div class="hero-visual">
-      <div class="hero-proof">
-        <span class="todo">TODO hero visual</span>
-        <div>Real prototype photo, a clear-chip test capture, or a short demo video.<br>Poster frame with click to play — not autoplay.</div>
-      </div>
+      <figure class="hero-photo">
+        <div class="stage-glow" aria-hidden="true"></div>
+        <img class="stage-img" src="assets/hero-device.jpg" alt="Side-by-side comparison of two microfluidic chips: the Aionik Inc. method produces an optically clear chip, while the conventional method result is hazy and distorted." width="970" height="768" loading="eager">
+        <div class="stage-horizon" aria-hidden="true"></div>
+        <div class="stage-floor" aria-hidden="true">
+          <img class="stage-reflection" src="assets/hero-device.jpg" alt="" width="970" height="768" loading="lazy">
+        </div>
+      </figure>
     </div>
   </div>
 </header>
@@ -83,6 +87,13 @@
       <p class="wn-lead">Fabrication did not move with them.</p>
       <p class="wn-para">Microfluidic chips are still cast by hand. Soft lithography needs a cleanroom, a mask aligner, and someone trained to run both, so the capability lives inside a small number of institutions. Everyone else orders custom chips from a foundry and waits weeks for a design they cannot revise without paying again.</p>
       <p class="wn-para">The process itself is <a href="https://www.nature.com/articles/s41598-025-16863-z" target="_blank" rel="noopener noreferrer">slow and operator dependent, with cure conditions that shift batch to batch</a>. And labs <a href="https://pubmed.ncbi.nlm.nih.gov/39687794/" target="_blank" rel="noopener noreferrer">prototype in PDMS while manufacturing in thermoplastic</a>, so the device they validate is never the device they ship.</p>
+    </div>
+
+    <!-- Block 2b (widens the demand beyond biology; cites the M&N top-10 editorial) -->
+    <div class="wn-block reveal prose">
+      <p class="wn-lead">The demand runs wider than biology.</p>
+      <p class="wn-para">Regulation set the clock for organ on chip work, but it is not the only pressure. When Microsystems and Nanoengineering surveyed scholars and industry for its <a href="https://www.nature.com/articles/s41378-025-01153-5" target="_blank" rel="noopener noreferrer">ten ground challenges for the field</a>, fabrication ran through the answers. Several of the ten stall not on ideas but on access to fast, high fidelity, biocompatible microfabrication: functional organ on chip reconstruction, affordable point of care diagnostics, precision that survives the print in high performance devices, and the AI guided design to fabrication loop that only closes when iteration is cheap.</p>
+      <p class="wn-para">Every one of those sits on the same microfluidic and additive foundation we build for. A process that turns a standard printer into a source of clear, biocompatible parts in minutes moves the fabrication half of each problem at once. The pull is not a single market. It is a field wide shift toward tools that let a lab hold an idea in its hands the week it has it, across diagnostics, computing, and medicine alike.</p>
     </div>
 
     <!-- Block 4 (table) — placed before Block 3 so Block 3 can hand off to the solution.
@@ -173,6 +184,15 @@
         <p>Depending on the print.</p>
       </div>
     </div>
+
+    <!-- Comparative proof figure from the patent (US 2026/0131529 A1).
+         Values 73 µm and 13.1 µm are printed in the source figure; do not alter. -->
+    <figure class="proof-figure reveal">
+      <img src="assets/proof-droplets.jpg" alt="Microscopy comparison of droplet generation in the same channel geometry. Top row, traditional method: large, uneven droplets about 73 microns across with rough, blurred channel walls. Bottom row, Spinning Desicurer method: fine, uniform droplets about 13 microns across with clean, sharply defined walls." width="1600" height="641" loading="lazy">
+      <figcaption>
+        <strong>Same geometry, sharper result.</strong> Droplet generation in an identical flow focusing junction. The traditional method (top row) produces large, uneven droplets near 73&nbsp;µm against rough, blurred walls. Our Spinning Desicurer method (bottom row) produces fine, uniform droplets near 13&nbsp;µm against clean, sharply defined channel walls. Figures from US&nbsp;2026/0131529&nbsp;A1.
+      </figcaption>
+    </figure>
   </div>
 </section>
 
@@ -248,22 +268,8 @@
     <div class="team-grid">
 
       <div class="team-card sheen reveal">
-        <div class="avatar" aria-hidden="true">
-          <svg viewBox="0 0 120 120" fill="none">
-            <defs>
-              <linearGradient id="avEdge" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#8B5CF6"/>
-                <stop offset="1" stop-color="#22D3EE"/>
-              </linearGradient>
-              <clipPath id="avClip"><circle cx="60" cy="60" r="55"/></clipPath>
-            </defs>
-            <circle cx="60" cy="60" r="55" fill="rgba(255,255,255,0.03)" stroke="url(#avEdge)" stroke-width="1.5"/>
-            <g clip-path="url(#avClip)">
-              <path d="M0 88 C 30 80, 50 98, 80 90 S 115 78, 125 84" stroke="rgba(34,211,238,0.35)" stroke-width="2"/>
-              <path d="M0 100 C 34 92, 58 108, 86 100 S 118 90, 126 96" stroke="rgba(139,92,246,0.3)" stroke-width="2"/>
-            </g>
-            <text x="60" y="56" text-anchor="middle" dominant-baseline="central" fill="#E7E7F2" font-size="28" font-weight="700" letter-spacing="2">DS</text>
-          </svg>
+        <div class="avatar">
+          <img src="assets/team-dane.jpg" alt="Dane Spencer" width="104" height="104" loading="lazy">
         </div>
         <h3>Dane Spencer</h3>
         <div class="role">Chief Executive Officer</div>
@@ -272,15 +278,8 @@
       </div>
 
       <div class="team-card sheen reveal">
-        <div class="avatar" aria-hidden="true">
-          <svg viewBox="0 0 120 120" fill="none">
-            <circle cx="60" cy="60" r="55" fill="rgba(255,255,255,0.03)" stroke="url(#avEdge)" stroke-width="1.5"/>
-            <g clip-path="url(#avClip)">
-              <path d="M0 88 C 30 80, 50 98, 80 90 S 115 78, 125 84" stroke="rgba(34,211,238,0.35)" stroke-width="2"/>
-              <path d="M0 100 C 34 92, 58 108, 86 100 S 118 90, 126 96" stroke="rgba(139,92,246,0.3)" stroke-width="2"/>
-            </g>
-            <text x="60" y="56" text-anchor="middle" dominant-baseline="central" fill="#E7E7F2" font-size="28" font-weight="700" letter-spacing="2">GS</text>
-          </svg>
+        <div class="avatar">
+          <img src="assets/team-gongchen.jpg" alt="Gongchen Sun" width="104" height="104" loading="lazy">
         </div>
         <h3>Gongchen Sun, PhD</h3>
         <div class="role">Chief Science Officer</div>
@@ -289,15 +288,8 @@
       </div>
 
       <div class="team-card sheen reveal">
-        <div class="avatar" aria-hidden="true">
-          <svg viewBox="0 0 120 120" fill="none">
-            <circle cx="60" cy="60" r="55" fill="rgba(255,255,255,0.03)" stroke="url(#avEdge)" stroke-width="1.5"/>
-            <g clip-path="url(#avClip)">
-              <path d="M0 88 C 30 80, 50 98, 80 90 S 115 78, 125 84" stroke="rgba(34,211,238,0.35)" stroke-width="2"/>
-              <path d="M0 100 C 34 92, 58 108, 86 100 S 118 90, 126 96" stroke="rgba(139,92,246,0.3)" stroke-width="2"/>
-            </g>
-            <text x="60" y="56" text-anchor="middle" dominant-baseline="central" fill="#E7E7F2" font-size="28" font-weight="700" letter-spacing="2">HS</text>
-          </svg>
+        <div class="avatar">
+          <img src="assets/team-henry.jpg" alt="Henry Shu" width="104" height="104" loading="lazy">
         </div>
         <h3>Henry Shu</h3>
         <div class="role">Chief Marketing Officer</div>
@@ -306,15 +298,8 @@
       </div>
 
       <div class="team-card sheen reveal">
-        <div class="avatar" aria-hidden="true">
-          <svg viewBox="0 0 120 120" fill="none">
-            <circle cx="60" cy="60" r="55" fill="rgba(255,255,255,0.03)" stroke="url(#avEdge)" stroke-width="1.5"/>
-            <g clip-path="url(#avClip)">
-              <path d="M0 88 C 30 80, 50 98, 80 90 S 115 78, 125 84" stroke="rgba(34,211,238,0.35)" stroke-width="2"/>
-              <path d="M0 100 C 34 92, 58 108, 86 100 S 118 90, 126 96" stroke="rgba(139,92,246,0.3)" stroke-width="2"/>
-            </g>
-            <text x="60" y="56" text-anchor="middle" dominant-baseline="central" fill="#E7E7F2" font-size="28" font-weight="700" letter-spacing="2">GR</text>
-          </svg>
+        <div class="avatar">
+          <img src="assets/team-guillermo.jpg" alt="Guillermo Ramirez-Alvarado" width="104" height="104" loading="lazy">
         </div>
         <h3>Guillermo Ramirez-Alvarado</h3>
         <div class="role">Chief Technology Officer</div>
@@ -323,15 +308,8 @@
       </div>
 
       <div class="team-card sheen reveal">
-        <div class="avatar" aria-hidden="true">
-          <svg viewBox="0 0 120 120" fill="none">
-            <circle cx="60" cy="60" r="55" fill="rgba(255,255,255,0.03)" stroke="url(#avEdge)" stroke-width="1.5"/>
-            <g clip-path="url(#avClip)">
-              <path d="M0 88 C 30 80, 50 98, 80 90 S 115 78, 125 84" stroke="rgba(34,211,238,0.35)" stroke-width="2"/>
-              <path d="M0 100 C 34 92, 58 108, 86 100 S 118 90, 126 96" stroke="rgba(139,92,246,0.3)" stroke-width="2"/>
-            </g>
-            <text x="60" y="56" text-anchor="middle" dominant-baseline="central" fill="#E7E7F2" font-size="28" font-weight="700" letter-spacing="2">GG</text>
-          </svg>
+        <div class="avatar">
+          <img src="assets/team-gabriel.jpg" alt="Gabriel Garibaldi" width="104" height="104" loading="lazy">
         </div>
         <h3>Gabriel Garibaldi</h3>
         <div class="role">Director of Applied Science</div>
@@ -342,7 +320,7 @@
     </div>
 
     <div class="todo-block reveal" style="margin-top:40px;">
-      <span class="todo">TODO</span> Advisors and technical board, and the roles we are hiring for. Headshots coming soon.
+      <span class="todo">TODO</span> Advisors and technical board, and the roles we are hiring for.
     </div>
   </div>
 </section>
@@ -359,7 +337,7 @@
       </div>
       <div class="ev-row reveal">
         <div class="cat">Origin</div>
-        <div class="body">Developed in the Sun Lab at UTSA. <span class="todo">TODO: independent or university test data with methodology.</span></div>
+        <div class="body">Developed in the Sun Lab at UTSA. Comparative droplet generation data is shown above under <a href="#insight">The insight</a>. <span class="todo">TODO: independent third-party test data with methodology.</span></div>
       </div>
       <div class="ev-row reveal">
         <div class="cat">Traction to date</div>

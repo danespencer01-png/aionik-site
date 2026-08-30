@@ -437,63 +437,28 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .if-grid .field { margin-bottom: 18px; }
 }
 
-/* ---------- Cost stack ----------
-   Line items with a value rail on the right, grouped by what kind of
-   money it is: one time capital, recurring, and the alternatives. Reads
-   as a bill rather than as a paragraph of numbers. */
-.cost-stack { margin-top: 34px; max-width: 760px; }
-.cs-group { margin-bottom: 30px; }
-.cs-group:last-of-type { margin-bottom: 0; }
-
-.cs-head {
-  display: flex; justify-content: space-between; align-items: baseline;
-  padding-bottom: 11px; margin-bottom: 4px;
-  border-bottom: 1px solid var(--line);
-  font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--cyan); font-weight: 700;
+/* ---------- Cost, stated briefly ----------
+   The itemized version lives on pdms.html. Here the job is scale, not
+   detail, so the three figures are the only thing that needs to land.
+   (An earlier line-item build of this is recoverable from git if the
+   detail is ever wanted inline again.) */
+.cost-brief {
+  max-width: 720px; margin-top: 26px;
+  font-size: 17.5px; line-height: 1.75; color: var(--muted);
 }
-.cs-when { color: var(--muted); letter-spacing: 0.1em; font-weight: 600; }
-
-.cs-row {
-  display: flex; justify-content: space-between; align-items: baseline; gap: 24px;
-  padding: 13px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-.cs-row:last-child { border-bottom: none; }
-.cs-item { font-size: 15px; color: var(--text); }
-.cs-item em {
-  display: block; font-style: normal; margin-top: 3px;
-  font-size: 13px; color: var(--muted); line-height: 1.45;
-}
-.cs-val {
-  font-size: 15.5px; font-weight: 700; color: var(--uv);
-  white-space: nowrap; text-align: right; flex-shrink: 0;
-}
-.cs-per { font-size: 12.5px; font-weight: 600; color: var(--muted); margin-left: 3px; }
-
-/* the summed row reads as the bottom line */
-.cs-total {
-  margin-top: 4px; padding-top: 16px;
-  border-top: 1px solid var(--line); border-bottom: none;
-}
-.cs-total .cs-item { font-weight: 700; }
-.cs-total .cs-val {
-  font-size: 19px;
+.cost-brief b {
+  font-weight: 800; font-size: 1.1em; white-space: nowrap;
+  letter-spacing: -0.01em;
   background: linear-gradient(90deg, var(--uv), var(--cyan));
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
-/* the middle cleanroom scenario is the one to anchor on */
-.cs-likely { background: linear-gradient(90deg, rgba(139, 92, 246, 0.08), transparent 70%); }
-.cs-likely .cs-item { font-weight: 600; }
-
-.cs-note {
-  margin-top: 26px; padding-top: 18px; border-top: 1px solid var(--line);
-  font-size: 13px; line-height: 1.65; color: var(--muted);
+.cost-brief-link { margin-top: 16px; font-size: 15px; }
+.cost-brief-link a {
+  color: var(--uv); text-decoration: none;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.35);
+  padding-bottom: 2px; transition: color 0.2s, border-color 0.2s;
 }
-
-@media (max-width: 560px) {
-  .cs-row { flex-direction: column; gap: 6px; }
-  .cs-val { text-align: left; }
-}
+.cost-brief-link a:hover { color: var(--cyan); border-color: var(--cyan); }
 
 /* ---------- PDMS summary (links out to pdms.html) ----------
    Given a little more presence than a plain card grid, because it is the

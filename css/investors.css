@@ -21,12 +21,12 @@
 .todo-block .todo { margin-bottom: 12px; }
 
 /* inline citation links inside prose */
-.prose a, a.src, .wn-closing a, .lead a, .mkt-sub a, .pdms-sum p a, figcaption a {
+.prose a, a.src, .wn-closing a, .lead a, .mkt-sub a, .pdms-sum p a, .cs-note a, figcaption a {
   color: var(--uv); text-decoration: underline;
   text-underline-offset: 3px; text-decoration-color: rgba(167, 139, 250, 0.5);
   transition: color 0.2s, text-decoration-color 0.2s;
 }
-.prose a:hover, a.src:hover, .wn-closing a:hover, .lead a:hover, .mkt-sub a:hover, .pdms-sum p a:hover, figcaption a:hover { color: var(--cyan); text-decoration-color: var(--cyan); }
+.prose a:hover, a.src:hover, .wn-closing a:hover, .lead a:hover, .mkt-sub a:hover, .pdms-sum p a:hover, .cs-note a:hover, figcaption a:hover { color: var(--cyan); text-decoration-color: var(--cyan); }
 
 /* visible keyboard focus everywhere */
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
@@ -435,6 +435,64 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 @media (max-width: 560px) {
   .if-grid { grid-template-columns: 1fr; gap: 0; }
   .if-grid .field { margin-bottom: 18px; }
+}
+
+/* ---------- Cost stack ----------
+   Line items with a value rail on the right, grouped by what kind of
+   money it is: one time capital, recurring, and the alternatives. Reads
+   as a bill rather than as a paragraph of numbers. */
+.cost-stack { margin-top: 34px; max-width: 760px; }
+.cs-group { margin-bottom: 30px; }
+.cs-group:last-of-type { margin-bottom: 0; }
+
+.cs-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-bottom: 11px; margin-bottom: 4px;
+  border-bottom: 1px solid var(--line);
+  font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--cyan); font-weight: 700;
+}
+.cs-when { color: var(--muted); letter-spacing: 0.1em; font-weight: 600; }
+
+.cs-row {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 24px;
+  padding: 13px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.cs-row:last-child { border-bottom: none; }
+.cs-item { font-size: 15px; color: var(--text); }
+.cs-item em {
+  display: block; font-style: normal; margin-top: 3px;
+  font-size: 13px; color: var(--muted); line-height: 1.45;
+}
+.cs-val {
+  font-size: 15.5px; font-weight: 700; color: var(--uv);
+  white-space: nowrap; text-align: right; flex-shrink: 0;
+}
+.cs-per { font-size: 12.5px; font-weight: 600; color: var(--muted); margin-left: 3px; }
+
+/* the summed row reads as the bottom line */
+.cs-total {
+  margin-top: 4px; padding-top: 16px;
+  border-top: 1px solid var(--line); border-bottom: none;
+}
+.cs-total .cs-item { font-weight: 700; }
+.cs-total .cs-val {
+  font-size: 19px;
+  background: linear-gradient(90deg, var(--uv), var(--cyan));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+/* the middle cleanroom scenario is the one to anchor on */
+.cs-likely { background: linear-gradient(90deg, rgba(139, 92, 246, 0.08), transparent 70%); }
+.cs-likely .cs-item { font-weight: 600; }
+
+.cs-note {
+  margin-top: 26px; padding-top: 18px; border-top: 1px solid var(--line);
+  font-size: 13px; line-height: 1.65; color: var(--muted);
+}
+
+@media (max-width: 560px) {
+  .cs-row { flex-direction: column; gap: 6px; }
+  .cs-val { text-align: left; }
 }
 
 /* ---------- PDMS summary (links out to pdms.html) ----------

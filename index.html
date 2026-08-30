@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Aionik Technologies investor brief — a solvent-free post-process that makes optically clear, biocompatible microfluidic chips printable on standard SLA hardware.">
+<meta name="description" content="Aionik Technologies — a patent pending curing process that makes optically clear, biocompatible microfluidic chips printable on standard SLA hardware, with no cleanroom and no tooling.">
 
 <!-- Public as of 29 Aug 2026: this is the only live Aionik page while the main
      site is rebuilt, so it needs to be findable. Was noindex while the page was
@@ -12,15 +12,15 @@
 
 <!-- Open Graph / Twitter — link is forwarded inside firms. TODO: add dedicated 1200x630 preview image. -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Aionik Technologies — Investor Brief">
+<meta property="og:title" content="Aionik Technologies — Microfluidics without the cleanroom">
 <meta property="og:description" content="A solvent-free post-process that makes optically clear, biocompatible microfluidics printable on standard SLA hardware.">
 <meta property="og:image" content="assets/og-investors.png"><!-- TODO: preview image -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Aionik Technologies — Investor Brief">
+<meta name="twitter:title" content="Aionik Technologies — Microfluidics without the cleanroom">
 <meta name="twitter:description" content="A solvent-free post-process that makes optically clear, biocompatible microfluidics printable on standard SLA hardware.">
 <meta name="twitter:image" content="assets/og-investors.png"><!-- TODO: preview image -->
 
-<title>Aionik Technologies — Investor Brief</title>
+<title>Aionik Technologies — Microfluidics without the cleanroom</title>
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/investors.css">
 </head>
@@ -42,7 +42,7 @@
 <header class="inv-hero">
   <div class="container inv-hero-split">
     <div class="hero-content">
-      <div class="pill">Investor brief</div>
+      <div class="pill">Microfluidics without the cleanroom</div>
       <h1>The bottleneck in research isn't ideas.<br>It's how fast you can <span class="grad">hold one in your hands.</span></h1>
       <p class="hero-tag">We're bridging that gap.</p>
       <p class="positioning">A post-process for standard and specialized SLA printers that replaces IPA chemical washing entirely, enabling rapid prototyping and manufacturing of high quality, biocompatible microfluidic chips.</p>
@@ -97,7 +97,7 @@
     <!-- Block 2 (two paragraphs, one block) -->
     <div class="wn-block reveal prose">
       <p class="wn-lead">Fabrication did not move with them.</p>
-      <p class="wn-para">Microfluidic chips are still cast by hand. Soft lithography needs a cleanroom, a mask aligner, and someone trained to run both, so the capability lives inside a small number of institutions. Everyone else orders custom chips from a foundry and waits weeks for a design they cannot revise without paying again.</p>
+      <p class="wn-para">Microfluidic chips are still cast by hand. Soft lithography needs a cleanroom, then, in rough order of what they cost, a <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6187812/" target="_blank" rel="noopener noreferrer">mask aligner near $50,000, a mask exposer near $15,000, a plasma system and a spin coater near $7,000 each</a>, plus a vacuum desiccator, a developer bench, hot plates, a curing oven, a profilometer to check what you actually made, and the fume hood and consumables around all of it. It needs someone trained to run the whole chain. That is why the capability lives inside a small number of institutions. Everyone else orders custom chips from a foundry and waits weeks for a design they cannot revise without paying again.</p>
       <p class="wn-para">The process itself is <a href="https://www.nature.com/articles/s41598-025-16863-z" target="_blank" rel="noopener noreferrer">slow and operator dependent, with cure conditions that shift batch to batch</a>. And labs <a href="https://pubmed.ncbi.nlm.nih.gov/39687794/" target="_blank" rel="noopener noreferrer">prototype in PDMS while manufacturing in thermoplastic</a>, so the device they validate is never the device they ship.</p>
     </div>
 
@@ -193,7 +193,7 @@
             </tr>
             <tr>
               <th scope="row">Outsourced foundry</th>
-              <td data-label="Overhead">None</td>
+              <td data-label="Overhead">No equipment, but setup and tooling charged per design</td>
               <td data-label="Per iteration">Weeks per revision, priced per order</td>
               <td data-label="Ceiling">No design iteration</td>
             </tr>
@@ -207,6 +207,7 @@
         </table>
       </div>
       <p class="wn-closing">Every existing option forces a tradeoff between speed and scale. Soft lithography iterates but cannot produce. Molding produces but cannot iterate. We hold both, in one material, with no cleanroom and no tooling.</p>
+      <p class="wn-closing" style="margin-top:18px;">The tradeoff is also a bill, and it changes shape depending on which end you work at. A research bench runs <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6187812/" target="_blank" rel="noopener noreferrer">$30,000 to $65,000 in equipment</a>. A production line is a different category of purchase: mask aligners and wafer bonders are quoted in the hundreds of thousands, and a single <a href="https://bidservice.com/collections/pva-tepla" target="_blank" rel="noopener noreferrer">used plasma system alone lists at $29,500 to $35,000</a>. Injection molding moves the money into tooling, <a href="https://www.meridian-medical.com/how-much-do-injection-moulding-tools-for-medical-devices-cost/" target="_blank" rel="noopener noreferrer">$15,000 for a simple part to over $100,000 for a complex multi cavity design</a>, bought again for every design change. Both ends still need a cleanroom, and both need the line item nobody can capitalize away: a trained operator on salary. <a href="pdms.html">See the full equipment and process breakdown</a>.</p>
     </div>
 
     <!-- Block 3 (single block, hands off to the solution section directly below) -->
@@ -294,6 +295,37 @@
      applications, and market framing are business plan detail that Dane does not
      want exposed on a page shared outside the company. The "why now" section above
      already establishes demand from public sources without revealing strategy. -->
+
+<!-- ============ HOW A PDMS CHIP IS MADE (summary -> pdms.html) ============ -->
+<section id="pdms" class="team-section">
+  <div class="container">
+    <div class="kicker reveal">The incumbent process</div>
+    <h2 class="reveal">What making a chip actually takes</h2>
+    <p class="lead muted reveal">The comparison above is easy to read past. It is worth seeing what the standard process involves, because the cost is only half of it. The other half is that it has to go right every time, by hand.</p>
+
+    <div class="pdms-summary reveal">
+      <div class="pdms-sum-grid">
+        <div class="pdms-sum">
+          <div class="pdms-sum-k">Eleven steps, two days</div>
+          <p>A silicon wafer is spin coated with photoresist, baked, exposed through a mask, developed, and silanized to make a mold. Only then does the PDMS get mixed, degassed, poured, cured, cut out, punched, and bonded.</p>
+        </div>
+        <div class="pdms-sum">
+          <div class="pdms-sum-k">Every port is made by hand</div>
+          <p>Inlet and outlet holes are punched individually into each slab with a biopsy punch. A torn port or a fragment of debris in the channel is a scrapped chip.</p>
+        </div>
+        <div class="pdms-sum">
+          <div class="pdms-sum-k">The bond is a deadline</div>
+          <p>Plasma activation decays within roughly 15 minutes to an hour. Alignment and contact have to happen inside that window, once, with no second attempt.</p>
+        </div>
+        <div class="pdms-sum">
+          <div class="pdms-sum-k">The seam is the weak point</div>
+          <p>A finished chip is two pieces held at an interface. That interface is what delaminates under pressure, and it is why these devices are treated as consumable rather than durable.</p>
+        </div>
+      </div>
+      <a href="pdms.html" class="btn btn-primary pdms-cta" data-cta="pdms-deepdive">See the full process, step by step</a>
+    </div>
+  </div>
+</section>
 
 <!-- ============ WHY THIS TEAM ============ -->
 <section id="team">

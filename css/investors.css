@@ -21,12 +21,12 @@
 .todo-block .todo { margin-bottom: 12px; }
 
 /* inline citation links inside prose */
-.prose a, a.src {
+.prose a, a.src, .wn-closing a, .lead a, .mkt-sub a, .pdms-sum p a, figcaption a {
   color: var(--uv); text-decoration: underline;
   text-underline-offset: 3px; text-decoration-color: rgba(167, 139, 250, 0.5);
   transition: color 0.2s, text-decoration-color 0.2s;
 }
-.prose a:hover, a.src:hover { color: var(--cyan); text-decoration-color: var(--cyan); }
+.prose a:hover, a.src:hover, .wn-closing a:hover, .lead a:hover, .mkt-sub a:hover, .pdms-sum p a:hover, figcaption a:hover { color: var(--cyan); text-decoration-color: var(--cyan); }
 
 /* visible keyboard focus everywhere */
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
@@ -435,6 +435,24 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 @media (max-width: 560px) {
   .if-grid { grid-template-columns: 1fr; gap: 0; }
   .if-grid .field { margin-bottom: 18px; }
+}
+
+/* ---------- PDMS summary (links out to pdms.html) ---------- */
+.pdms-summary { margin-top: 50px; }
+.pdms-sum-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.pdms-sum {
+  border: 1px solid var(--line); border-radius: 16px;
+  padding: 28px 26px; background: rgba(255, 255, 255, 0.02);
+}
+.pdms-sum-k {
+  font-size: 15px; font-weight: 700; color: var(--uv);
+  margin-bottom: 10px; letter-spacing: -0.01em;
+}
+.pdms-sum p { font-size: 14.5px; color: var(--muted); line-height: 1.6; }
+.pdms-cta { margin-top: 34px; }
+
+@media (max-width: 860px) {
+  .pdms-sum-grid { grid-template-columns: 1fr; }
 }
 
 /* ---------- Legal / footer ---------- */

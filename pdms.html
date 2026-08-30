@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How a PDMS microfluidic chip is actually made: eleven steps from silicon wafer to bonded device, what the equipment costs at research and production scale, and where the process fails.">
+
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="How a PDMS chip is actually made">
+<meta property="og:description" content="Eleven steps from silicon wafer to bonded device, the equipment cost at research and production scale, and the places it goes wrong.">
+<meta property="og:image" content="assets/og-investors.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How a PDMS chip is actually made">
+<meta name="twitter:description" content="Eleven steps from silicon wafer to bonded device, and where the process fails.">
+<meta name="twitter:image" content="assets/og-investors.png">
+
+<title>How a PDMS chip is actually made — Aionik Technologies</title>
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/investors.css">
+<link rel="stylesheet" href="css/pdms.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="logo">AION<span>IK</span><sup class="tm">&trade;</sup></a>
+    <div class="nav-links">
+      <a href="./">Home</a>
+      <a href="#cost">What it costs</a>
+      <a href="#fails">Where it fails</a>
+      <a href="./#book" class="nav-cta" data-cta="book-call-pdms-nav">Book a call</a>
+    </div>
+    <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="pdms-hero">
+  <div class="container">
+    <a href="./" class="back-link">&larr; Back to Aionik</a>
+    <div class="pill">The incumbent process</div>
+    <h1>How a PDMS chip is <span class="grad">actually made</span></h1>
+    <p class="positioning">Soft lithography is the standard way to make a microfluidic chip, and it has been for two decades. It is also slow, expensive, and unforgiving. This page walks the whole process, from bare silicon wafer to a bonded device, and is honest about where it goes wrong.</p>
+  </div>
+</header>
+
+<!-- ============ THE PROCESS ============ -->
+<section id="process">
+  <div class="container">
+    <div class="kicker reveal">Step by step</div>
+    <h2 class="reveal">Eleven steps, and most of a week</h2>
+    <p class="lead muted reveal">The process splits in two. First you build a mold, which is the part that needs the cleanroom. Then you cast against it, which is the part that needs the hands. A mold can be reused, so the first half is amortized. The second half is repeated for every single chip.</p>
+
+    <!-- Phase 1 -->
+    <div class="phase reveal">
+      <div class="phase-head">
+        <span class="phase-num">Phase one</span>
+        <h3>Building the master mold</h3>
+        <span class="when">Cleanroom required. Done once per design.</span>
+      </div>
+      <div class="steps">
+        <div class="step-card">
+          <span class="n">1</span>
+          <h4>Clean the wafer</h4>
+          <p>A bare silicon wafer is solvent cleaned and dehydration baked so the photoresist will adhere.</p>
+          <span class="risk">Any particle left behind becomes a defect reproduced into every chip cast from this mold.</span>
+        </div>
+        <div class="step-card">
+          <span class="n">2</span>
+          <h4>Spin coat the photoresist</h4>
+          <p>SU-8 is poured onto the wafer centre and spun to depth. Spin speed sets channel height, so the recipe is the geometry.</p>
+          <span class="risk">Edge bead, bubbles, or a speed error changes channel height across the whole wafer.</span>
+        </div>
+        <div class="step-card">
+          <span class="n">3</span>
+          <h4>Soft bake</h4>
+          <p>Baked in stages on a hotplate, typically around 65&nbsp;&deg;C then 95&nbsp;&deg;C, to drive off solvent before exposure.</p>
+          <span class="risk">Under baking leaves solvent and the resist sticks to the mask. Over baking cracks it.</span>
+        </div>
+        <div class="step-card">
+          <span class="n">4</span>
+          <h4>Align and expose</h4>
+          <p>The photomask is aligned to the wafer in a mask aligner and the pattern is written with UV.</p>
+          <span class="risk">Alignment is done by an operator through optics. Dose errors under or over cure the features.</span>
+        </div>
+        <div class="step-card">
+          <span class="n">5</span>
+          <h4>Develop and silanize</h4>
+          <p>Uncured resist is dissolved away, leaving raised channel features. The mold is then vapour silanized so cured rubber will release from it.</p>
+          <span class="risk">Skip or rush silanization and the first casting tears the mold apart, taking the design with it.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 2 -->
+    <div class="phase reveal">
+      <div class="phase-head">
+        <span class="phase-num">Phase two</span>
+        <h3>Casting and finishing the chip</h3>
+        <span class="when">Repeated for every chip. Mostly by hand.</span>
+      </div>
+      <div class="steps">
+        <div class="step-card">
+          <span class="n">6</span>
+          <h4>Mix the PDMS</h4>
+          <p>Base and curing agent are mixed, conventionally around ten to one. The ratio sets stiffness and how well it will bond later.</p>
+          <span class="risk">Mixing traps air throughout the batch, which is why the next step exists.</span>
+        </div>
+        <div class="step-card">
+          <span class="n">7</span>
+          <h4>Degas</h4>
+          <p>The mixture sits under vacuum until the bubbles stirred in during mixing rise out and collapse.</p>
+          <span class="risk">A bubble that survives into a channel wall is a scrapped chip, found only after curing.</span>
+        </div>
+        <div class="step-card">
+          <span class="n">8</span>
+          <h4>Pour and cure</h4>
+          <p>Poured over the mold and cured with heat, commonly around 60&nbsp;&deg;C for several hours or overnight.</p>
+          <span class="risk">This is the wait. The design is frozen for the length of the cure before anyone learns whether it worked.</span>
+        </div>
+        <div class="step-card">
+          <span class="n">9</span>
+          <h4>Cut and peel</h4>
+          <p>The cured slab is cut out and peeled off the mold by hand.</p>
+          <span class="risk">The most physical step. Peel wrong and you tear the slab, damage fine features, or crack the wafer underneath.</span>
+        </div>
+        <div class="step-card">
+          <span class="n">10</span>
+          <h4>Punch the ports</h4>
+          <p>Every inlet and outlet is punched individually with a biopsy punch, positioned by eye against the channel end.</p>
+          <span class="risk">A punch that misses, tears, or leaves a plug of debris in the channel ruins the chip after all prior work.</span>
+        </div>
+        <div class="step-card">
+          <span class="n">11</span>
+          <h4>Activate and bond</h4>
+          <p>The slab and a glass slide are plasma treated, then pressed together to form a permanent seal.</p>
+          <span class="risk">One attempt. Contact is irreversible, and the activation is already decaying (see below).</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Diagram: the bonding window -->
+    <figure class="figure reveal">
+      <svg viewBox="0 0 1200 300" role="img" aria-label="Timeline showing that plasma activated PDMS must be bonded within roughly fifteen minutes to one hour before the surface reverts to hydrophobic.">
+        <defs>
+          <linearGradient id="win" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.55"/>
+            <stop offset="55%" stop-color="#8B5CF6" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0.04"/>
+          </linearGradient>
+        </defs>
+        <text x="60" y="52" fill="#22D3EE" font-family="Helvetica,Arial" font-size="15" font-weight="700" letter-spacing="2.4">THE BONDING WINDOW</text>
+
+        <!-- track -->
+        <rect x="60" y="120" width="1080" height="26" rx="13" fill="rgba(255,255,255,0.05)"/>
+        <rect x="60" y="120" width="470" height="26" rx="13" fill="url(#win)"/>
+
+        <!-- markers -->
+        <line x1="60" y1="104" x2="60" y2="176" stroke="#22D3EE" stroke-width="2"/>
+        <circle cx="60" cy="133" r="7" fill="#22D3EE"/>
+        <text x="60" y="206" fill="#E7E7F2" font-family="Helvetica,Arial" font-size="15" font-weight="700">Plasma treatment ends</text>
+        <text x="60" y="230" fill="#8A8AA3" font-family="Helvetica,Arial" font-size="13.5">Surface is activated and ready to bond</text>
+
+        <line x1="330" y1="110" x2="330" y2="170" stroke="rgba(255,255,255,0.28)" stroke-width="1.5" stroke-dasharray="4 4"/>
+        <text x="330" y="98" fill="#8A8AA3" font-family="Helvetica,Arial" font-size="13" text-anchor="middle">~15 min</text>
+
+        <line x1="530" y1="104" x2="530" y2="176" stroke="#A78BFA" stroke-width="2"/>
+        <circle cx="530" cy="133" r="7" fill="#A78BFA"/>
+        <text x="530" y="206" fill="#E7E7F2" font-family="Helvetica,Arial" font-size="15" font-weight="700">~1 hour</text>
+        <text x="530" y="230" fill="#8A8AA3" font-family="Helvetica,Arial" font-size="13.5">Practical limit for a reliable bond</text>
+
+        <text x="1140" y="206" fill="#8A8AA3" font-family="Helvetica,Arial" font-size="15" font-weight="700" text-anchor="end">Hydrophobic recovery</text>
+        <text x="1140" y="230" fill="#8A8AA3" font-family="Helvetica,Arial" font-size="13.5" text-anchor="end">Surface reverts. The moment has passed.</text>
+
+        <text x="60" y="278" fill="#8A8AA3" font-family="Helvetica,Arial" font-size="13">Every alignment, placement, and contact decision has to happen inside the lit section of that bar.</text>
+      </svg>
+      <figcaption>
+        <strong>The bond is a deadline, not a step.</strong> Once plasma treatment ends, the activated surface immediately begins reverting to its original state. Bonding and any subsequent handling are generally recommended <a href="https://harrickplasma.com/pdms-bonding/" target="_blank" rel="noopener noreferrer">within roughly 15 minutes to an hour</a>, because polymer chains reorient and low molecular weight siloxane oligomers migrate back to the surface (<a href="https://pubs.acs.org/doi/10.1021/acs.langmuir.4c03086" target="_blank" rel="noopener noreferrer">Langmuir, 2024</a>).
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ WHY IT IS CALLED AN ART ============ -->
+<section id="skill" class="team-section">
+  <div class="container">
+    <div class="kicker reveal">The human factor</div>
+    <h2 class="reveal">People call it an art, and they are not being poetic</h2>
+    <div class="lead muted reveal" style="max-width:760px;">
+      <p class="wn-para">Eleven steps, and roughly half of them depend on an individual's hands and judgement rather than on a setting you can dial in. How fast to peel. When the degassing is finished. Where exactly to place the punch. How much pressure to apply as two surfaces meet, once, permanently.</p>
+      <p class="wn-para">The consequence is that outcomes track the operator. A lab with someone experienced produces working chips. The same protocol, same equipment, and a new graduate student produces a stack of scrap while they learn the feel of it. That knowledge lives in people, not in documentation, which is why the capability concentrates in a small number of institutions and why it does not transfer easily between them.</p>
+      <p class="wn-para">It also shows up in the literature. Even the standard test for whether a bond held is a manual peel, which <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11618810/" target="_blank" rel="noopener noreferrer">yields no quantitative data and is acknowledged to be subjective with poor reproducibility</a>. The field's own quality check is a person pulling on a chip to see what happens.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHERE IT FAILS ============ -->
+<section id="fails">
+  <div class="container">
+    <div class="kicker reveal">Failure modes</div>
+    <h2 class="reveal">Where it goes wrong</h2>
+    <p class="lead muted reveal">Most of these are only discovered at the end, after every prior step has already been paid for in time and material.</p>
+
+    <div class="fail-grid">
+      <div class="fail reveal">
+        <h4>Delamination at the seam</h4>
+        <p>The classic failure. A bond fails when a path of separation can be traced from the channel out to the edge of the device. Under pressure, the interface is what gives.</p>
+      </div>
+      <div class="fail reveal">
+        <h4>Inlet pin ejection</h4>
+        <p>Tubing pushed into a hand punched port pops back out under flow, because the port was punched slightly oversized or off axis.</p>
+      </div>
+      <div class="fail reveal">
+        <h4>Bulk splitting</h4>
+        <p>The rubber itself tears rather than the bond, which is what happens when the mix ratio was adjusted to favour bond strength at the cost of material strength.</p>
+      </div>
+      <div class="fail reveal">
+        <h4>Trapped bubbles</h4>
+        <p>Air that survived degassing sits in a channel wall. Invisible until the slab is cured and cut, at which point the chip is scrap.</p>
+      </div>
+      <div class="fail reveal">
+        <h4>Tearing on demold</h4>
+        <p>Peeling a cured slab off the master is done by hand. Fine or high aspect ratio features are the first to go, and a badly stuck slab can take the mold with it.</p>
+      </div>
+      <div class="fail reveal">
+        <h4>The window closing</h4>
+        <p>Alignment takes longer than expected, the activated surface decays, and the bond that results is weak in a way that only shows up later under flow.</p>
+      </div>
+    </div>
+
+    <p class="wn-closing reveal" style="max-width:760px;margin-top:40px;">Those first three are documented failure classes in the bonding literature, not anecdotes: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11618810/" target="_blank" rel="noopener noreferrer">visible delamination, inlet pin ejection, and bulk PDMS splitting</a> are the named modes researchers sort their broken devices into.</p>
+  </div>
+</section>
+
+<!-- ============ DURABILITY ============ -->
+<section id="durability" class="team-section">
+  <div class="container">
+    <div class="kicker reveal">Service life</div>
+    <h2 class="reveal">A chip is two pieces pretending to be one</h2>
+
+    <figure class="figure reveal">
+      <svg viewBox="0 0 1200 360" role="img" aria-label="Cross section of a PDMS chip showing a rubber slab bonded to a glass slide. The bonded interface directly beneath the channel is highlighted as the plane that carries the pressure load and delaminates.">
+        <defs>
+          <marker id="ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+            <path d="M0 0 L8 4 L0 8 z" fill="#22D3EE"/>
+          </marker>
+        </defs>
+
+        <!-- PDMS slab, with a channel void notched out of its underside, centred at x=600 -->
+        <path d="M120 96 h960 v136 h-426 v-42 a54 42 0 0 0 -108 0 v42 h-426 z"
+              fill="rgba(139,92,246,0.13)" stroke="rgba(167,139,250,0.55)" stroke-width="1.5"/>
+        <text x="144" y="130" fill="#A78BFA" font-family="Helvetica,Arial" font-size="14" font-weight="700" letter-spacing="1.4">PDMS SLAB</text>
+
+        <!-- glass -->
+        <rect x="120" y="232" width="960" height="50" rx="4" fill="rgba(34,211,238,0.10)" stroke="rgba(34,211,238,0.5)" stroke-width="1.5"/>
+        <text x="144" y="263" fill="#22D3EE" font-family="Helvetica,Arial" font-size="14" font-weight="700" letter-spacing="1.4">GLASS SLIDE</text>
+
+        <!-- the seam, thickened directly under the channel where load concentrates -->
+        <line x1="120" y1="232" x2="1080" y2="232" stroke="#F5734E" stroke-width="2.5"/>
+        <line x1="520" y1="232" x2="680" y2="232" stroke="#F5734E" stroke-width="8"/>
+
+        <!-- channel label and pressure arrows -->
+        <text x="600" y="168" fill="#E7E7F2" font-family="Helvetica,Arial" font-size="14" text-anchor="middle">channel</text>
+        <!-- pressure acts outward in every direction, including down onto the seam -->
+        <line x1="600" y1="206" x2="564" y2="206" stroke="#22D3EE" stroke-width="2" marker-end="url(#ar)"/>
+        <line x1="600" y1="206" x2="636" y2="206" stroke="#22D3EE" stroke-width="2" marker-end="url(#ar)"/>
+        <line x1="600" y1="200" x2="600" y2="224" stroke="#22D3EE" stroke-width="2" marker-end="url(#ar)"/>
+
+        <!-- callout to the highlighted seam -->
+        <line x1="680" y1="232" x2="860" y2="304" stroke="rgba(245,115,78,0.55)" stroke-width="1.4"/>
+        <text x="872" y="300" fill="#F5906E" font-family="Helvetica,Arial" font-size="14" font-weight="700">the bonded interface</text>
+        <text x="872" y="322" fill="#8A8AA3" font-family="Helvetica,Arial" font-size="13">where pressure acts, and where it lets go</text>
+
+        <text x="120" y="336" fill="#8A8AA3" font-family="Helvetica,Arial" font-size="13.5">Two parts, one seam.</text>
+      </svg>
+      <figcaption>
+        <strong>The seam carries the load.</strong> A finished chip is a rubber slab sealed to glass. Fluid pressure inside the channel pushes outward on exactly the interface holding the device together, which is why delamination is the dominant failure and why these devices are generally treated as consumable rather than as durable instruments.
+      </figcaption>
+    </figure>
+
+    <div class="lead muted reveal" style="max-width:760px;margin-top:40px;">
+      <p class="wn-para">There is a second, quieter version of the same problem. The plasma treatment that makes bonding possible also makes the surface temporarily water friendly, and that property does not last either. The same hydrophobic recovery that closes the bonding window keeps going after the device is sealed, so the internal surface a protocol was validated against is not necessarily the surface it has weeks later.</p>
+      <p class="wn-para">Neither issue is exotic or a sign of a bad lab. They are properties of building a channel by sealing two parts together, in a material chosen for how easily it casts.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COST ============ -->
+<section id="cost">
+  <div class="container">
+    <div class="kicker reveal">Capital</div>
+    <h2 class="reveal">What the equipment costs</h2>
+    <p class="lead muted reveal">Two very different answers depending on scale. A research bench is affordable to a funded lab. A production line is a different category of purchase entirely, and it is the reason the field has not simply scaled its way out of the problem.</p>
+
+    <h3 class="reveal" style="font-size:17px;margin-top:52px;">Production grade</h3>
+    <table class="cost-table reveal">
+      <thead>
+        <tr><th scope="col">System</th><th scope="col">What it does</th><th scope="col">Price</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">EV Group permanent bonding systems</th>
+          <td data-label="What it does">Automated wafer bonding under controlled thermal compression</td>
+          <td data-label="Price" class="price">$300k &ndash; $750k+ <span class="tag-e">est</span></td>
+        </tr>
+        <tr>
+          <th scope="row">SUSS MicroTec MA8/BA8 Gen&nbsp;3 mask aligner</th>
+          <td data-label="What it does">Aligns photomask to wafer and exposes the pattern</td>
+          <td data-label="Price" class="price">$250k &ndash; $450k+ new <span class="tag-e">est</span></td>
+        </tr>
+        <tr>
+          <th scope="row">SUSS automated track / coater</th>
+          <td data-label="What it does">Automated resist dispensing and coating</td>
+          <td data-label="Price" class="price">$150k &ndash; $400k <span class="tag-e">est</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Same MA8/BA8, refurbished</th>
+          <td data-label="What it does">Older operational configurations on the secondary market</td>
+          <td data-label="Price" class="price">$85k &ndash; $180k <span class="tag-e">est</span></td>
+        </tr>
+        <tr>
+          <th scope="row">PVA TePla 660</th>
+          <td data-label="What it does">Low pressure microwave plasma cleaning</td>
+          <td data-label="Price" class="price">$35,000 used <span class="tag-v">listed</span></td>
+        </tr>
+        <tr>
+          <th scope="row">PVA TePla ION-100</th>
+          <td data-label="What it does">Plasma surface treatment, cleanroom ready</td>
+          <td data-label="Price" class="price">$29,500 used <span class="tag-v">listed</span></td>
+        </tr>
+        <tr>
+          <th scope="row">THINKY ARE-400TWIN</th>
+          <td data-label="What it does">Planetary centrifugal mixing and defoaming at volume</td>
+          <td data-label="Price" class="price">$20k &ndash; $35k <span class="tag-e">est</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="cost-note reveal">Entries marked <span class="tag-v">listed</span> are verified against current secondary market listings at <a href="https://bidservice.com/collections/pva-tepla" target="_blank" rel="noopener noreferrer">BidService</a>. Entries marked <span class="tag-e">est</span> are compiled estimates; production aligners and bonders are quoted rather than price listed, which is itself characteristic of this equipment class. Accessories are capital items too: a replacement wafer chuck or maskholder for an aligner runs <a href="https://www.classoneequipment.com/KS1211" target="_blank" rel="noopener noreferrer">roughly $3,000 to $6,500</a>.</p>
+
+    <h3 class="reveal" style="font-size:17px;margin-top:56px;">Research bench</h3>
+    <table class="cost-table reveal">
+      <thead>
+        <tr><th scope="col">Item</th><th scope="col">What it does</th><th scope="col">Price</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Mask aligner</th><td data-label="What it does">Aligns and exposes through the photomask</td><td data-label="Price" class="price">~$50,000</td></tr>
+        <tr><th scope="row">Mask exposer</th><td data-label="What it does">UV exposure without full alignment optics</td><td data-label="Price" class="price">~$15,000</td></tr>
+        <tr><th scope="row">Plasma machine</th><td data-label="What it does">Surface activation before bonding</td><td data-label="Price" class="price">~$7,000</td></tr>
+        <tr><th scope="row">Spin coater</th><td data-label="What it does">Sets photoresist thickness, and so channel height</td><td data-label="Price" class="price">~$7,000</td></tr>
+        <tr><th scope="row">Consumables</th><td data-label="What it does">SU-8 photoresist, PDMS, chrome photomasks</td><td data-label="Price" class="price">$400/L, $200/kg, $100&ndash;500</td></tr>
+        <tr><th scope="row"><strong>Typical full bench</strong></th><td data-label="What it does">Conventional soft lithography setup, equipment only</td><td data-label="Price" class="price">$30,000 &ndash; $65,000</td></tr>
+      </tbody>
+    </table>
+    <p class="cost-note reveal">Research bench figures are as published in <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6187812/" target="_blank" rel="noopener noreferrer">Low-Cost, Accessible Fabrication Methods for Microfluidics Research in Low-Resource Settings</a> (Micromachines, 2018), a peer reviewed survey of conventional versus low cost approaches.</p>
+
+    <p class="wn-closing reveal" style="max-width:760px;margin-top:44px;">None of the above includes the room. A hard walled cleanroom with temperature and humidity control starts <a href="https://www.plasticstoday.com/blow-molding/cleanroom-molding-balancing-cost-and-benefit" target="_blank" rel="noopener noreferrer">around $150 per square foot to build</a> and bills energy, filter replacement, and validation every year it stays open. Nor does it include the operator, who has to be trained, retained, and paid, and without whom none of the equipment above produces a working chip.</p>
+  </div>
+</section>
+
+<!-- ============ VIDEO REFERENCES ============ -->
+<section id="watch" class="team-section">
+  <div class="container">
+    <div class="kicker reveal">See it done</div>
+    <h2 class="reveal">Watch the process</h2>
+    <p class="lead muted reveal">Descriptions only go so far. These are walkthroughs of the fabrication process filmed in working labs. They open on YouTube in a new tab.</p>
+    <div class="vids">
+      <a class="vid reveal" href="https://www.youtube.com/watch?v=P2bFp79l2Cs" target="_blank" rel="noopener noreferrer" data-cta="pdms-video-1">
+        <div class="play" aria-hidden="true">&#9654;</div>
+        <h4>Fabrication walkthrough, part one</h4>
+        <span>Watch on YouTube &nearr;</span>
+      </a>
+      <a class="vid reveal" href="https://www.youtube.com/watch?v=RxoZhAevZVo" target="_blank" rel="noopener noreferrer" data-cta="pdms-video-2">
+        <div class="play" aria-hidden="true">&#9654;</div>
+        <h4>Fabrication walkthrough, part two</h4>
+        <span>Watch on YouTube &nearr;</span>
+      </a>
+      <a class="vid reveal" href="https://www.youtube.com/watch?v=SLWmMIAG-oA" target="_blank" rel="noopener noreferrer" data-cta="pdms-video-3">
+        <div class="play" aria-hidden="true">&#9654;</div>
+        <h4>Fabrication walkthrough, part three</h4>
+        <span>Watch on YouTube &nearr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLOSING ============ -->
+<section id="close">
+  <div class="container">
+    <div class="cta-band">
+      <div class="inner reveal">
+        <div class="kicker">The point</div>
+        <h2>None of this is anyone's <span class="grad">fault</span></h2>
+        <p class="muted" style="max-width:640px;margin:0 auto 36px;">Soft lithography is a good process that has carried the field a long way. It is simply a process built around a mold, a cleanroom, and a pair of trained hands, and every one of those is a constraint on how fast a lab can go from an idea to a part. We took out the step that forced the tradeoff.</p>
+        <a href="./" class="btn btn-primary" data-cta="pdms-back-home">See what we built instead</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="logo" style="font-size:15px;">AION<span>IK</span></span>
+      <p>&copy; 2026 Aionik Technologies. All rights reserved.</p>
+    </div>
+    <p class="updated" id="updated">Last updated 30 August 2026</p>
+    <p class="legal">
+      Equipment prices are as listed or as compiled from public sources on the dates cited and change without notice. Figures marked as estimates are not vendor quotations.
+      Descriptions of conventional fabrication reflect commonly published protocols and are not a criticism of any specific laboratory or manufacturer.
+    </p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/investors.js"></script>
+</body>
+</html>

@@ -36,6 +36,39 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 /* ---------- Quieter nav ---------- */
 .nav-links .home-link { color: var(--muted); }
 
+/* ---------- Logo lockup: AK monogram + wordmark ----------
+   The mark is the traced AK ligature (assets/aionik-mark.svg), inlined so it
+   inherits colour and can be themed per placement. Solid violet in the nav so
+   it does not compete with the gradient already in the wordmark's "IK". */
+.logo {
+  display: inline-flex; align-items: center; gap: 11px;
+  line-height: 1;
+}
+.logo-mark {
+  height: 0.92em; width: auto; flex-shrink: 0;
+  color: var(--uv);
+  transition: color 0.25s, opacity 0.25s;
+}
+a.logo:hover .logo-mark { opacity: 0.82; }
+/* Option B: the monogram carries the gradient, so the wordmark goes plain
+   white. Overrides the `.logo span` gradient inherited from styles.css,
+   which would otherwise make the whole word transparent. */
+.logo .logo-word,
+.logo .logo-word span {
+  display: inline-block;
+  background: none;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  color: var(--text);
+  -webkit-text-fill-color: var(--text);
+}
+.logo .logo-word .tm {
+  color: var(--muted);
+  -webkit-text-fill-color: var(--muted);
+}
+/* footer lockup sits quieter than the nav */
+.footer-logo .logo-mark { color: var(--muted); opacity: 0.85; }
+
 /* Trademark mark on the wordmark. Aionik is unregistered, so TM is correct
    and R would not be. Kept small and slightly faded so it reads as a legal
    mark rather than as part of the logo, and letter-spacing is zeroed out so

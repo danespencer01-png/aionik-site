@@ -69,6 +69,8 @@ market are not.
 | `css/pdms.css` | Deep-dive page components. |
 | `js/main.js` | Shared; canvas/network code self-guards and stays dormant on these pages. |
 | `js/investors.js` | Analytics config, self-updating footer date, and the whole inquiry form. |
+| `assets/aionik-mark.svg` | The AK monogram, vectorised. Traced from a PNG screenshot of the original logo (`~/Documents/Screenshots/Aionik Logo.png`) by boundary-walking the bitmap, since no vector source was available. 19-point outline plus the A's counter. Uses `currentColor` so it themes per placement. **If the designer's original vector ever turns up, prefer it over this trace.** |
+| `assets/favicon.svg` | Same mark in the violet-to-cyan gradient, with padding. Browser tab icon. |
 | `assets/` | hero-device.jpg, proof-droplets.jpg, og-investors.png, team-{dane,gongchen,henry,guillermo,gabriel}.jpg |
 
 ## Design system
@@ -77,7 +79,12 @@ Tokens in `css/styles.css`: `--bg #07070E`, `--surface #0E0E1A`, `--violet #8B5C
 `--uv #A78BFA`, `--cyan #22D3EE`, `--text #E7E7F2`, `--muted #8A8AA3`,
 `--line rgba(139,92,246,0.18)`.
 
-`.grad` is the violet→cyan gradient used for **headings only**. Money figures use solid
+`.grad` is the violet→cyan gradient used for **headings only**.
+
+**Logo lockup:** the AK monogram carries the gradient and the AIONIK wordmark is plain white
+(option B of four Dane reviewed on 30 Aug 2026). The `.logo .logo-word` rule in
+`investors.css` deliberately overrides the `.logo span` gradient in `styles.css`, which would
+otherwise make the whole wordmark transparent. Footer mark stays muted and solid. Money figures use solid
 `#B99BFF` on purpose, so they read as figures rather than as a heading treatment. Kicker
 labels, glass cards, `.sheen` hover, `.reveal` scroll-in. Sentence case, active voice.
 No hero canvas, no ticker, no animated backgrounds on these pages.

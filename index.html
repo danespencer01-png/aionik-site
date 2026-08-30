@@ -97,7 +97,7 @@
     <!-- Block 2 (two paragraphs, one block) -->
     <div class="wn-block reveal prose">
       <p class="wn-lead">Fabrication did not move with them.</p>
-      <p class="wn-para">Microfluidic chips are still cast by hand. Soft lithography needs a cleanroom, then, in rough order of what they cost, a <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6187812/" target="_blank" rel="noopener noreferrer">mask aligner near $50,000, a mask exposer near $15,000, a plasma system and a spin coater near $7,000 each</a>, plus a vacuum desiccator, a developer bench, hot plates, a curing oven, a profilometer to check what you actually made, and the fume hood and consumables around all of it. It needs someone trained to run the whole chain. That is why the capability lives inside a small number of institutions. Everyone else orders custom chips from a foundry and waits weeks for a design they cannot revise without paying again.</p>
+      <p class="wn-para">Microfluidic chips are still cast by hand. Soft lithography needs a cleanroom, then, in rough order of what they cost, a mask aligner, a wafer bonder, an automated coater track, a mask exposer, a plasma system, and a spin coater, plus a vacuum desiccator, a developer bench, hot plates, a curing oven, a profilometer to check what you actually made, and the fume hood and consumables around all of it. It needs someone trained to run the whole chain. That is why the capability lives inside a small number of institutions.</p>
       <p class="wn-para">The process itself is <a href="https://www.nature.com/articles/s41598-025-16863-z" target="_blank" rel="noopener noreferrer">slow and operator dependent, with cure conditions that shift batch to batch</a>. And labs <a href="https://pubmed.ncbi.nlm.nih.gov/39687794/" target="_blank" rel="noopener noreferrer">prototype in PDMS while manufacturing in thermoplastic</a>, so the device they validate is never the device they ship.</p>
     </div>
 
@@ -207,7 +207,7 @@
         </table>
       </div>
       <p class="wn-closing">Every existing option forces a tradeoff between speed and scale. Soft lithography iterates but cannot produce. Molding produces but cannot iterate. We hold both, in one material, with no cleanroom and no tooling.</p>
-      <p class="wn-closing" style="margin-top:18px;">The tradeoff is also a bill, and it changes shape depending on which end you work at. A research bench runs <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6187812/" target="_blank" rel="noopener noreferrer">$30,000 to $65,000 in equipment</a>. A production line is a different category of purchase: mask aligners and wafer bonders are quoted in the hundreds of thousands, and a single <a href="https://bidservice.com/collections/pva-tepla" target="_blank" rel="noopener noreferrer">used plasma system alone lists at $29,500 to $35,000</a>. Injection molding moves the money into tooling, <a href="https://www.meridian-medical.com/how-much-do-injection-moulding-tools-for-medical-devices-cost/" target="_blank" rel="noopener noreferrer">$15,000 for a simple part to over $100,000 for a complex multi cavity design</a>, bought again for every design change. Both ends still need a cleanroom, and both need the line item nobody can capitalize away: a trained operator on salary. <a href="pdms.html">See the full equipment and process breakdown</a>.</p>
+      <p class="wn-closing" style="margin-top:18px;">The tradeoff is also a bill, and it changes shape depending on which end you work at. A research bench runs $30,000 to $65,000 in equipment. A production line is a different category of purchase entirely: commercial mask aligners and wafer bonders run $150,000 to $500,000 and up, and are sold on inquiry rather than listed. Injection molding moves the money into tooling, $15,000 for a simple part to over $100,000 for a complex multi cavity design, bought again for every design change. Then there is the room. Cleanroom construction runs roughly $250 to $450 per square foot at ISO 7, and $700 to $1,000 at ISO 5, before the energy, filters, and validation it bills every year it stays open. And all of it still needs the line item nobody can capitalize away: a trained operator on salary. <a href="pdms.html">See the full equipment breakdown, with sources</a>.</p>
     </div>
 
     <!-- Block 3 (single block, hands off to the solution section directly below) -->
@@ -322,7 +322,10 @@
           <p>A finished chip is two pieces held at an interface. That interface is what delaminates under pressure, and it is why these devices are treated as consumable rather than durable.</p>
         </div>
       </div>
-      <a href="pdms.html" class="btn btn-primary pdms-cta" data-cta="pdms-deepdive">See the full process, step by step</a>
+      <div class="pdms-cta-row">
+        <a href="pdms.html" class="btn btn-primary pdms-cta" data-cta="pdms-deepdive">See the full process, step by step</a>
+        <span class="pdms-cta-note">Eleven steps, the failure modes, and what the equipment actually costs.</span>
+      </div>
     </div>
   </div>
 </section>

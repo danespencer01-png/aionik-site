@@ -437,22 +437,60 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .if-grid .field { margin-bottom: 18px; }
 }
 
-/* ---------- PDMS summary (links out to pdms.html) ---------- */
-.pdms-summary { margin-top: 50px; }
-.pdms-sum-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-.pdms-sum {
-  border: 1px solid var(--line); border-radius: 16px;
-  padding: 28px 26px; background: rgba(255, 255, 255, 0.02);
+/* ---------- PDMS summary (links out to pdms.html) ----------
+   Given a little more presence than a plain card grid, because it is the
+   bridge into the deep dive and was reading as skippable. The lift is a
+   framed panel with a hairline gradient top edge and a numbered rail on
+   each card, not louder colour. */
+.pdms-summary {
+  position: relative; margin-top: 50px;
+  border: 1px solid var(--line); border-radius: 20px;
+  padding: 42px 40px 40px;
+  background:
+    radial-gradient(ellipse 70% 100% at 50% 0%, rgba(139, 92, 246, 0.09), transparent 70%),
+    rgba(255, 255, 255, 0.015);
+  overflow: hidden;
 }
+/* hairline of light along the top edge */
+.pdms-summary::before {
+  content: ''; position: absolute; top: 0; left: 12%; right: 12%; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--violet) 30%, var(--cyan) 70%, transparent);
+  opacity: 0.85;
+}
+.pdms-sum-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.pdms-sum {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.07); border-radius: 14px;
+  padding: 26px 26px 24px 30px;
+  background: rgba(255, 255, 255, 0.025);
+  transition: border-color 0.25s, background 0.25s;
+}
+/* accent rail, brightening on hover so the grid feels alive without colour noise */
+.pdms-sum::before {
+  content: ''; position: absolute; left: 0; top: 26px; bottom: 26px; width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, var(--violet), var(--cyan));
+  opacity: 0.55; transition: opacity 0.25s;
+}
+.pdms-sum:hover { border-color: rgba(139, 92, 246, 0.4); background: rgba(255, 255, 255, 0.04); }
+.pdms-sum:hover::before { opacity: 1; }
 .pdms-sum-k {
-  font-size: 15px; font-weight: 700; color: var(--uv);
+  font-size: 15.5px; font-weight: 700; color: var(--text);
   margin-bottom: 10px; letter-spacing: -0.01em;
 }
 .pdms-sum p { font-size: 14.5px; color: var(--muted); line-height: 1.6; }
-.pdms-cta { margin-top: 34px; }
+
+.pdms-cta-row {
+  display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+  margin-top: 32px; padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+.pdms-cta { margin: 0; }
+.pdms-cta-note { font-size: 13.5px; color: var(--muted); }
 
 @media (max-width: 860px) {
   .pdms-sum-grid { grid-template-columns: 1fr; }
+  .pdms-summary { padding: 32px 24px 30px; }
 }
 
 /* ---------- Legal / footer ---------- */

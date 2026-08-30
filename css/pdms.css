@@ -92,6 +92,9 @@
 }
 .tag-v { color: var(--cyan); border: 1px solid rgba(34, 211, 238, 0.4); background: rgba(34, 211, 238, 0.07); }
 .tag-e { color: var(--muted); border: 1px solid rgba(255, 255, 255, 0.14); }
+/* "on inquiry" marks equipment that is genuinely not price listed anywhere,
+   which is a fact about the market, not a gap in the research. */
+.tag-q { color: var(--uv); border: 1px solid rgba(167, 139, 250, 0.45); background: rgba(139, 92, 246, 0.10); }
 
 .cost-note {
   margin-top: 18px; font-size: 12.5px; line-height: 1.65; color: var(--muted);

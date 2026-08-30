@@ -1,12 +1,53 @@
+/* ==================================================================
+   ANALYTICS CONFIG — paste the two IDs here to switch tracking on.
+
+   Both stay OFF while their value is an empty string, so the page never
+   ships a broken beacon. Filling one in activates only that one.
+
+   CF_BEACON_TOKEN
+     Cloudflare dashboard -> Analytics & Logs -> Web Analytics -> Add a site
+     (use danespencer01-png.github.io) -> copy the value of "token" out of
+     the snippet it gives you. It is a 32 character hex string.
+     Counts visits. No cookies, so no consent banner needed.
+
+   CLARITY_PROJECT_ID
+     clarity.microsoft.com -> sign in -> New project -> copy the id out of
+     the install snippet (the last argument, a short alphanumeric string).
+     Heatmaps and session replay. NOTE: Clarity does set cookies, so if you
+     expect EU visitors you likely need a consent banner. Clarity masks form
+     input by default, so what people type is not recorded.
+   ================================================================== */
+const CF_BEACON_TOKEN    = '';
+const CLARITY_PROJECT_ID = '';
+
+(() => {
+  // Cloudflare Web Analytics
+  if (CF_BEACON_TOKEN) {
+    const s = document.createElement('script');
+    s.defer = true;
+    s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+    s.setAttribute('data-cf-beacon', JSON.stringify({ token: CF_BEACON_TOKEN }));
+    document.head.appendChild(s);
+  }
+  // Microsoft Clarity
+  if (CLARITY_PROJECT_ID) {
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+      t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, 'clarity', 'script', CLARITY_PROJECT_ID);
+  }
+})();
+
 /* Investor page — CTA click tracking.
-   No analytics provider is wired yet (TODO: confirm Plausible / GA4 / Fathom).
-   Until then, clicks push to dataLayer if present and log in dev, so the
-   hooks are in place and nothing fails silently. */
+   Fires into whichever providers are switched on above, plus dataLayer if a
+   tag manager is ever added. Logs in dev so the hooks are verifiable locally. */
 (() => {
   document.querySelectorAll('[data-cta]').forEach(el => {
     el.addEventListener('click', () => {
       const id = el.getAttribute('data-cta');
       if (window.dataLayer) window.dataLayer.push({ event: 'cta_click', cta: id });
+      if (window.clarity) window.clarity('event', 'cta_' + id);
       if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
         console.log('[cta]', id);
       }
@@ -143,6 +184,7 @@
       await fetch(ACTION, { method: 'POST', mode: 'no-cors', body });
 
       if (window.dataLayer) window.dataLayer.push({ event: 'form_submit', form: 'investor-inquiry' });
+      if (window.clarity) window.clarity('event', 'inquiry_submitted');
       form.hidden = true;
       done.hidden = false;
       done.setAttribute('tabindex', '-1');

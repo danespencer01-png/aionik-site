@@ -11,7 +11,7 @@
      never passes through Cloudflare's proxy, and automatic setup would
      measure nothing. Counts visits, no cookies, no consent banner needed.
 
-   CLARITY_PROJECT_ID
+   CLARITY_PROJECT_ID  (SET 30 Aug 2026)
      clarity.microsoft.com -> sign in -> New project -> copy the id out of
      the install snippet (the last argument, a short alphanumeric string).
      Heatmaps and session replay. NOTE: Clarity does set cookies, so if you
@@ -19,7 +19,7 @@
      input by default, so what people type is not recorded.
    ================================================================== */
 const CF_BEACON_TOKEN    = 'dc964eef76044a8b9c527ac23f86b6d6';
-const CLARITY_PROJECT_ID = '';
+const CLARITY_PROJECT_ID = 'yaet5grufy';
 
 (() => {
   // Cloudflare Web Analytics

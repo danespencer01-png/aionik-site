@@ -28,6 +28,7 @@
     <a href="./" class="logo">AION<span>IK</span><sup class="tm">&trade;</sup></a>
     <div class="nav-links">
       <a href="./">Home</a>
+      <a href="#time">How long it takes</a>
       <a href="#cost">What it costs</a>
       <a href="#fails">Where it fails</a>
       <a href="./#book" class="nav-cta" data-cta="book-call-pdms-nav">Book a call</a>
@@ -180,6 +181,81 @@
         <strong>The bond is a deadline, not a step.</strong> Once plasma treatment ends, the activated surface immediately begins reverting to its original state. Bonding and any subsequent handling are generally recommended <a href="https://harrickplasma.com/pdms-bonding/" target="_blank" rel="noopener noreferrer">within roughly 15 minutes to an hour</a>, because polymer chains reorient and low molecular weight siloxane oligomers migrate back to the surface (<a href="https://pubs.acs.org/doi/10.1021/acs.langmuir.4c03086" target="_blank" rel="noopener noreferrer">Langmuir, 2024</a>).
       </figcaption>
     </figure>
+  </div>
+</section>
+
+<!-- ============ TIME TO A CHIP IN HAND ============ -->
+<section id="time">
+  <div class="container">
+    <div class="kicker reveal">Elapsed time</div>
+    <h2 class="reveal">From an idea to holding one</h2>
+    <p class="lead muted reveal">Cost is the number people quote. Time is the one that actually shapes the research, because it sets how many times a question can be asked and answered in a year.</p>
+
+    <figure class="figure reveal">
+      <svg viewBox="0 0 1200 470" role="img" aria-label="Timeline comparing how long it takes to get a microfluidic chip in hand: about a day to recast from an existing mold, about a week for a new design in house, and one to twelve weeks when the design is outsourced to a foundry.">
+        <defs>
+          <linearGradient id="fast" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.9"/>
+            <stop offset="100%" stop-color="#22D3EE" stop-opacity="0.55"/>
+          </linearGradient>
+          <linearGradient id="slow" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.75"/>
+            <stop offset="55%" stop-color="#8B5CF6" stop-opacity="0.4"/>
+            <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0.10"/>
+          </linearGradient>
+        </defs>
+
+        <text x="70" y="44" fill="#22D3EE" font-family="Helvetica,Arial" font-size="14" font-weight="700" letter-spacing="2.4">IDEA TO CHIP IN HAND</text>
+
+        <!-- week axis: 0 to 12 across 1000px -->
+        <line x1="90" y1="96" x2="1090" y2="96" stroke="rgba(255,255,255,0.13)" stroke-width="1"/>
+        <g font-family="Helvetica,Arial" font-size="12.5" fill="#8A8AA3" text-anchor="middle">
+          <text x="90" y="84">week 0</text>
+          <text x="256" y="84">2</text>
+          <text x="423" y="84">4</text>
+          <text x="590" y="84">6</text>
+          <text x="756" y="84">8</text>
+          <text x="923" y="84">10</text>
+          <text x="1090" y="84">12</text>
+        </g>
+        <g stroke="rgba(255,255,255,0.10)" stroke-width="1">
+          <line x1="256" y1="96" x2="256" y2="392"/><line x1="423" y1="96" x2="423" y2="392"/>
+          <line x1="590" y1="96" x2="590" y2="392"/><line x1="756" y1="96" x2="756" y2="392"/>
+          <line x1="923" y1="96" x2="923" y2="392"/><line x1="1090" y1="96" x2="1090" y2="392"/>
+        </g>
+
+        <!-- Track 1: recast from an existing mold -->
+        <text x="90" y="140" fill="#E7E7F2" font-family="Helvetica,Arial" font-size="15" font-weight="600">Recast from a mold you already have</text>
+        <rect x="90" y="152" width="14" height="26" rx="4" fill="url(#fast)"/>
+        <text x="118" y="171" fill="#22D3EE" font-family="Helvetica,Arial" font-size="14" font-weight="700">about a day</text>
+        <text x="230" y="171" fill="#8A8AA3" font-family="Helvetica,Arial" font-size="13.5">the cure is most of it</text>
+
+        <!-- Track 2: new design, in house -->
+        <text x="90" y="228" fill="#E7E7F2" font-family="Helvetica,Arial" font-size="15" font-weight="600">A new design, in house, if you own the cleanroom</text>
+        <rect x="90" y="240" width="83" height="26" rx="4" fill="url(#fast)"/>
+        <text x="187" y="259" fill="#22D3EE" font-family="Helvetica,Arial" font-size="14" font-weight="700">about a week</text>
+        <text x="310" y="259" fill="#8A8AA3" font-family="Helvetica,Arial" font-size="13.5">a new mask and a new master mold, before any casting starts</text>
+
+        <!-- Track 3: outsourced -->
+        <text x="90" y="316" fill="#E7E7F2" font-family="Helvetica,Arial" font-size="15" font-weight="600">A new design, outsourced, which is where most labs are</text>
+        <rect x="90" y="328" width="1000" height="26" rx="4" fill="url(#slow)"/>
+        <text x="104" y="347" fill="#E7E7F2" font-family="Helvetica,Arial" font-size="14" font-weight="700">1 to 12 weeks, depending on vendor and complexity</text>
+
+        <!-- repeat marker -->
+        <line x1="90" y1="392" x2="1090" y2="392" stroke="rgba(139,92,246,0.35)" stroke-width="1" stroke-dasharray="5 5"/>
+        <text x="90" y="422" fill="#A78BFA" font-family="Helvetica,Arial" font-size="14" font-weight="700">Then the design changes, and the clock starts again.</text>
+        <text x="90" y="446" fill="#8A8AA3" font-family="Helvetica,Arial" font-size="13.5">Every revision is a new mask, a new mold, or a new purchase order. There is no edit and re-run.</text>
+      </svg>
+      <figcaption>
+        <strong>The wait is the real constraint.</strong> Lead times as published by <a href="https://www.ufluidix.com/microfluidics-technical-notes/purchase-pdms-chips-or-diy/" target="_blank" rel="noopener noreferrer">uFluidix</a>, a custom microfluidics manufacturer: buying custom devices takes one to twelve weeks depending on vendor and design complexity, while a lab with its own equipment and expertise can produce a prototype in a few days, sometimes one. The same source notes that microfabrication protocols typically require a week or more of highly skilled personnel time in a high maintenance cleanroom, and that the bottleneck is the master mold.
+      </figcaption>
+    </figure>
+
+    <div class="lead muted reveal" style="max-width:760px;margin-top:44px;">
+      <p class="wn-para">The top two rows of that chart describe labs that can afford a cleanroom. Most cannot. The equipment and the room together are a capital commitment few research groups can justify for a fabrication step that is not itself the research, so the work goes out to a foundry, and the group joins the bottom row.</p>
+      <p class="wn-para">That is the part worth sitting with. A researcher with an idea on Monday is not asking when the chip will be finished. They are asking whether the question is worth a purchase order and a month. Ideas that would take an afternoon to test never get tested, because the fabrication step prices them out of existence.</p>
+      <p class="wn-para">And it compounds with iteration. A first design is rarely right. The second version means a new photomask, a new master mold, or a new order, and the same wait again. A group that could run ten iterations a year on a fast loop runs two or three on a slow one, and the difference is not effort or funding. It is fabrication turnaround.</p>
+    </div>
   </div>
 </section>
 

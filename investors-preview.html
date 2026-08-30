@@ -5,8 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Aionik Technologies investor brief — a solvent-free post-process that makes optically clear, biocompatible microfluidic chips printable on standard SLA hardware.">
 
-<!-- Round is not public: keep this page out of search until confirmed otherwise. TODO: confirm noindex before launch. -->
-<meta name="robots" content="noindex, nofollow">
+<!-- Public as of 29 Aug 2026: this is the only live Aionik page while the main
+     site is rebuilt, so it needs to be findable. Was noindex while the page was
+     shared by direct link only. -->
+<meta name="robots" content="index, follow">
 
 <!-- Open Graph / Twitter — link is forwarded inside firms. TODO: add dedicated 1200x630 preview image. -->
 <meta property="og:type" content="website">
@@ -33,9 +35,8 @@
 
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="logo">AION<span>IK</span><sup class="tm">&trade;</sup></a>
+    <span class="logo">AION<span>IK</span><sup class="tm">&trade;</sup></span>
     <div class="nav-links">
-      <a href="index.html" class="home-link">Main site</a>
       <a href="#today">Where we are</a>
       <a href="#team">Team</a>
       <a href="#book" class="nav-cta" data-cta="book-call-nav">Book a call</a>
@@ -112,6 +113,55 @@
       <p class="wn-lead">The demand runs wider than biology.</p>
       <p class="wn-para">Regulation set the clock for organ on chip work, but it is not the only pressure. When Microsystems and Nanoengineering surveyed scholars and industry for its <a href="https://www.nature.com/articles/s41378-025-01153-5" target="_blank" rel="noopener noreferrer">ten ground challenges for the field</a>, fabrication ran through the answers. Several of the ten stall not on ideas but on access to fast, high fidelity, biocompatible microfabrication: functional organ on chip reconstruction, affordable point of care diagnostics, precision that survives the print in high performance devices, and the AI guided design to fabrication loop that only closes when iteration is cheap.</p>
       <p class="wn-para">Every one of those sits on the same microfluidic and additive foundation we build for. A process that turns a standard printer into a source of clear, biocompatible parts in minutes moves the fabrication half of each problem at once. The pull is not a single market. It is a field wide shift toward tools that let a lab hold an idea in its hands the week it has it, across diagnostics, computing, and medicine alike.</p>
+    </div>
+
+    <!-- Block 2c (market scale). Compiled from Dane's analyst workbook
+         "Microfluidic AnalystCompilation Updated .xlsx", 8 named firms.
+         The workbook's own headline finding is the DIVERGENCE between
+         estimates, and it explicitly warns against treating any single
+         figure as a precise TAM. That caveat is reproduced here on purpose:
+         publishing the spread is more defensible than cherry-picking the
+         biggest number, and it is what a analyst-literate reader expects.
+         Base years differ (2023 to 2025) and the copy says so. -->
+    <div class="wn-block reveal prose">
+      <p class="wn-lead">The market is large, and the analysts disagree about how large.</p>
+      <p class="wn-para">Eight research firms publish a microfluidics market size. For nominally the same market they report figures between $9.4 billion and $41.9 billion, a spread of more than four times. That gap is about scope, whether a report counts diagnostics alone or the full device, component, and instrumentation ecosystem, rather than about growth.</p>
+
+      <div class="mkt-stats">
+        <div class="mkt-stat">
+          <div class="mkt-k">Market today</div>
+          <div class="mkt-v">$27B</div>
+          <div class="mkt-sub">Median of eight estimates, base years 2023 to 2025. Range $9.4B to $41.9B.</div>
+        </div>
+        <div class="mkt-stat">
+          <div class="mkt-k">Forecast</div>
+          <div class="mkt-v">$67B</div>
+          <div class="mkt-sub">Median forecast across target years 2030 to 2035. Range $21.7B to $223B.</div>
+        </div>
+        <div class="mkt-stat">
+          <div class="mkt-k">Growth</div>
+          <div class="mkt-v">8.3 to 24%</div>
+          <div class="mkt-sub">Compound annual growth rate. Every one of the eight projects double digits.</div>
+        </div>
+      </div>
+
+      <p class="wn-para">What the eight agree on matters more than what they dispute. All of them project double digit growth, North America leading, and medical and diagnostics as the largest application. Mordor Intelligence carves out organ on chip as the fastest growing sub technology in the field at 22.7 percent, which is the segment our biocompatible housings serve.</p>
+      <p class="wn-para">Growth at those rates runs straight into the constraint described above. A market cannot compound at double digits for a decade while the parts it depends on are still cast by hand in a cleanroom. That is the bottleneck, and it is the one we removed.</p>
+
+      <div class="mkt-sources">
+        <div class="mkt-src-title">The eight estimates, as published</div>
+        <ul>
+          <li><a href="https://www.grandviewresearch.com/industry-analysis/microfluidics-market" target="_blank" rel="noopener noreferrer">Grand View Research</a><span>$41.9B (2025) to $105.1B by 2033, 12.2%</span></li>
+          <li><a href="https://www.snsinsider.com/reports/microfluidics-market-3848" target="_blank" rel="noopener noreferrer">SNS Insider</a><span>$34.9B (2025) to $107.9B by 2035, 11.9%</span></li>
+          <li><a href="https://straitsresearch.com/report/microfluidics-market" target="_blank" rel="noopener noreferrer">Straits Research</a><span>$32.3B (2024) to $223.2B by 2033, 24.0%</span></li>
+          <li><a href="https://www.globenewswire.com/news-release/2025/12/01/3197199/0/en/Microfluidics-Forecast-Report-2025-A-60-Billion-Market-by-2030-Driven-by-Demand-for-Miniaturized-Point-of-Care-Diagnostics-and-Advancements-in-High-Throughput-Biomedical-Research.html" target="_blank" rel="noopener noreferrer">Research and Markets</a><span>$29.1B (2024) to $60.9B by 2030, 13.1%</span></li>
+          <li><a href="https://www.marketsandmarkets.com/Market-Reports/microfluidics-market-1305.html" target="_blank" rel="noopener noreferrer">MarketsandMarkets</a><span>$25.0B (2025) to $37.2B by 2030, 8.3%</span></li>
+          <li><a href="https://www.skyquestt.com/report/microfluidics-market" target="_blank" rel="noopener noreferrer">SkyQuest</a><span>$24.5B (2023) to $72.4B by 2032, 12.8%</span></li>
+          <li><a href="https://www.mordorintelligence.com/industry-reports/microfluidics-market" target="_blank" rel="noopener noreferrer">Mordor Intelligence</a><span>$24.2B (2025) to $46.1B by 2031, 11.4%</span></li>
+          <li><a href="https://www.vantagemarketresearch.com/microfluidics-market" target="_blank" rel="noopener noreferrer">Vantage Market Research</a><span>$9.4B (2025) to $21.7B by 2035, 8.7%</span></li>
+        </ul>
+        <p class="mkt-note">Figures as published by each firm, with no normalization across differing scope definitions. Base years differ, so these are not strictly like for like. Treat the range as an indication of scale, not as a precise market size.</p>
+      </div>
     </div>
 
     <!-- Block 4 (table) — placed before Block 3 so Block 3 can hand off to the solution.
@@ -409,10 +459,12 @@
 <footer>
   <div class="container">
     <div class="footer-inner">
-      <a href="index.html" class="logo" style="font-size:15px;">AION<span>IK</span></a>
+      <span class="logo" style="font-size:15px;">AION<span>IK</span></span>
       <p>© 2026 Aionik Technologies. All rights reserved.</p>
     </div>
-    <p class="updated">Last updated 26 August 2026</p>
+    <!-- Date is overwritten at load from the file's own Last-Modified. The text
+         below is only the fallback if that is unavailable. -->
+    <p class="updated" id="updated">Last updated 29 August 2026</p>
     <p class="legal">
       This page is for informational purposes only and is not an offer to sell or a solicitation of an offer to buy any security.
       Statements about future plans, milestones, and capabilities are forward looking and not guarantees of outcome or return.

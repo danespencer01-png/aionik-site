@@ -15,6 +15,27 @@
 })();
 
 /* ------------------------------------------------------------------
+   Footer "last updated" date.
+
+   Driven by the page's own Last-Modified rather than a hardcoded string,
+   so it can never go stale. GitHub Pages serves a real Last-Modified for
+   the file, and document.lastModified reflects it in local time.
+
+   The hardcoded date in the HTML is the fallback and stays correct if a
+   host reports nothing usable. The year guard catches hosts that return
+   the epoch or the current time for a missing header.
+   ------------------------------------------------------------------ */
+(() => {
+  const el = document.getElementById('updated');
+  if (!el) return;
+  const d = new Date(document.lastModified);
+  if (isNaN(d.getTime()) || d.getFullYear() < 2020) return;
+  el.textContent = 'Last updated ' + d.toLocaleDateString('en-GB', {
+    day: 'numeric', month: 'long', year: 'numeric'
+  });
+})();
+
+/* ------------------------------------------------------------------
    Investor inquiry form -> Google Forms
 
    Posts the native form straight to the published "Aionik - Investor

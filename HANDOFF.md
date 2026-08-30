@@ -7,9 +7,10 @@ _Last updated: 29 Aug 2026, current with the native inquiry form on `main`._
 
 ## What this is
 A single investor landing page added to the existing Aionik marketing site. It argues from
-insight, team, and scope, not from traction metrics. It is live already, unlinked from the
-main nav, and shared by direct URL only. Visible amber TODO placeholders mark fields not yet
-filled in; these stay on the page on purpose until Dane says it is ready to go public.
+insight, evidence, and team. It does NOT contain an ask, terms, a roadmap, or market strategy,
+by Dane's decision on 29 Aug 2026 (see KEY DECISIONS). It is live already, unlinked from the
+main nav, and shared by direct URL only. Two amber TODO chips remain and stay visible on
+purpose until Dane fills them or says the page is ready.
 
 ## Repo + live URL
 - GitHub: `danespencer01-png/aionik-site` (public), default branch `main`
@@ -83,12 +84,45 @@ filled in; these stay on the page on purpose until Dane says it is ready to go p
   Google sends no CORS headers on formResponse, so the browser cannot read the reply. A
   resolved request means "delivered", not "accepted" — hence validation happens client side
   before sending, and a failed request falls back to a link to the hosted form.
+- TRADEMARK (29 Aug 2026). Aionik is NOT registered, so the page uses TM, never R.
+  Using R before registration would be a real problem; TM on an unregistered mark is fine.
+  TM appears in exactly three places on investors.html, and this restraint is deliberate:
+  the nav wordmark, the first body-text use (the Aionik row in the comparison table), and
+  "Spinning Desicurer" in the proof-figure caption, which reads as branded usage ("Our
+  Spinning Desicurer method"). Do NOT mark every instance; it reads as amateurish. Left
+  unmarked on purpose: the copyright line, the license sentence, the form privacy note,
+  page title/meta, image alt text, and the team prose.
+  `.logo .tm` in investors.css zeroes the wordmark's 0.14em tracking so the symbol sits
+  correctly. It is scoped to investors.css, so index.html is untouched.
+  NOT YET DONE: index.html (the live main site) has 10 Aionik references and no TM at all.
+  Dane has not approved touching the live homepage. If he does, mark the nav wordmark and
+  the first body use ("Aionik's post-process replaces isopropyl alcohol washes...") and move
+  the `.logo .tm` rule into styles.css so both pages share it.
+- Confirm with Dane whether "Spinning Desicurer" is genuinely being used as a brand name or
+  is descriptive patent terminology. The TM there is easy to remove if it is the latter.
 - Team will NOT have LinkedIn links. The four dead placeholders were removed.
-- Pitch deck is coming, not ready. The deck-request form was removed and replaced with a
-  "deck on the way" note. Revisit (second Google Form, or just link the file) when it exists.
+- NOT RAISING (Dane, 29 Aug 2026). Aionik is not running a round and is not necessarily
+  seeking outside investment right now. Consequences already applied to the page:
+  the ask section, the hero round-status line, and the deck note are all GONE. Do not
+  reintroduce terms, a SAFE, valuation, use-of-funds buckets, or milestone dates without
+  Dane saying the round is open. The page's job now is credibility and inbound leads.
+  Cutting the ask also avoids anything that reads as publicly soliciting investment, which
+  preserves options on how a future round is structured. (Not legal advice; worth a lawyer's
+  read before the page goes fully public.)
+- NO BUSINESS PLAN DETAIL (Dane, 29 Aug 2026). No beachhead, no adjacent-market mapping, no
+  market sizing, no hiring plans, no roadmap. "Why now" stays because it argues from public
+  regulatory and literature sources only and reveals nothing about strategy.
+- The capital-amount field STAYS on the contact form and stays optional. Dane wants it as a
+  lead-prioritization signal. Suggested but NOT applied: relabel it on the page from
+  "Starting capital injection amount" to something like "Typical check size", which reads
+  less transactional for a company that is not raising. Renaming the question inside Google
+  Forms is safe (entry IDs survive a rename; only delete-and-recreate changes them).
+- Pitch deck: not ready, and the "deck on the way" note was removed since there is no round.
+  Revisit when both a deck and a round exist.
 - Patent language: "patent pending" only, NEVER "patented"/"granted" (published application,
   A1 kind code). Exclusive license from UTSA, terms still finalizing.
-- Page is `noindex` (round not public). Confirm before removing.
+- Page is `noindex`. Originally because the round was not public; now because Dane shares it
+  by direct link only. Confirm before removing.
 - Page is UNLINKED from the homepage. Not yet decided whether to add a footer link.
 - Why-now block-order: table (Block 4) sits before Block 3 so Block 3 hands off to the insight
   section. The spec's "four blocks in this order" and "Block 3 above the solution" can't both
@@ -96,33 +130,50 @@ filled in; these stay on the page on purpose until Dane says it is ready to go p
 - Amber TODO chips STAY visible until Dane says the site is ready; removing them is the final
   pre-launch step.
 
-## OPEN TODOs (amber chips on the live page) — these are content Dane is still deciding
-- Round-status line in hero: STAGE / RAISE_TARGET / INSTRUMENT (ties to the ask below).
-- Batch 2 (what exists today): methodology per result; what is explicitly NOT built yet;
-  NEXT_12_MONTHS; LONG_HORIZON.
-- Batch 3 (scope): beachhead + why start there; 2-3 adjacent applications; long horizon as
-  thesis; directional market framing (industries + rough scale + source, NO TAM/SAM/SOM).
-- Batch 5 (the ask): RAISE_TARGET, INSTRUMENT (SAFE/note/priced), VALUATION_OR_CAP, MIN_CHECK,
-  COMMITTED_TO_DATE, USE_OF_FUNDS (3-4 buckets w/ %), MILESTONES (with dates), next round,
-  existing investors.
-- Team: "how the team came together / why not easily assembled" line; advisors/board; roles
-  hiring for.
-- Evidence: independent third-party test data with methodology; grants/competitions/LOIs/
-  design partners/publications (cut any row that stays empty rather than padding).
-- Optional "What we're still figuring out" section — keep with 2-3 real open questions, or cut.
+## OPEN TODOs (amber chips on the live page)
+NONE. As of 29 Aug 2026 the page has zero TODO chips. Every remaining line is real.
 
-## NON-CONTENT TOUCH-UPS before going public (not amber chips)
-- Analytics: pick provider (Plausible/GA4/Fathom); wire into js/investors.js (hooks are ready;
-  the form already pushes a `form_submit` event alongside the `cta_click` ones).
-- The inquiry form has NO captcha, only a honeypot field. That is right for a page shared by
-  direct link; revisit if the URL goes public and spam starts landing in the sheet.
-- Delete the three "ZZ TEST DELETE ME" rows from the responses sheet.
-- OG/Twitter preview image: assets/og-investors.png is referenced but does NOT exist —
-  forwarded links show a blank preview card. Generate a branded 1200x630.
-- Footer "Last updated ..." date is stale — refresh at launch.
-- Confirm the `noindex` decision when the round goes public.
-- Final step: strip all amber TODO chips and cut/soften any sections still empty.
+The have/need section was renamed "What we have, and what we need" and filled from Dane:
+- What we have: working post-process with the four results; biocompatible organoid housings
+  in production (deliberately shows the process is not limited to chips); collaborators in
+  several scientific fields running work on chips Aionik fabricated; 30 chips fabricated in
+  4.5 hours by one operator on modest equipment. Those numbers are Dane's, do not alter.
+- What we need: a final device design (R&D still needed on optimal structure); lab space and
+  equipment; people to hire and pay. Written as requirements, NOT as a solicitation, to stay
+  consistent with the not-raising decision. Dane approved that framing implicitly by asking
+  for it; if it ever reads too forward, soften "need" to "next steps".
+
+Cut earlier and still worth GETTING, though no longer marked on the page:
+- Methodology for each of the four demonstrated results. Would belong in the insight section.
+- Independent third-party test data with methodology. Single strongest possible addition.
+- Grants, competitions, LOIs, design partners, publications, for an evidence "traction" row.
+
+## NON-CONTENT TOUCH-UPS — status as of 29 Aug 2026
+DONE:
+- OG preview image: `assets/og-investors.png` generated at 1200x630 from the brand palette
+  and hero-device.jpg. Was referenced but missing, so every forwarded link showed a blank
+  card. Regenerate by rendering an HTML file in headless Chrome at 1200x630, scale factor 2.
+- robots: now `index, follow`. Was noindex. Changed because this is the ONLY live Aionik page
+  while the main site is rebuilt, so it has to be findable.
+- Both links to index.html removed (nav "Main site" and the footer wordmark). The wordmark
+  stays visible as non-clickable text. Dane chose full removal over a "coming soon" label,
+  on the reasoning that advertising an unfinished site undercuts a credibility page.
+- Footer date is self-updating: js/investors.js sets it from document.lastModified at load.
+  Verified by setting a test file's mtime to 15 Jan 2026 and confirming it overrode the
+  fallback text. Caveat: it reflects last DEPLOY, not last meaningful content edit.
+- Analytics wired: Cloudflare Web Analytics + Microsoft Clarity, both driven by
+  CF_BEACON_TOKEN and CLARITY_PROJECT_ID at the top of js/investors.js. Both stay dormant
+  while those are empty strings. Dane still needs to paste the two IDs in.
+  Clarity sets cookies, so a consent banner is likely needed if EU traffic matters.
+
+STILL OPEN:
+- Paste the two analytics IDs (see the comment block in js/investors.js for where to get them).
+- Delete the three "ZZ TEST DELETE ME" rows from the responses sheet AND from the Form's own
+  Responses tab; deleting in the Sheet alone does not remove the Form's copy.
+- Consent banner decision, if Clarity stays on and EU visitors matter.
 - Custom domain (optional).
+- THE SWAP: the finished page still lives only at investors-preview.html. Copy it over
+  investors.html, delete investors-preview.html, and push this HANDOFF. Not yet approved.
 
 ## HOW WE WORK (client preferences — persist across sessions)
 - No em dashes or hyphens in prose. Bullets over paragraphs. Sentence case, active voice.
@@ -135,9 +186,10 @@ filled in; these stay on the page on purpose until Dane says it is ready to go p
   mobile at 500px, not narrower.
 
 ## SUGGESTED NEXT STEP
-Batch 5 (the ask numbers) and the hero round-status line are DEFERRED by Dane's call on
-29 Aug 2026: the numbers get specific once the UT System licensing terms finalize, so both
-stay as amber chips until then. That leaves Batches 2 and 3 (what exists today, scope and
-beachhead), the team assembly line, and evidence rows as the content worth doing next.
-On the non-content side the OG preview image is the highest-leverage fix, since forwarded
-links currently show a blank card.
+The page is close to launch-ready. In order:
+1. Fill the two remaining amber chips (methodology per result, and what is not built yet).
+   The "Not built yet" column renders visibly thin until it has content.
+2. Generate `assets/og-investors.png` (1200x630, branded). It is referenced in the meta tags
+   but 404s, so every forwarded link shows a blank preview card. Highest-leverage fix.
+3. Delete the three "ZZ TEST DELETE ME" rows from the responses sheet.
+4. Refresh the footer "Last updated" date, then strip the two amber chips as the final step.

@@ -3,412 +3,470 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Aionik Technologies — SLA post-processing without IPA or traditional curing. Enabling optically clear, ultra-fine microfluidic chips printed on standard SLA hardware.">
-<title>Aionik Technologies — SLA Post-Processing, Reinvented</title>
+<meta name="description" content="Aionik Technologies investor brief — a solvent-free post-process that makes optically clear, biocompatible microfluidic chips printable on standard SLA hardware.">
+
+<!-- Public as of 29 Aug 2026: this is the only live Aionik page while the main
+     site is rebuilt, so it needs to be findable. Was noindex while the page was
+     shared by direct link only. -->
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph / Twitter — link is forwarded inside firms. TODO: add dedicated 1200x630 preview image. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Aionik Technologies — Investor Brief">
+<meta property="og:description" content="A solvent-free post-process that makes optically clear, biocompatible microfluidics printable on standard SLA hardware.">
+<meta property="og:image" content="assets/og-investors.png"><!-- TODO: preview image -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Aionik Technologies — Investor Brief">
+<meta name="twitter:description" content="A solvent-free post-process that makes optically clear, biocompatible microfluidics printable on standard SLA hardware.">
+<meta name="twitter:image" content="assets/og-investors.png"><!-- TODO: preview image -->
+
+<title>Aionik Technologies — Investor Brief</title>
 <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/investors.css">
 </head>
 <body>
 
 <nav>
   <div class="nav-inner">
-    <a href="#" class="logo">AION<span>IK</span></a>
+    <span class="logo">AION<span>IK</span><sup class="tm">&trade;</sup></span>
     <div class="nav-links">
-      <a href="#technology">Technology</a>
-      <a href="#microfluidics">Microfluidics</a>
-      <a href="#why">Why Aionik</a>
+      <a href="#today">Where we are</a>
       <a href="#team">Team</a>
-      <a href="#connect">Connect</a>
-      <a href="#connect" class="nav-cta">Get in Touch</a>
+      <a href="#book" class="nav-cta" data-cta="book-call-nav">Book a call</a>
     </div>
     <button class="nav-toggle" aria-label="Menu">☰</button>
   </div>
 </nav>
 
-<header class="hero">
-  <canvas id="field" aria-hidden="true"></canvas>
-  <div class="container hero-split">
+<!-- ============ HERO ============ -->
+<header class="inv-hero">
+  <div class="container inv-hero-split">
     <div class="hero-content">
-      <div class="pill">Now enabling SLA-printed microfluidics</div>
-      <h1>The end of IPA.<br>The beginning of <span class="grad">clear microfluidics.</span></h1>
-      <p>Aionik's post-process replaces isopropyl alcohol washes and traditional curing entirely, unlocking optically clear, ultra-fine microfluidic chips straight off standard SLA printers.</p>
+      <div class="pill">Investor brief</div>
+      <h1>The bottleneck in research isn't ideas.<br>It's how fast you can <span class="grad">hold one in your hands.</span></h1>
+      <p class="hero-tag">We're bridging that gap.</p>
+      <p class="positioning">A post-process for standard and specialized SLA printers that replaces IPA chemical washing entirely, enabling rapid prototyping and manufacturing of high quality, biocompatible microfluidic chips.</p>
       <div class="btn-row">
-        <a href="#technology" class="btn btn-primary">See How It Works</a>
-        <a href="#connect" class="btn btn-ghost">Investor Inquiries</a>
+        <a href="#book" class="btn btn-primary" data-cta="book-call-hero">Book a call</a>
+      </div>
+      <!-- Round status (stage / target / instrument) was removed on 29 Aug 2026:
+           Aionik is not raising, so those fields have no honest values. The strip
+           now carries verifiable facts instead. Restore the round fields here if
+           and when a round opens. -->
+      <div class="round-status">
+        <span class="rs-item"><b>IP:</b> Patent pending</span>
+        <span class="rs-item"><b>License:</b> Exclusive, UT System</span>
+        <span class="rs-item"><b>Origin:</b> Sun Lab, UTSA</span>
       </div>
     </div>
 
     <div class="hero-visual">
-      <!-- Animated microfluidic chip -->
-      <svg class="chip" viewBox="0 0 520 400" fill="none" aria-hidden="true">
-        <defs>
-          <linearGradient id="chipEdge" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#8B5CF6" stop-opacity="0.9"/>
-            <stop offset="1" stop-color="#22D3EE" stop-opacity="0.9"/>
-          </linearGradient>
-          <linearGradient id="channelGlow" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0" stop-color="#8B5CF6"/>
-            <stop offset="1" stop-color="#22D3EE"/>
-          </linearGradient>
-          <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="4" result="blur"/>
-            <feMerge>
-              <feMergeNode in="blur"/>
-              <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-          </filter>
-          <radialGradient id="glassSheen" cx="0.3" cy="0.2" r="1">
-            <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.10"/>
-            <stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0.02"/>
-            <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
-          </radialGradient>
-        </defs>
-
-        <!-- chip body -->
-        <rect x="30" y="30" width="460" height="340" rx="22"
-              fill="rgba(255,255,255,0.02)" stroke="url(#chipEdge)" stroke-width="1.5"/>
-        <rect x="30" y="30" width="460" height="340" rx="22" fill="url(#glassSheen)"/>
-
-        <!-- inlet / outlet ports -->
-        <circle cx="80" cy="80" r="14" stroke="url(#chipEdge)" stroke-width="1.5" fill="rgba(139,92,246,0.08)"/>
-        <circle cx="80" cy="320" r="14" stroke="url(#chipEdge)" stroke-width="1.5" fill="rgba(139,92,246,0.08)"/>
-        <circle cx="440" cy="200" r="14" stroke="url(#chipEdge)" stroke-width="1.5" fill="rgba(34,211,238,0.08)"/>
-
-        <!-- static channel traces -->
-        <path id="ch1" d="M80 80 H 160 C 200 80, 200 140, 160 140 H 120 C 90 140, 90 200, 130 200 H 380 C 420 200, 430 200, 440 200"
-              stroke="rgba(139,92,246,0.25)" stroke-width="4" stroke-linecap="round"/>
-        <path id="ch2" d="M80 320 H 180 C 220 320, 220 260, 180 260 H 140 C 105 260, 105 200, 145 200"
-              stroke="rgba(34,211,238,0.25)" stroke-width="4" stroke-linecap="round"/>
-        <path id="ch3" d="M260 200 C 260 160, 300 160, 300 120 C 300 90, 340 90, 340 120 C 340 160, 380 160, 380 200"
-              stroke="rgba(139,92,246,0.2)" stroke-width="3" stroke-linecap="round"/>
-        <path id="ch4" d="M260 200 C 260 240, 300 240, 300 280 C 300 310, 340 310, 340 280 C 340 240, 380 240, 380 200"
-              stroke="rgba(34,211,238,0.2)" stroke-width="3" stroke-linecap="round"/>
-
-        <!-- animated flow pulses -->
-        <path d="M80 80 H 160 C 200 80, 200 140, 160 140 H 120 C 90 140, 90 200, 130 200 H 380 C 420 200, 430 200, 440 200"
-              stroke="url(#channelGlow)" stroke-width="4" stroke-linecap="round" filter="url(#soft)"
-              stroke-dasharray="60 640" class="flow-pulse">
-          <animate attributeName="stroke-dashoffset" from="700" to="0" dur="4.5s" repeatCount="indefinite"/>
-        </path>
-        <path d="M80 320 H 180 C 220 320, 220 260, 180 260 H 140 C 105 260, 105 200, 145 200"
-              stroke="url(#channelGlow)" stroke-width="4" stroke-linecap="round" filter="url(#soft)"
-              stroke-dasharray="50 420" class="flow-pulse">
-          <animate attributeName="stroke-dashoffset" from="470" to="0" dur="5.5s" repeatCount="indefinite"/>
-        </path>
-
-        <!-- droplet particles -->
-        <circle r="5" fill="#22D3EE" filter="url(#soft)">
-          <animateMotion dur="4.5s" repeatCount="indefinite" rotate="auto">
-            <mpath href="#ch1"/>
-          </animateMotion>
-        </circle>
-        <circle r="4" fill="#A78BFA" filter="url(#soft)">
-          <animateMotion dur="5.5s" repeatCount="indefinite" begin="1s">
-            <mpath href="#ch2"/>
-          </animateMotion>
-        </circle>
-        <circle r="3.5" fill="#67E8F9" filter="url(#soft)">
-          <animateMotion dur="6s" repeatCount="indefinite" begin="0.5s">
-            <mpath href="#ch3"/>
-          </animateMotion>
-        </circle>
-        <circle r="3.5" fill="#C4B5FD" filter="url(#soft)">
-          <animateMotion dur="6s" repeatCount="indefinite" begin="2s">
-            <mpath href="#ch4"/>
-          </animateMotion>
-        </circle>
-
-        <!-- micro detail marks -->
-        <g stroke="rgba(255,255,255,0.12)" stroke-width="1">
-          <line x1="60" y1="360" x2="90" y2="360"/>
-          <line x1="60" y1="355" x2="60" y2="365"/>
-          <line x1="90" y1="355" x2="90" y2="365"/>
-        </g>
-        <text x="98" y="364" fill="rgba(255,255,255,0.3)" font-size="10" font-family="monospace">200 µm</text>
-      </svg>
-      <div class="chip-caption">SLA-printed microfluidic chip — placeholder visualization</div>
+      <figure class="hero-photo">
+        <div class="stage-glow" aria-hidden="true"></div>
+        <img class="stage-img" src="assets/hero-device.jpg" alt="Side-by-side comparison of two microfluidic chips: the Aionik Inc. method produces an optically clear chip, while the conventional method result is hazy and distorted." width="970" height="768" loading="eager">
+        <div class="stage-horizon" aria-hidden="true"></div>
+        <div class="stage-floor" aria-hidden="true">
+          <img class="stage-reflection" src="assets/hero-device.jpg" alt="" width="970" height="768" loading="lazy">
+        </div>
+      </figure>
     </div>
   </div>
 </header>
 
-<div class="ticker" aria-hidden="true">
-  <div class="ticker-track">
-    <span><b>Zero</b> IPA</span><span><b>Zero</b> UV cure chambers</span><span><b>PDMS-free</b> microfluidics</span><span><b>Optical-grade</b> clarity</span><span><b>Ultra-fine</b> channel geometry</span><span><b>Zero</b> IPA</span><span><b>Zero</b> UV cure chambers</span><span><b>PDMS-free</b> microfluidics</span><span><b>Optical-grade</b> clarity</span><span><b>Ultra-fine</b> channel geometry</span>
-  </div>
-</div>
-
-<section id="technology">
-  <div class="container split">
-    <div class="reveal">
-      <div class="kicker">The Breakthrough</div>
-      <h2>SLA post-processing, <span class="grad">rebuilt from zero</span></h2>
-      <p class="muted">Every SLA workflow today ends the same way: solvent washes and UV ovens that cloud surfaces and destroy fine features. That ceiling has capped what SLA could ever produce.</p>
-      <p class="muted">Our process removes both steps. What remains is a part with the clarity and precision to serve markets SLA has never touched. [Placeholder copy — technical detail to come.]</p>
-      <div class="step-row">
-        <div class="step"><span class="step-num">01</span>Print on any standard SLA printer</div>
-        <div class="step"><span class="step-num">02</span>Apply the Aionik post-process</div>
-        <div class="step"><span class="step-num">03</span>Finished part. No IPA, no cure chamber</div>
-      </div>
-    </div>
-    <div class="placeholder reveal">Product Render / Process Photo</div>
-  </div>
-</section>
-
-<section id="microfluidics" class="micro-section">
-  <div class="micro-bg" aria-hidden="true">
-    <svg id="network" viewBox="0 0 1160 420" preserveAspectRatio="xMidYMid meet" fill="none">
-      <defs>
-        <linearGradient id="nflow" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0" stop-color="#8B5CF6"/>
-          <stop offset="1" stop-color="#22D3EE"/>
-        </linearGradient>
-        <filter id="nsoft" x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur stdDeviation="3" result="blur"/>
-          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-        </filter>
-        <!-- full inlet-to-outlet routes for the droplets -->
-        <path id="lam1" d="M0 210 H 180 C 210 210, 210 150, 240 150 C 270 150, 270 210, 300 210 C 330 210, 330 150, 360 150 C 390 150, 390 210, 420 210 H 480 C 520 210, 520 120, 560 120 H 700 C 740 120, 740 70, 780 70 H 1160"/>
-        <path id="lam2" d="M0 210 H 180 C 210 210, 210 150, 240 150 C 270 150, 270 210, 300 210 C 330 210, 330 150, 360 150 C 390 150, 390 210, 420 210 H 480 C 520 210, 520 300, 560 300 H 660 C 700 300, 700 350, 740 350 H 1160"/>
-        <path id="lam3" d="M0 210 H 180 C 210 210, 210 150, 240 150 C 270 150, 270 210, 300 210 C 330 210, 330 150, 360 150 C 390 150, 390 210, 420 210 H 480 C 520 210, 520 120, 560 120 H 700 C 740 120, 740 170, 780 170 H 1014"/>
-      </defs>
-
-      <!-- faint hairline traces for depth: not etched, always there -->
-      <g stroke="rgba(139,92,246,0.06)" stroke-width="1">
-        <path d="M0 60 C 200 40, 420 90, 620 60 S 1000 30, 1160 55"/>
-        <path d="M0 395 C 240 375, 480 410, 720 390 S 1040 370, 1160 392"/>
-      </g>
-
-      <g stroke-opacity="0.55">
-        <!-- trunk + serpentine mixer -->
-        <path class="wire" d="M0 210 H 180 C 210 210, 210 150, 240 150 C 270 150, 270 210, 300 210 C 330 210, 330 150, 360 150 C 390 150, 390 210, 420 210 H 480" stroke="url(#nflow)" stroke-width="2.5"/>
-        <!-- first split -->
-        <path class="wire" d="M480 210 C 520 210, 520 120, 560 120 H 700" stroke="url(#nflow)" stroke-width="2"/>
-        <path class="wire" d="M480 210 C 520 210, 520 300, 560 300 H 660" stroke="url(#nflow)" stroke-width="2"/>
-        <!-- upper sub-splits -->
-        <path class="wire" d="M700 120 C 740 120, 740 70, 780 70 H 1160" stroke="url(#nflow)" stroke-width="1.5"/>
-        <path class="wire" d="M700 120 C 740 120, 740 170, 780 170 H 1014" stroke="url(#nflow)" stroke-width="1.5"/>
-        <!-- lower sub-splits -->
-        <path class="wire" d="M660 300 C 700 300, 700 250, 740 250 H 1160" stroke="url(#nflow)" stroke-width="1.5"/>
-        <path class="wire" d="M660 300 C 700 300, 700 350, 740 350 H 1160" stroke="url(#nflow)" stroke-width="1.5"/>
-        <!-- capillary cross-links -->
-        <path class="wire" d="M880 70 C 880 110, 880 130, 880 170" stroke="url(#nflow)" stroke-width="1"/>
-        <path class="wire" d="M940 250 C 940 290, 940 310, 940 350" stroke="url(#nflow)" stroke-width="1"/>
-        <!-- reaction chamber on the inner upper branch -->
-        <path class="wire" d="M 1014 170 a 26 26 0 1 0 52 0 a 26 26 0 1 0 -52 0" stroke="url(#nflow)" stroke-width="1.5"/>
-        <path class="wire" d="M1066 170 H 1160" stroke="url(#nflow)" stroke-width="1.5"/>
-      </g>
-
-      <!-- laminar streams: hidden until the etch completes -->
-      <g class="streams">
-        <!-- two parallel non-mixing streams through the trunk and mixer -->
-        <g filter="url(#nsoft)">
-          <path d="M0 210 H 180 C 210 210, 210 150, 240 150 C 270 150, 270 210, 300 210 C 330 210, 330 150, 360 150 C 390 150, 390 210, 420 210 H 480" transform="translate(0 -2.2)" stroke="#A78BFA" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="70 630">
-            <animate attributeName="stroke-dashoffset" from="700" to="0" dur="5s" repeatCount="indefinite"/>
-          </path>
-          <path d="M0 210 H 180 C 210 210, 210 150, 240 150 C 270 150, 270 210, 300 210 C 330 210, 330 150, 360 150 C 390 150, 390 210, 420 210 H 480" transform="translate(0 2.2)" stroke="#22D3EE" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="70 630">
-            <animate attributeName="stroke-dashoffset" from="700" to="0" dur="5s" begin="0.35s" repeatCount="indefinite"/>
-          </path>
-        </g>
-        <!-- branch streams -->
-        <path d="M480 210 C 520 210, 520 120, 560 120 H 700 C 740 120, 740 70, 780 70 H 1160" stroke="#A78BFA" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="60 560" filter="url(#nsoft)">
-          <animate attributeName="stroke-dashoffset" from="620" to="0" dur="6s" repeatCount="indefinite"/>
-        </path>
-        <path d="M480 210 C 520 210, 520 300, 560 300 H 660 C 700 300, 700 350, 740 350 H 1160" stroke="#22D3EE" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="60 560" filter="url(#nsoft)">
-          <animate attributeName="stroke-dashoffset" from="620" to="0" dur="6.8s" begin="0.8s" repeatCount="indefinite"/>
-        </path>
-        <!-- droplets riding the full routes -->
-        <circle r="3.2" fill="#22D3EE" filter="url(#nsoft)">
-          <animateMotion dur="9s" repeatCount="indefinite"><mpath href="#lam1"/></animateMotion>
-        </circle>
-        <circle r="2.8" fill="#A78BFA" filter="url(#nsoft)">
-          <animateMotion dur="10s" begin="1.5s" repeatCount="indefinite"><mpath href="#lam2"/></animateMotion>
-        </circle>
-        <circle r="2.6" fill="#67E8F9" filter="url(#nsoft)">
-          <animateMotion dur="11s" begin="3s" repeatCount="indefinite"><mpath href="#lam3"/></animateMotion>
-        </circle>
-      </g>
-
-      <!-- junction nodes -->
-      <circle class="node" data-at="0.45" cx="480" cy="210" r="6" fill="#0E0E1A" stroke="url(#nflow)" stroke-width="2"/>
-      <circle class="node" data-at="0.7" cx="700" cy="120" r="5" fill="#0E0E1A" stroke="url(#nflow)" stroke-width="2"/>
-      <circle class="node" data-at="0.7" cx="660" cy="300" r="5" fill="#0E0E1A" stroke="url(#nflow)" stroke-width="2"/>
-      <circle class="node" data-at="0.95" cx="1120" cy="70" r="4" fill="#A78BFA"/>
-      <circle class="node" data-at="0.95" cx="1040" cy="170" r="4" fill="#22D3EE"/>
-      <circle class="node" data-at="0.95" cx="1120" cy="250" r="4" fill="#8B5CF6"/>
-      <circle class="node" data-at="0.95" cx="1120" cy="350" r="4" fill="#22D3EE"/>
-    </svg>
-  </div>
-  <div class="container micro-content">
-    <div class="kicker reveal">Microfluidics</div>
-    <h2 class="reveal">Chips that were <span class="grad">impossible to print</span></h2>
-    <p class="muted reveal" style="max-width:640px;">Microfluidic chips demand two things SLA could never deliver together: extremely fine channels and optical clarity. PDMS soft lithography was the only path. Not anymore.</p>
-    <div class="compare reveal">
-      <div class="compare-col old">
-        <h3>The old way: PDMS</h3>
-        <ul>
-          <li>Cleanroom master molds</li>
-          <li>Manual casting and bonding</li>
-          <li>Days per design iteration</li>
-          <li>Limited geometry freedom</li>
-        </ul>
-      </div>
-      <div class="compare-arrow" aria-hidden="true">→</div>
-      <div class="compare-col new">
-        <h3>The Aionik way: SLA</h3>
-        <ul>
-          <li>Print directly, no molds</li>
-          <li>Ultra-fine, crystal-clear channels</li>
-          <li>Iterate designs in hours</li>
-          <li>Full 3D channel geometry</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="why" class="why-section">
+<!-- ============ MISSION ============ -->
+<section class="mission">
   <div class="container">
-    <div class="kicker reveal">Why It Matters</div>
-    <h2 class="reveal">Three walls, <span class="grad">broken at once</span></h2>
-    <div class="glass-grid">
-      <div class="glass sheen reveal">
+    <div class="kicker reveal">Why it matters</div>
+    <p class="mission-lead reveal">Every breakthrough starts as a concept, but concepts do not answer questions or save lives. Prototypes do. We are building the technology that turns a researcher's idea into something real in minutes instead of weeks, so the best minds in biomedical science spend less time waiting and more time discovering.</p>
+    <p class="mission-sub reveal">Our patent pending curing process strips away the chemicals, the solvents, and the delays that have slowed manufacturing for decades.</p>
+  </div>
+</section>
+
+<!-- ============ WHY NOW ============ -->
+<section class="whynow">
+  <div class="container">
+    <div class="kicker reveal">The moment</div>
+    <h2 class="reveal">Why now</h2>
+
+    <!-- Block 1 -->
+    <div class="wn-block reveal prose">
+      <p class="wn-lead">Regulators set a clock.</p>
+      <p class="wn-para">The FDA has moved to <a href="https://www.fda.gov/news-events/press-announcements/fda-announces-plan-phase-out-animal-testing-requirement-monoclonal-antibodies-and-other-drugs" target="_blank" rel="noopener noreferrer">replace animal testing with organ on chip systems and organoids</a> within five years. The NIH <a href="https://grants.nih.gov/news-events/nih-extramural-nexus-news/2025/07/how-does-the-nih-initiative-to-prioritize-human-based-research-affect-research-proposing-the-use-of-laboratory-animals" target="_blank" rel="noopener noreferrer">stopped issuing funding opportunities built solely around animal models</a>. The UK committed to the same path with <a href="https://www.gov.uk/government/news/animal-testing-to-be-phased-out-faster-as-uk-unveils-roadmap-for-alternative-methods" target="_blank" rel="noopener noreferrer">£75 million behind it</a>, and the EPA set a <a href="https://www.epa.gov/newsreleases/icymi-administrator-zeldin-gets-epa-back-track-eliminate-animal-testing-after-biden" target="_blank" rel="noopener noreferrer">2035 deadline to eliminate mammal testing</a>.</p>
+    </div>
+
+    <!-- Block 2 (two paragraphs, one block) -->
+    <div class="wn-block reveal prose">
+      <p class="wn-lead">Fabrication did not move with them.</p>
+      <p class="wn-para">Microfluidic chips are still cast by hand. Soft lithography needs a cleanroom, a mask aligner, and someone trained to run both, so the capability lives inside a small number of institutions. Everyone else orders custom chips from a foundry and waits weeks for a design they cannot revise without paying again.</p>
+      <p class="wn-para">The process itself is <a href="https://www.nature.com/articles/s41598-025-16863-z" target="_blank" rel="noopener noreferrer">slow and operator dependent, with cure conditions that shift batch to batch</a>. And labs <a href="https://pubmed.ncbi.nlm.nih.gov/39687794/" target="_blank" rel="noopener noreferrer">prototype in PDMS while manufacturing in thermoplastic</a>, so the device they validate is never the device they ship.</p>
+    </div>
+
+    <!-- Block 2b (widens the demand beyond biology; cites the M&N top-10 editorial) -->
+    <div class="wn-block reveal prose">
+      <p class="wn-lead">The demand runs wider than biology.</p>
+      <p class="wn-para">Regulation set the clock for organ on chip work, but it is not the only pressure. When Microsystems and Nanoengineering surveyed scholars and industry for its <a href="https://www.nature.com/articles/s41378-025-01153-5" target="_blank" rel="noopener noreferrer">ten ground challenges for the field</a>, fabrication ran through the answers. Several of the ten stall not on ideas but on access to fast, high fidelity, biocompatible microfabrication: functional organ on chip reconstruction, affordable point of care diagnostics, precision that survives the print in high performance devices, and the AI guided design to fabrication loop that only closes when iteration is cheap.</p>
+      <p class="wn-para">Every one of those sits on the same microfluidic and additive foundation we build for. A process that turns a standard printer into a source of clear, biocompatible parts in minutes moves the fabrication half of each problem at once. The pull is not a single market. It is a field wide shift toward tools that let a lab hold an idea in its hands the week it has it, across diagnostics, computing, and medicine alike.</p>
+    </div>
+
+    <!-- Block 2c (market scale). Compiled from Dane's analyst workbook
+         "Microfluidic AnalystCompilation Updated .xlsx", 8 named firms.
+         The workbook's own headline finding is the DIVERGENCE between
+         estimates, and it explicitly warns against treating any single
+         figure as a precise TAM. That caveat is reproduced here on purpose:
+         publishing the spread is more defensible than cherry-picking the
+         biggest number, and it is what a analyst-literate reader expects.
+         Base years differ (2023 to 2025) and the copy says so. -->
+    <div class="wn-block reveal prose">
+      <p class="wn-lead">The market is large, and the analysts disagree about how large.</p>
+      <p class="wn-para">Eight research firms publish a microfluidics market size. For nominally the same market they report figures between $9.4 billion and $41.9 billion, a spread of more than four times. That gap is about scope, whether a report counts diagnostics alone or the full device, component, and instrumentation ecosystem, rather than about growth.</p>
+
+      <div class="mkt-stats">
+        <div class="mkt-stat">
+          <div class="mkt-k">Market today</div>
+          <div class="mkt-v">$27B</div>
+          <div class="mkt-sub">Median of eight estimates, base years 2023 to 2025. Range $9.4B to $41.9B.</div>
+        </div>
+        <div class="mkt-stat">
+          <div class="mkt-k">Forecast</div>
+          <div class="mkt-v">$67B</div>
+          <div class="mkt-sub">Median forecast across target years 2030 to 2035. Range $21.7B to $223B.</div>
+        </div>
+        <div class="mkt-stat">
+          <div class="mkt-k">Growth</div>
+          <div class="mkt-v">8.3 to 24%</div>
+          <div class="mkt-sub">Compound annual growth rate. Every one of the eight projects double digits.</div>
+        </div>
+      </div>
+
+      <p class="wn-para">What the eight agree on matters more than what they dispute. All of them project double digit growth, North America leading, and medical and diagnostics as the largest application. Mordor Intelligence carves out organ on chip as the fastest growing sub technology in the field at 22.7 percent, which is the segment our biocompatible housings serve.</p>
+      <p class="wn-para">Growth at those rates runs straight into the constraint described above. A market cannot compound at double digits for a decade while the parts it depends on are still cast by hand in a cleanroom. That is the bottleneck, and it is the one we removed.</p>
+
+      <div class="mkt-sources">
+        <div class="mkt-src-title">The eight estimates, as published</div>
+        <ul>
+          <li><a href="https://www.grandviewresearch.com/industry-analysis/microfluidics-market" target="_blank" rel="noopener noreferrer">Grand View Research</a><span>$41.9B (2025) to $105.1B by 2033, 12.2%</span></li>
+          <li><a href="https://www.snsinsider.com/reports/microfluidics-market-3848" target="_blank" rel="noopener noreferrer">SNS Insider</a><span>$34.9B (2025) to $107.9B by 2035, 11.9%</span></li>
+          <li><a href="https://straitsresearch.com/report/microfluidics-market" target="_blank" rel="noopener noreferrer">Straits Research</a><span>$32.3B (2024) to $223.2B by 2033, 24.0%</span></li>
+          <li><a href="https://www.globenewswire.com/news-release/2025/12/01/3197199/0/en/Microfluidics-Forecast-Report-2025-A-60-Billion-Market-by-2030-Driven-by-Demand-for-Miniaturized-Point-of-Care-Diagnostics-and-Advancements-in-High-Throughput-Biomedical-Research.html" target="_blank" rel="noopener noreferrer">Research and Markets</a><span>$29.1B (2024) to $60.9B by 2030, 13.1%</span></li>
+          <li><a href="https://www.marketsandmarkets.com/Market-Reports/microfluidics-market-1305.html" target="_blank" rel="noopener noreferrer">MarketsandMarkets</a><span>$25.0B (2025) to $37.2B by 2030, 8.3%</span></li>
+          <li><a href="https://www.skyquestt.com/report/microfluidics-market" target="_blank" rel="noopener noreferrer">SkyQuest</a><span>$24.5B (2023) to $72.4B by 2032, 12.8%</span></li>
+          <li><a href="https://www.mordorintelligence.com/industry-reports/microfluidics-market" target="_blank" rel="noopener noreferrer">Mordor Intelligence</a><span>$24.2B (2025) to $46.1B by 2031, 11.4%</span></li>
+          <li><a href="https://www.vantagemarketresearch.com/microfluidics-market" target="_blank" rel="noopener noreferrer">Vantage Market Research</a><span>$9.4B (2025) to $21.7B by 2035, 8.7%</span></li>
+        </ul>
+        <p class="mkt-note">Figures as published by each firm, with no normalization across differing scope definitions. Base years differ, so these are not strictly like for like. Treat the range as an indication of scale, not as a precise market size.</p>
+      </div>
+    </div>
+
+    <!-- Block 4 (table) — placed before Block 3 so Block 3 can hand off to the solution.
+         NOTE: see build summary — the spec's "four blocks in this order" and "Block 3 immediately
+         above the solution section" cannot both hold literally; flagged for your call. -->
+    <div class="wn-block reveal prose" style="max-width:none;">
+      <p class="wn-lead">What the alternatives cost.</p>
+      <div class="cmp-wrap">
+        <table class="cmp">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Overhead</th>
+              <th scope="col">Per iteration</th>
+              <th scope="col">Ceiling</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">PDMS soft lithography</th>
+              <td data-label="Overhead">Cleanroom, mask aligner, trained operator</td>
+              <td data-label="Per iteration">Hours to days in house, weeks by foundry order</td>
+              <td data-label="Ceiling">Cannot scale to production</td>
+            </tr>
+            <tr>
+              <th scope="row">Thermoplastic injection molding</th>
+              <td data-label="Overhead">Mold tooling per design</td>
+              <td data-label="Per iteration">Weeks, and a new mold for any change</td>
+              <td data-label="Ceiling">Locks the design before it is validated</td>
+            </tr>
+            <tr>
+              <th scope="row">Glass and silicon</th>
+              <td data-label="Overhead">Semiconductor facility access</td>
+              <td data-label="Per iteration">Weeks</td>
+              <td data-label="Ceiling">Cost per chip stays high</td>
+            </tr>
+            <tr>
+              <th scope="row">Outsourced foundry</th>
+              <td data-label="Overhead">None</td>
+              <td data-label="Per iteration">Weeks per revision, priced per order</td>
+              <td data-label="Ceiling">No design iteration</td>
+            </tr>
+            <tr class="us">
+              <th scope="row">Aionik&trade;</th>
+              <td data-label="Overhead">Desktop printer and our unit</td>
+              <td data-label="Per iteration">30 to 60 minute print, multiple chips per plate, then a 3 minute cure</td>
+              <td data-label="Ceiling">Scales to production at the lowest cost per chip, same process throughout</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="wn-closing">Every existing option forces a tradeoff between speed and scale. Soft lithography iterates but cannot produce. Molding produces but cannot iterate. We hold both, in one material, with no cleanroom and no tooling.</p>
+    </div>
+
+    <!-- Block 3 (single block, hands off to the solution section directly below) -->
+    <div class="wn-block reveal prose">
+      <p class="wn-lead">Printing finally caught up. The cure was the last obstacle.</p>
+      <p class="wn-para">Resin printers now resolve features small enough for microfluidics at a fraction of the cost and time. What kept those parts out of biology was never the resin, though that is where the field has spent its effort, formulating clearer and more biocompatible materials one at a time. The obstacle is the cure. We changed the process, and now get optical clarity and biocompatibility out of affordable, general purpose resins, not the specialized biocompatible formulations the field has been chasing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE INSIGHT — solution / four results ============ -->
+<section id="insight" class="team-section">
+  <div class="container">
+    <div class="kicker reveal">The insight</div>
+    <h2 class="reveal">One process change, <span class="grad">four results</span></h2>
+    <p class="lead muted reveal">By removing chemicals from the curing step, our method delivers what resin printing could not before. Core method developed at UTSA — US&nbsp;2026/0131529&nbsp;A1, patent pending.</p>
+    <div class="results">
+      <div class="result-card reveal">
         <span class="num">01</span>
-        <h3>No More IPA</h3>
-        <p>Eliminate solvent purchase, handling, storage, and disposal from your entire post-processing chain.</p>
+        <h3>Optical clarity</h3>
+        <p>Similar quality to PDMS microfluidic chips.</p>
       </div>
-      <div class="glass sheen reveal">
+      <div class="result-card reveal">
         <span class="num">02</span>
-        <h3>No Traditional Cure</h3>
-        <p>Skip the UV chamber. Our process finishes parts without the surface degradation of conventional curing.</p>
+        <h3>Smooth surface</h3>
+        <p>Not the rough finish of traditional polymerization.</p>
       </div>
-      <div class="glass sheen reveal">
+      <div class="result-card reveal">
         <span class="num">03</span>
-        <h3>Microfluidics on SLA</h3>
-        <p>Extremely fine, extremely clear chips — previously the exclusive domain of PDMS soft lithography.</p>
+        <h3>Biocompatibility</h3>
+        <p>Even with resins that are not biocompatible on their own.</p>
+      </div>
+      <div class="result-card reveal">
+        <span class="num">04</span>
+        <h3>1 to 3 minute cures</h3>
+        <p>Depending on the print.</p>
+      </div>
+    </div>
+
+    <!-- Comparative proof figure from the patent (US 2026/0131529 A1).
+         Values 73 µm and 13.1 µm are printed in the source figure; do not alter. -->
+    <figure class="proof-figure reveal">
+      <img src="assets/proof-droplets.jpg" alt="Microscopy comparison of droplet generation in the same channel geometry. Top row, traditional method: large, uneven droplets about 73 microns across with rough, blurred channel walls. Bottom row, the Aionik curing process, labeled Spinning Desicurer Method in the figure: fine, uniform droplets about 13 microns across with clean, sharply defined walls." width="1600" height="641" loading="lazy">
+      <figcaption>
+        <strong>Same geometry, sharper result.</strong> Droplet generation in an identical flow focusing junction. The traditional method (top row) produces large, uneven droplets near 73&nbsp;µm against rough, blurred walls. Our Aionik&trade; curing process (bottom row, labeled Spinning Desicurer Method in the source figure) produces fine, uniform droplets near 13&nbsp;µm against clean, sharply defined channel walls. Figures from US&nbsp;2026/0131529&nbsp;A1.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ WHAT WE HAVE / WHAT WE NEED ============ -->
+<section id="today">
+  <div class="container">
+    <div class="kicker reveal">Where we are</div>
+    <h2 class="reveal">What we have, and what we need</h2>
+    <p class="lead muted reveal">An honest separation between what is working today and what it will take to go further.</p>
+    <!-- Trimmed from three columns to two on 29 Aug 2026, then filled with real content
+         from Dane on the same day. The "Next 12 months" and "At scale" columns were
+         roadmap, which Dane does not want on a public page. -->
+    <div class="stages two">
+      <div class="stage today reveal">
+        <h3>What we have</h3>
+        <div class="when">Working and demonstrated</div>
+        <ul>
+          <li>A working post-process on printed chips, with optical clarity, smooth surfaces, biocompatibility, and 1 to 3 minute cures</li>
+          <li>Biocompatible organoid housings in production, so the process is not limited to microfluidic chips</li>
+          <li>Collaborators across several scientific fields running work on chips we fabricated</li>
+          <li>30 usable microfluidic chips fabricated and cured in 4.5 hours by a single operator, with two small printers and two Aionik curing devices</li>
+        </ul>
+      </div>
+      <div class="stage next reveal">
+        <h3>What we need</h3>
+        <div class="when">To develop the device and commercialize it</div>
+        <ul>
+          <li>A final device design. Further research and development is needed to settle on the optimal structure</li>
+          <li>Lab space and equipment, both to commercialize and to continue the research that widens what the process reaches</li>
+          <li>People. Hiring, and paying the team already building this, to move development faster</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<section id="team" class="team-section">
+<!-- SCOPE & POTENTIAL section removed on 29 Aug 2026. Beachhead, adjacent
+     applications, and market framing are business plan detail that Dane does not
+     want exposed on a page shared outside the company. The "why now" section above
+     already establishes demand from public sources without revealing strategy. -->
+
+<!-- ============ WHY THIS TEAM ============ -->
+<section id="team">
   <div class="container">
-    <div class="kicker reveal">Leadership</div>
-    <h2 class="reveal">The team behind <span class="grad">the process</span></h2>
-    <p class="muted reveal" style="max-width:640px;">Founded in San Antonio, Aionik pairs deep microfluidics and materials research with commercial and product experience.</p>
+    <div class="kicker reveal">The team</div>
+    <h2 class="reveal">Why this team</h2>
+    <p class="lead muted reveal">Founded in San Antonio, Aionik pairs deep microfluidics and materials research with commercial and product experience.</p>
 
     <div class="team-grid">
 
       <div class="team-card sheen reveal">
-        <div class="avatar" aria-hidden="true">
-          <svg viewBox="0 0 120 120" fill="none">
-            <defs>
-              <linearGradient id="avEdge" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#8B5CF6"/>
-                <stop offset="1" stop-color="#22D3EE"/>
-              </linearGradient>
-              <clipPath id="avClip"><circle cx="60" cy="60" r="55"/></clipPath>
-            </defs>
-            <circle cx="60" cy="60" r="55" fill="rgba(255,255,255,0.03)" stroke="url(#avEdge)" stroke-width="1.5"/>
-            <g clip-path="url(#avClip)">
-              <path d="M0 88 C 30 80, 50 98, 80 90 S 115 78, 125 84" stroke="rgba(34,211,238,0.35)" stroke-width="2"/>
-              <path d="M0 100 C 34 92, 58 108, 86 100 S 118 90, 126 96" stroke="rgba(139,92,246,0.3)" stroke-width="2"/>
-            </g>
-            <text x="60" y="56" text-anchor="middle" dominant-baseline="central" fill="#E7E7F2" font-size="28" font-weight="700" letter-spacing="2">DS</text>
-          </svg>
+        <div class="avatar">
+          <img src="assets/team-dane.jpg" alt="Dane Spencer" width="104" height="104" loading="lazy">
         </div>
         <h3>Dane Spencer</h3>
         <div class="role">Chief Executive Officer</div>
-        <p>Dane holds a bachelor's degree in finance from UTSA and leads Aionik's commercial direction, drawing on a background in financial consulting and business strategy.</p>
-      </div>
+        <p>Finance, UTSA. Leads commercial direction from a background in financial consulting and business strategy.</p>      </div>
 
       <div class="team-card sheen reveal">
-        <div class="avatar" aria-hidden="true">
-          <svg viewBox="0 0 120 120" fill="none">
-            <circle cx="60" cy="60" r="55" fill="rgba(255,255,255,0.03)" stroke="url(#avEdge)" stroke-width="1.5"/>
-            <g clip-path="url(#avClip)">
-              <path d="M0 88 C 30 80, 50 98, 80 90 S 115 78, 125 84" stroke="rgba(34,211,238,0.35)" stroke-width="2"/>
-              <path d="M0 100 C 34 92, 58 108, 86 100 S 118 90, 126 96" stroke="rgba(139,92,246,0.3)" stroke-width="2"/>
-            </g>
-            <text x="60" y="56" text-anchor="middle" dominant-baseline="central" fill="#E7E7F2" font-size="28" font-weight="700" letter-spacing="2">GS</text>
-          </svg>
+        <div class="avatar">
+          <img src="assets/team-gongchen.jpg" alt="Gongchen Sun" width="104" height="104" loading="lazy">
         </div>
         <h3>Gongchen Sun, PhD</h3>
         <div class="role">Chief Science Officer</div>
-        <p>Assistant Professor of Biomedical and Chemical Engineering at UTSA. His research spans electrokinetics, micro and nanofluidics, additive manufacturing, and ion exchange membranes.</p>
+        <p>Assistant Professor of Biomedical and Chemical Engineering at UTSA. Electrokinetics, micro and nanofluidics, additive manufacturing.</p>
         <a class="team-link" href="https://www.sunlabutsa.org/" target="_blank" rel="noopener">Sun Lab at UTSA ↗</a>
       </div>
 
       <div class="team-card sheen reveal">
-        <div class="avatar" aria-hidden="true">
-          <svg viewBox="0 0 120 120" fill="none">
-            <circle cx="60" cy="60" r="55" fill="rgba(255,255,255,0.03)" stroke="url(#avEdge)" stroke-width="1.5"/>
-            <g clip-path="url(#avClip)">
-              <path d="M0 88 C 30 80, 50 98, 80 90 S 115 78, 125 84" stroke="rgba(34,211,238,0.35)" stroke-width="2"/>
-              <path d="M0 100 C 34 92, 58 108, 86 100 S 118 90, 126 96" stroke="rgba(139,92,246,0.3)" stroke-width="2"/>
-            </g>
-            <text x="60" y="56" text-anchor="middle" dominant-baseline="central" fill="#E7E7F2" font-size="28" font-weight="700" letter-spacing="2">HS</text>
-          </svg>
+        <div class="avatar">
+          <img src="assets/team-henry.jpg" alt="Henry Shu" width="104" height="104" loading="lazy">
         </div>
         <h3>Henry Shu</h3>
         <div class="role">Chief Marketing Officer</div>
-        <p>Assistant Professor of Practice in Marketing at UTSA's Alvarez College of Business, with biology degrees from UC Berkeley and an MBA from UTSA. His career spans genomics research and product marketing across biotech, pharma, diagnostics, and software.</p>
-      </div>
+        <p>Assistant Professor of Practice in Marketing, UTSA. Biology, UC Berkeley; MBA, UTSA. Genomics and product marketing across biotech and diagnostics.</p>      </div>
 
       <div class="team-card sheen reveal">
-        <div class="avatar" aria-hidden="true">
-          <svg viewBox="0 0 120 120" fill="none">
-            <circle cx="60" cy="60" r="55" fill="rgba(255,255,255,0.03)" stroke="url(#avEdge)" stroke-width="1.5"/>
-            <g clip-path="url(#avClip)">
-              <path d="M0 88 C 30 80, 50 98, 80 90 S 115 78, 125 84" stroke="rgba(34,211,238,0.35)" stroke-width="2"/>
-              <path d="M0 100 C 34 92, 58 108, 86 100 S 118 90, 126 96" stroke="rgba(139,92,246,0.3)" stroke-width="2"/>
-            </g>
-            <text x="60" y="56" text-anchor="middle" dominant-baseline="central" fill="#E7E7F2" font-size="28" font-weight="700" letter-spacing="2">GR</text>
-          </svg>
+        <div class="avatar">
+          <img src="assets/team-guillermo.jpg" alt="Guillermo Ramirez-Alvarado" width="104" height="104" loading="lazy">
         </div>
         <h3>Guillermo Ramirez-Alvarado</h3>
         <div class="role">Chief Technology Officer</div>
-        <p>Guillermo holds a bachelor's degree in biomedical engineering from UTSA, where he is currently pursuing a PhD in biomedical engineering.</p>
-      </div>
+        <p>PhD in biomedical engineering, UTSA. Named inventor on the core patent application.</p>      </div>
 
       <div class="team-card sheen reveal">
-        <div class="avatar" aria-hidden="true">
-          <svg viewBox="0 0 120 120" fill="none">
-            <circle cx="60" cy="60" r="55" fill="rgba(255,255,255,0.03)" stroke="url(#avEdge)" stroke-width="1.5"/>
-            <g clip-path="url(#avClip)">
-              <path d="M0 88 C 30 80, 50 98, 80 90 S 115 78, 125 84" stroke="rgba(34,211,238,0.35)" stroke-width="2"/>
-              <path d="M0 100 C 34 92, 58 108, 86 100 S 118 90, 126 96" stroke="rgba(139,92,246,0.3)" stroke-width="2"/>
-            </g>
-            <text x="60" y="56" text-anchor="middle" dominant-baseline="central" fill="#E7E7F2" font-size="28" font-weight="700" letter-spacing="2">GG</text>
-          </svg>
+        <div class="avatar">
+          <img src="assets/team-gabriel.jpg" alt="Gabriel Garibaldi" width="104" height="104" loading="lazy">
         </div>
         <h3>Gabriel Garibaldi</h3>
         <div class="role">Director of Applied Science</div>
-        <p>Gabriel holds a bachelor's degree in biomedical engineering from UTSA and is currently pursuing a PhD in chemical engineering there.</p>
-      </div>
+        <p>Biomedical engineering, UTSA, with a PhD in chemical engineering. Named inventor on the core patent application.</p>      </div>
 
     </div>
-    <p class="team-note">Headshots coming soon</p>
+
+    <!-- Advisors / hiring placeholder removed on 29 Aug 2026: never filled in, and
+         hiring plans are business detail Dane does not want public. -->
   </div>
 </section>
 
-<section id="connect" class="cta-band">
+<!-- ============ EVIDENCE ============ -->
+<section id="evidence">
+  <div class="container">
+    <div class="kicker reveal">Evidence</div>
+    <h2 class="reveal">What we can show</h2>
+    <div class="ev-list">
+      <div class="ev-row reveal">
+        <div class="cat">Intellectual property</div>
+        <div class="body"><strong>US 2026/0131529 A1 — patent pending.</strong> Core post-processing method, filed July 2025 and published May 2026, assigned to the University of Texas System. Exclusive license to Aionik, terms in final negotiation.</div>
+      </div>
+      <div class="ev-row reveal">
+        <div class="cat">Origin</div>
+        <div class="body">Developed in the Sun Lab at UTSA. Comparative droplet generation data is shown above under <a href="#insight">The insight</a>.</div>
+      </div>
+      <!-- "Traction to date" row cut on 29 Aug 2026: it stayed empty, and the standing
+           rule is to cut an empty row rather than pad it. Restore it when there are
+           real grants, competitions, LOIs, design partners, or publications to list. -->
+    </div>
+  </div>
+</section>
+
+<!-- THE ASK section removed on 29 Aug 2026. Aionik is not raising, so the terms,
+     use-of-funds buckets, and milestone timeline had no honest values. The CSS for
+     these components (.ask-terms, .term, .funds, .fund-*, .milestones, .ms, .ask-extra)
+     is deliberately LEFT IN css/investors.css so the section can be restored intact
+     when a round opens. Recover the markup from git history at commit 6ac0bee. -->
+
+<!-- "What we're still figuring out" section removed on 29 Aug 2026. It was optional,
+     never filled in, and framed around open questions for investors evaluating a round. -->
+
+<!-- ============ CLOSING CTA ============ -->
+<section id="book" class="cta-band">
   <div class="container">
     <div class="inner reveal">
-      <div class="kicker">Investors · Customers · Partners</div>
-      <h2>Build the future of <span class="grad">additive precision</span> with us</h2>
-      <p class="muted" style="max-width: 520px; margin: 0 auto 40px;">We are in active market research across microfluidics and beyond. If precision post-processing changes your industry, we want to hear from you.</p>
-      <a href="mailto:contact@aionik.example" class="btn btn-primary">Contact Aionik</a>
-      <p class="cta-note">[Placeholder email — replace with real contact]</p>
+      <div class="kicker">Let's talk</div>
+      <h2>See the process <span class="grad">for yourself</span></h2>
+      <p class="muted" style="max-width: 520px; margin: 0 auto 40px;">The fastest way in is a short call. Leave your details and a note, and we will reach out. We will show you what is built and answer whatever you want to ask about the process.</p>
+      <!-- CONTACT: native form posting straight to the "Aionik - Investor Inquiry"
+           Google Form. Responses land in the same linked Google Sheet as before.
+           Entry IDs verified against the live form on 29 August 2026. Google returns
+           an opaque response by design, so js/investors.js validates before sending
+           and falls back to the hosted form if the request cannot be delivered. -->
+      <form class="inv-form" id="inquiry-form" novalidate>
+        <div class="if-grid">
+          <div class="field">
+            <label for="if-name">Name <span class="req" aria-hidden="true">*</span></label>
+            <input id="if-name" name="name" type="text" autocomplete="name" required aria-required="true">
+            <p class="field-err" id="if-name-err" hidden>Please enter your name.</p>
+          </div>
+          <div class="field">
+            <label for="if-email">Email <span class="req" aria-hidden="true">*</span></label>
+            <input id="if-email" name="email" type="email" autocomplete="email" required aria-required="true">
+            <p class="field-err" id="if-email-err" hidden>Please enter a valid email address.</p>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="if-firm">Firm or organization <span class="req" aria-hidden="true">*</span></label>
+          <input id="if-firm" name="firm" type="text" autocomplete="organization" required aria-required="true">
+          <p class="field-err" id="if-firm-err" hidden>Please enter your firm or organization.</p>
+        </div>
+
+        <div class="field">
+          <label for="if-discuss">What would you like to discuss? <span class="opt">Optional</span></label>
+          <textarea id="if-discuss" name="discuss" rows="4"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="if-amount">Starting capital injection amount <span class="opt">Optional</span></label>
+          <input id="if-amount" name="amount" type="text" inputmode="numeric" placeholder="Dollar amount">
+        </div>
+
+        <!-- honeypot: hidden from people, tempting to bots. Submissions that fill
+             it are dropped silently. The form has no captcha. -->
+        <div class="if-hp" aria-hidden="true">
+          <label for="if-website">Website</label>
+          <input id="if-website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+
+        <button type="submit" class="btn btn-primary if-submit" data-cta="book-call-closing">Send inquiry</button>
+        <p class="if-status" id="if-status" role="status" aria-live="polite"></p>
+        <p class="cta-note if-privacy">We follow up by email. Your details go to the Aionik team only.</p>
+      </form>
+
+      <div class="if-done" id="if-done" hidden>
+        <div class="if-done-mark" aria-hidden="true">✓</div>
+        <h3>Thanks. Your inquiry is in.</h3>
+        <p class="muted">We read every one and follow up by email, usually within two business days.</p>
+      </div>
+
+      <!-- Deck note removed on 29 Aug 2026: Aionik is not raising, so promising a pitch
+           deck sets an expectation that does not match. Restore when a round opens. -->
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="container footer-inner">
-    <a href="#" class="logo" style="font-size:15px;">AION<span>IK</span></a>
-    <p>© 2026 Aionik Technologies. All rights reserved.</p>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="logo" style="font-size:15px;">AION<span>IK</span></span>
+      <p>© 2026 Aionik Technologies. All rights reserved.</p>
+    </div>
+    <!-- Date is overwritten at load from the file's own Last-Modified. The text
+         below is only the fallback if that is unavailable. -->
+    <p class="updated" id="updated">Last updated 29 August 2026</p>
+    <p class="legal">
+      This page is for informational purposes only and is not an offer to sell or a solicitation of an offer to buy any security.
+      Statements about future plans, milestones, and capabilities are forward looking and not guarantees of outcome or return.
+      Figures marked as demonstrated reflect results to date; figures marked as expected are projections.
+    </p>
   </div>
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/investors.js"></script>
 </body>
 </html>

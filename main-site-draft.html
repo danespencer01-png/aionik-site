@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- PARKED 30 Aug 2026. This is the v1 marketing homepage, kept for when the
+     main site is resumed. It is NOT linked from anywhere and is noindex so an
+     unfinished page never shows up in search. It still contains a placeholder
+     contact address (contact@aionik.example). -->
+<meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Aionik Technologies — SLA post-processing without IPA or traditional curing. Enabling optically clear, ultra-fine microfluidic chips printed on standard SLA hardware.">
+<title>Aionik Technologies — SLA Post-Processing, Reinvented</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">AION<span>IK</span></a>
+    <div class="nav-links">
+      <a href="#technology">Technology</a>
+      <a href="#microfluidics">Microfluidics</a>
+      <a href="#why">Why Aionik</a>
+      <a href="#team">Team</a>
+      <a href="#connect">Connect</a>
+      <a href="#connect" class="nav-cta">Get in Touch</a>
+    </div>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<header class="hero">
+  <canvas id="field" aria-hidden="true"></canvas>
+  <div class="container hero-split">
+    <div class="hero-content">
+      <div class="pill">Now enabling SLA-printed microfluidics</div>
+      <h1>The end of IPA.<br>The beginning of <span class="grad">clear microfluidics.</span></h1>
+      <p>Aionik's post-process replaces isopropyl alcohol washes and traditional curing entirely, unlocking optically clear, ultra-fine microfluidic chips straight off standard SLA printers.</p>
+      <div class="btn-row">
+        <a href="#technology" class="btn btn-primary">See How It Works</a>
+        <a href="#connect" class="btn btn-ghost">Investor Inquiries</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <!-- Animated microfluidic chip -->
+      <svg class="chip" viewBox="0 0 520 400" fill="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="chipEdge" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#8B5CF6" stop-opacity="0.9"/>
+            <stop offset="1" stop-color="#22D3EE" stop-opacity="0.9"/>
+          </linearGradient>
+          <linearGradient id="channelGlow" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#8B5CF6"/>
+            <stop offset="1" stop-color="#22D3EE"/>
+          </linearGradient>
+          <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="4" result="blur"/>
+            <feMerge>
+              <feMergeNode in="blur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+          <radialGradient id="glassSheen" cx="0.3" cy="0.2" r="1">
+            <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.10"/>
+            <stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0.02"/>
+            <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <!-- chip body -->
+        <rect x="30" y="30" width="460" height="340" rx="22"
+              fill="rgba(255,255,255,0.02)" stroke="url(#chipEdge)" stroke-width="1.5"/>
+        <rect x="30" y="30" width="460" height="340" rx="22" fill="url(#glassSheen)"/>
+
+        <!-- inlet / outlet ports -->
+        <circle cx="80" cy="80" r="14" stroke="url(#chipEdge)" stroke-width="1.5" fill="rgba(139,92,246,0.08)"/>
+        <circle cx="80" cy="320" r="14" stroke="url(#chipEdge)" stroke-width="1.5" fill="rgba(139,92,246,0.08)"/>
+        <circle cx="440" cy="200" r="14" stroke="url(#chipEdge)" stroke-width="1.5" fill="rgba(34,211,238,0.08)"/>
+
+        <!-- static channel traces -->
+        <path id="ch1" d="M80 80 H 160 C 200 80, 200 140, 160 140 H 120 C 90 140, 90 200, 130 200 H 380 C 420 200, 430 200, 440 200"
+              stroke="rgba(139,92,246,0.25)" stroke-width="4" stroke-linecap="round"/>
+        <path id="ch2" d="M80 320 H 180 C 220 320, 220 260, 180 260 H 140 C 105 260, 105 200, 145 200"
+              stroke="rgba(34,211,238,0.25)" stroke-width="4" stroke-linecap="round"/>
+        <path id="ch3" d="M260 200 C 260 160, 300 160, 300 120 C 300 90, 340 90, 340 120 C 340 160, 380 160, 380 200"
+              stroke="rgba(139,92,246,0.2)" stroke-width="3" stroke-linecap="round"/>
+        <path id="ch4" d="M260 200 C 260 240, 300 240, 300 280 C 300 310, 340 310, 340 280 C 340 240, 380 240, 380 200"
+              stroke="rgba(34,211,238,0.2)" stroke-width="3" stroke-linecap="round"/>
+
+        <!-- animated flow pulses -->
+        <path d="M80 80 H 160 C 200 80, 200 140, 160 140 H 120 C 90 140, 90 200, 130 200 H 380 C 420 200, 430 200, 440 200"
+              stroke="url(#channelGlow)" stroke-width="4" stroke-linecap="round" filter="url(#soft)"
+              stroke-dasharray="60 640" class="flow-pulse">
+          <animate attributeName="stroke-dashoffset" from="700" to="0" dur="4.5s" repeatCount="indefinite"/>
+        </path>
+        <path d="M80 320 H 180 C 220 320, 220 260, 180 260 H 140 C 105 260, 105 200, 145 200"
+              stroke="url(#channelGlow)" stroke-width="4" stroke-linecap="round" filter="url(#soft)"
+              stroke-dasharray="50 420" class="flow-pulse">
+          <animate attributeName="stroke-dashoffset" from="470" to="0" dur="5.5s" repeatCount="indefinite"/>
+        </path>
+
+        <!-- droplet particles -->
+        <circle r="5" fill="#22D3EE" filter="url(#soft)">
+          <animateMotion dur="4.5s" repeatCount="indefinite" rotate="auto">
+            <mpath href="#ch1"/>
+          </animateMotion>
+        </circle>
+        <circle r="4" fill="#A78BFA" filter="url(#soft)">
+          <animateMotion dur="5.5s" repeatCount="indefinite" begin="1s">
+            <mpath href="#ch2"/>
+          </animateMotion>
+        </circle>
+        <circle r="3.5" fill="#67E8F9" filter="url(#soft)">
+          <animateMotion dur="6s" repeatCount="indefinite" begin="0.5s">
+            <mpath href="#ch3"/>
+          </animateMotion>
+        </circle>
+        <circle r="3.5" fill="#C4B5FD" filter="url(#soft)">
+          <animateMotion dur="6s" repeatCount="indefinite" begin="2s">
+            <mpath href="#ch4"/>
+          </animateMotion>
+        </circle>
+
+        <!-- micro detail marks -->
+        <g stroke="rgba(255,255,255,0.12)" stroke-width="1">
+          <line x1="60" y1="360" x2="90" y2="360"/>
+          <line x1="60" y1="355" x2="60" y2="365"/>
+          <line x1="90" y1="355" x2="90" y2="365"/>
+        </g>
+        <text x="98" y="364" fill="rgba(255,255,255,0.3)" font-size="10" font-family="monospace">200 µm</text>
+      </svg>
+      <div class="chip-caption">SLA-printed microfluidic chip — placeholder visualization</div>
+    </div>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span><b>Zero</b> IPA</span><span><b>Zero</b> UV cure chambers</span><span><b>PDMS-free</b> microfluidics</span><span><b>Optical-grade</b> clarity</span><span><b>Ultra-fine</b> channel geometry</span><span><b>Zero</b> IPA</span><span><b>Zero</b> UV cure chambers</span><span><b>PDMS-free</b> microfluidics</span><span><b>Optical-grade</b> clarity</span><span><b>Ultra-fine</b> channel geometry</span>
+  </div>
+</div>
+
+<section id="technology">
+  <div class="container split">
+    <div class="reveal">
+      <div class="kicker">The Breakthrough</div>
+      <h2>SLA post-processing, <span class="grad">rebuilt from zero</span></h2>
+      <p class="muted">Every SLA workflow today ends the same way: solvent washes and UV ovens that cloud surfaces and destroy fine features. That ceiling has capped what SLA could ever produce.</p>
+      <p class="muted">Our process removes both steps. What remains is a part with the clarity and precision to serve markets SLA has never touched. [Placeholder copy — technical detail to come.]</p>
+      <div class="step-row">
+        <div class="step"><span class="step-num">01</span>Print on any standard SLA printer</div>
+        <div class="step"><span class="step-num">02</span>Apply the Aionik post-process</div>
+        <div class="step"><span class="step-num">03</span>Finished part. No IPA, no cure chamber</div>
+      </div>
+    </div>
+    <div class="placeholder reveal">Product Render / Process Photo</div>
+  </div>
+</section>
+
+<section id="microfluidics" class="micro-section">
+  <div class="micro-bg" aria-hidden="true">
+    <svg id="network" viewBox="0 0 1160 420" preserveAspectRatio="xMidYMid meet" fill="none">
+      <defs>
+        <linearGradient id="nflow" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#8B5CF6"/>
+          <stop offset="1" stop-color="#22D3EE"/>
+        </linearGradient>
+        <filter id="nsoft" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="3" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <!-- full inlet-to-outlet routes for the droplets -->
+        <path id="lam1" d="M0 210 H 180 C 210 210, 210 150, 240 150 C 270 150, 270 210, 300 210 C 330 210, 330 150, 360 150 C 390 150, 390 210, 420 210 H 480 C 520 210, 520 120, 560 120 H 700 C 740 120, 740 70, 780 70 H 1160"/>
+        <path id="lam2" d="M0 210 H 180 C 210 210, 210 150, 240 150 C 270 150, 270 210, 300 210 C 330 210, 330 150, 360 150 C 390 150, 390 210, 420 210 H 480 C 520 210, 520 300, 560 300 H 660 C 700 300, 700 350, 740 350 H 1160"/>
+        <path id="lam3" d="M0 210 H 180 C 210 210, 210 150, 240 150 C 270 150, 270 210, 300 210 C 330 210, 330 150, 360 150 C 390 150, 390 210, 420 210 H 480 C 520 210, 520 120, 560 120 H 700 C 740 120, 740 170, 780 170 H 1014"/>
+      </defs>
+
+      <!-- faint hairline traces for depth: not etched, always there -->
+      <g stroke="rgba(139,92,246,0.06)" stroke-width="1">
+        <path d="M0 60 C 200 40, 420 90, 620 60 S 1000 30, 1160 55"/>
+        <path d="M0 395 C 240 375, 480 410, 720 390 S 1040 370, 1160 392"/>
+      </g>
+
+      <g stroke-opacity="0.55">
+        <!-- trunk + serpentine mixer -->
+        <path class="wire" d="M0 210 H 180 C 210 210, 210 150, 240 150 C 270 150, 270 210, 300 210 C 330 210, 330 150, 360 150 C 390 150, 390 210, 420 210 H 480" stroke="url(#nflow)" stroke-width="2.5"/>
+        <!-- first split -->
+        <path class="wire" d="M480 210 C 520 210, 520 120, 560 120 H 700" stroke="url(#nflow)" stroke-width="2"/>
+        <path class="wire" d="M480 210 C 520 210, 520 300, 560 300 H 660" stroke="url(#nflow)" stroke-width="2"/>
+        <!-- upper sub-splits -->
+        <path class="wire" d="M700 120 C 740 120, 740 70, 780 70 H 1160" stroke="url(#nflow)" stroke-width="1.5"/>
+        <path class="wire" d="M700 120 C 740 120, 740 170, 780 170 H 1014" stroke="url(#nflow)" stroke-width="1.5"/>
+        <!-- lower sub-splits -->
+        <path class="wire" d="M660 300 C 700 300, 700 250, 740 250 H 1160" stroke="url(#nflow)" stroke-width="1.5"/>
+        <path class="wire" d="M660 300 C 700 300, 700 350, 740 350 H 1160" stroke="url(#nflow)" stroke-width="1.5"/>
+        <!-- capillary cross-links -->
+        <path class="wire" d="M880 70 C 880 110, 880 130, 880 170" stroke="url(#nflow)" stroke-width="1"/>
+        <path class="wire" d="M940 250 C 940 290, 940 310, 940 350" stroke="url(#nflow)" stroke-width="1"/>
+        <!-- reaction chamber on the inner upper branch -->
+        <path class="wire" d="M 1014 170 a 26 26 0 1 0 52 0 a 26 26 0 1 0 -52 0" stroke="url(#nflow)" stroke-width="1.5"/>
+        <path class="wire" d="M1066 170 H 1160" stroke="url(#nflow)" stroke-width="1.5"/>
+      </g>
+
+      <!-- laminar streams: hidden until the etch completes -->
+      <g class="streams">
+        <!-- two parallel non-mixing streams through the trunk and mixer -->
+        <g filter="url(#nsoft)">
+          <path d="M0 210 H 180 C 210 210, 210 150, 240 150 C 270 150, 270 210, 300 210 C 330 210, 330 150, 360 150 C 390 150, 390 210, 420 210 H 480" transform="translate(0 -2.2)" stroke="#A78BFA" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="70 630">
+            <animate attributeName="stroke-dashoffset" from="700" to="0" dur="5s" repeatCount="indefinite"/>
+          </path>
+          <path d="M0 210 H 180 C 210 210, 210 150, 240 150 C 270 150, 270 210, 300 210 C 330 210, 330 150, 360 150 C 390 150, 390 210, 420 210 H 480" transform="translate(0 2.2)" stroke="#22D3EE" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="70 630">
+            <animate attributeName="stroke-dashoffset" from="700" to="0" dur="5s" begin="0.35s" repeatCount="indefinite"/>
+          </path>
+        </g>
+        <!-- branch streams -->
+        <path d="M480 210 C 520 210, 520 120, 560 120 H 700 C 740 120, 740 70, 780 70 H 1160" stroke="#A78BFA" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="60 560" filter="url(#nsoft)">
+          <animate attributeName="stroke-dashoffset" from="620" to="0" dur="6s" repeatCount="indefinite"/>
+        </path>
+        <path d="M480 210 C 520 210, 520 300, 560 300 H 660 C 700 300, 700 350, 740 350 H 1160" stroke="#22D3EE" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="60 560" filter="url(#nsoft)">
+          <animate attributeName="stroke-dashoffset" from="620" to="0" dur="6.8s" begin="0.8s" repeatCount="indefinite"/>
+        </path>
+        <!-- droplets riding the full routes -->
+        <circle r="3.2" fill="#22D3EE" filter="url(#nsoft)">
+          <animateMotion dur="9s" repeatCount="indefinite"><mpath href="#lam1"/></animateMotion>
+        </circle>
+        <circle r="2.8" fill="#A78BFA" filter="url(#nsoft)">
+          <animateMotion dur="10s" begin="1.5s" repeatCount="indefinite"><mpath href="#lam2"/></animateMotion>
+        </circle>
+        <circle r="2.6" fill="#67E8F9" filter="url(#nsoft)">
+          <animateMotion dur="11s" begin="3s" repeatCount="indefinite"><mpath href="#lam3"/></animateMotion>
+        </circle>
+      </g>
+
+      <!-- junction nodes -->
+      <circle class="node" data-at="0.45" cx="480" cy="210" r="6" fill="#0E0E1A" stroke="url(#nflow)" stroke-width="2"/>
+      <circle class="node" data-at="0.7" cx="700" cy="120" r="5" fill="#0E0E1A" stroke="url(#nflow)" stroke-width="2"/>
+      <circle class="node" data-at="0.7" cx="660" cy="300" r="5" fill="#0E0E1A" stroke="url(#nflow)" stroke-width="2"/>
+      <circle class="node" data-at="0.95" cx="1120" cy="70" r="4" fill="#A78BFA"/>
+      <circle class="node" data-at="0.95" cx="1040" cy="170" r="4" fill="#22D3EE"/>
+      <circle class="node" data-at="0.95" cx="1120" cy="250" r="4" fill="#8B5CF6"/>
+      <circle class="node" data-at="0.95" cx="1120" cy="350" r="4" fill="#22D3EE"/>
+    </svg>
+  </div>
+  <div class="container micro-content">
+    <div class="kicker reveal">Microfluidics</div>
+    <h2 class="reveal">Chips that were <span class="grad">impossible to print</span></h2>
+    <p class="muted reveal" style="max-width:640px;">Microfluidic chips demand two things SLA could never deliver together: extremely fine channels and optical clarity. PDMS soft lithography was the only path. Not anymore.</p>
+    <div class="compare reveal">
+      <div class="compare-col old">
+        <h3>The old way: PDMS</h3>
+        <ul>
+          <li>Cleanroom master molds</li>
+          <li>Manual casting and bonding</li>
+          <li>Days per design iteration</li>
+          <li>Limited geometry freedom</li>
+        </ul>
+      </div>
+      <div class="compare-arrow" aria-hidden="true">→</div>
+      <div class="compare-col new">
+        <h3>The Aionik way: SLA</h3>
+        <ul>
+          <li>Print directly, no molds</li>
+          <li>Ultra-fine, crystal-clear channels</li>
+          <li>Iterate designs in hours</li>
+          <li>Full 3D channel geometry</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="why-section">
+  <div class="container">
+    <div class="kicker reveal">Why It Matters</div>
+    <h2 class="reveal">Three walls, <span class="grad">broken at once</span></h2>
+    <div class="glass-grid">
+      <div class="glass sheen reveal">
+        <span class="num">01</span>
+        <h3>No More IPA</h3>
+        <p>Eliminate solvent purchase, handling, storage, and disposal from your entire post-processing chain.</p>
+      </div>
+      <div class="glass sheen reveal">
+        <span class="num">02</span>
+        <h3>No Traditional Cure</h3>
+        <p>Skip the UV chamber. Our process finishes parts without the surface degradation of conventional curing.</p>
+      </div>
+      <div class="glass sheen reveal">
+        <span class="num">03</span>
+        <h3>Microfluidics on SLA</h3>
+        <p>Extremely fine, extremely clear chips — previously the exclusive domain of PDMS soft lithography.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="team" class="team-section">
+  <div class="container">
+    <div class="kicker reveal">Leadership</div>
+    <h2 class="reveal">The team behind <span class="grad">the process</span></h2>
+    <p class="muted reveal" style="max-width:640px;">Founded in San Antonio, Aionik pairs deep microfluidics and materials research with commercial and product experience.</p>
+
+    <div class="team-grid">
+
+      <div class="team-card sheen reveal">
+        <div class="avatar" aria-hidden="true">
+          <svg viewBox="0 0 120 120" fill="none">
+            <defs>
+              <linearGradient id="avEdge" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#8B5CF6"/>
+                <stop offset="1" stop-color="#22D3EE"/>
+              </linearGradient>
+              <clipPath id="avClip"><circle cx="60" cy="60" r="55"/></clipPath>
+            </defs>
+            <circle cx="60" cy="60" r="55" fill="rgba(255,255,255,0.03)" stroke="url(#avEdge)" stroke-width="1.5"/>
+            <g clip-path="url(#avClip)">
+              <path d="M0 88 C 30 80, 50 98, 80 90 S 115 78, 125 84" stroke="rgba(34,211,238,0.35)" stroke-width="2"/>
+              <path d="M0 100 C 34 92, 58 108, 86 100 S 118 90, 126 96" stroke="rgba(139,92,246,0.3)" stroke-width="2"/>
+            </g>
+            <text x="60" y="56" text-anchor="middle" dominant-baseline="central" fill="#E7E7F2" font-size="28" font-weight="700" letter-spacing="2">DS</text>
+          </svg>
+        </div>
+        <h3>Dane Spencer</h3>
+        <div class="role">Chief Executive Officer</div>
+        <p>Dane holds a bachelor's degree in finance from UTSA and leads Aionik's commercial direction, drawing on a background in financial consulting and business strategy.</p>
+      </div>
+
+      <div class="team-card sheen reveal">
+        <div class="avatar" aria-hidden="true">
+          <svg viewBox="0 0 120 120" fill="none">
+            <circle cx="60" cy="60" r="55" fill="rgba(255,255,255,0.03)" stroke="url(#avEdge)" stroke-width="1.5"/>
+            <g clip-path="url(#avClip)">
+              <path d="M0 88 C 30 80, 50 98, 80 90 S 115 78, 125 84" stroke="rgba(34,211,238,0.35)" stroke-width="2"/>
+              <path d="M0 100 C 34 92, 58 108, 86 100 S 118 90, 126 96" stroke="rgba(139,92,246,0.3)" stroke-width="2"/>
+            </g>
+            <text x="60" y="56" text-anchor="middle" dominant-baseline="central" fill="#E7E7F2" font-size="28" font-weight="700" letter-spacing="2">GS</text>
+          </svg>
+        </div>
+        <h3>Gongchen Sun, PhD</h3>
+        <div class="role">Chief Science Officer</div>
+        <p>Assistant Professor of Biomedical and Chemical Engineering at UTSA. His research spans electrokinetics, micro and nanofluidics, additive manufacturing, and ion exchange membranes.</p>
+        <a class="team-link" href="https://www.sunlabutsa.org/" target="_blank" rel="noopener">Sun Lab at UTSA ↗</a>
+      </div>
+
+      <div class="team-card sheen reveal">
+        <div class="avatar" aria-hidden="true">
+          <svg viewBox="0 0 120 120" fill="none">
+            <circle cx="60" cy="60" r="55" fill="rgba(255,255,255,0.03)" stroke="url(#avEdge)" stroke-width="1.5"/>
+            <g clip-path="url(#avClip)">
+              <path d="M0 88 C 30 80, 50 98, 80 90 S 115 78, 125 84" stroke="rgba(34,211,238,0.35)" stroke-width="2"/>
+              <path d="M0 100 C 34 92, 58 108, 86 100 S 118 90, 126 96" stroke="rgba(139,92,246,0.3)" stroke-width="2"/>
+            </g>
+            <text x="60" y="56" text-anchor="middle" dominant-baseline="central" fill="#E7E7F2" font-size="28" font-weight="700" letter-spacing="2">HS</text>
+          </svg>
+        </div>
+        <h3>Henry Shu</h3>
+        <div class="role">Chief Marketing Officer</div>
+        <p>Assistant Professor of Practice in Marketing at UTSA's Alvarez College of Business, with biology degrees from UC Berkeley and an MBA from UTSA. His career spans genomics research and product marketing across biotech, pharma, diagnostics, and software.</p>
+      </div>
+
+      <div class="team-card sheen reveal">
+        <div class="avatar" aria-hidden="true">
+          <svg viewBox="0 0 120 120" fill="none">
+            <circle cx="60" cy="60" r="55" fill="rgba(255,255,255,0.03)" stroke="url(#avEdge)" stroke-width="1.5"/>
+            <g clip-path="url(#avClip)">
+              <path d="M0 88 C 30 80, 50 98, 80 90 S 115 78, 125 84" stroke="rgba(34,211,238,0.35)" stroke-width="2"/>
+              <path d="M0 100 C 34 92, 58 108, 86 100 S 118 90, 126 96" stroke="rgba(139,92,246,0.3)" stroke-width="2"/>
+            </g>
+            <text x="60" y="56" text-anchor="middle" dominant-baseline="central" fill="#E7E7F2" font-size="28" font-weight="700" letter-spacing="2">GR</text>
+          </svg>
+        </div>
+        <h3>Guillermo Ramirez-Alvarado</h3>
+        <div class="role">Chief Technology Officer</div>
+        <p>Guillermo holds a bachelor's degree in biomedical engineering from UTSA, where he is currently pursuing a PhD in biomedical engineering.</p>
+      </div>
+
+      <div class="team-card sheen reveal">
+        <div class="avatar" aria-hidden="true">
+          <svg viewBox="0 0 120 120" fill="none">
+            <circle cx="60" cy="60" r="55" fill="rgba(255,255,255,0.03)" stroke="url(#avEdge)" stroke-width="1.5"/>
+            <g clip-path="url(#avClip)">
+              <path d="M0 88 C 30 80, 50 98, 80 90 S 115 78, 125 84" stroke="rgba(34,211,238,0.35)" stroke-width="2"/>
+              <path d="M0 100 C 34 92, 58 108, 86 100 S 118 90, 126 96" stroke="rgba(139,92,246,0.3)" stroke-width="2"/>
+            </g>
+            <text x="60" y="56" text-anchor="middle" dominant-baseline="central" fill="#E7E7F2" font-size="28" font-weight="700" letter-spacing="2">GG</text>
+          </svg>
+        </div>
+        <h3>Gabriel Garibaldi</h3>
+        <div class="role">Director of Applied Science</div>
+        <p>Gabriel holds a bachelor's degree in biomedical engineering from UTSA and is currently pursuing a PhD in chemical engineering there.</p>
+      </div>
+
+    </div>
+    <p class="team-note">Headshots coming soon</p>
+  </div>
+</section>
+
+<section id="connect" class="cta-band">
+  <div class="container">
+    <div class="inner reveal">
+      <div class="kicker">Investors · Customers · Partners</div>
+      <h2>Build the future of <span class="grad">additive precision</span> with us</h2>
+      <p class="muted" style="max-width: 520px; margin: 0 auto 40px;">We are in active market research across microfluidics and beyond. If precision post-processing changes your industry, we want to hear from you.</p>
+      <a href="mailto:contact@aionik.example" class="btn btn-primary">Contact Aionik</a>
+      <p class="cta-note">[Placeholder email — replace with real contact]</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <a href="#" class="logo" style="font-size:15px;">AION<span>IK</span></a>
+    <p>© 2026 Aionik Technologies. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

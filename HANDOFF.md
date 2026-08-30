@@ -56,8 +56,9 @@ purpose until Dane fills them or says the page is ready.
 - Team: 5 real headshots in circular gradient-ring avatars. Guillermo and Gabriel are PhD
   HOLDERS (not "pursuing"). Gongchen keeps his Sun Lab link. NO LinkedIn links (see decision).
 - Evidence IP row (REAL): "US 2026/0131529 A1 — patent pending", filed July 2025, published
-  May 2026, assigned to University of Texas System, exclusive license to Aionik, terms in final
-  negotiation. Origin row now points to the droplet figure above.
+  May 2026, assigned to University of Texas System, exclusive license to Aionik. The
+  "terms in final negotiation" qualifier was REMOVED on 30 Aug 2026 at Dane's instruction:
+  the page now states the exclusive license plainly. Origin row points to the droplet figure.
 - Contact: a NATIVE styled form in the closing CTA band posts straight to the Google Form.
   Nav and hero "Book a call" now scroll to `#book` instead of opening a new tab. Responses
   still land in the same linked Google Sheet. Fields, validation, honeypot, and the success
@@ -120,7 +121,7 @@ purpose until Dane fills them or says the page is ready.
 - Pitch deck: not ready, and the "deck on the way" note was removed since there is no round.
   Revisit when both a deck and a round exist.
 - Patent language: "patent pending" only, NEVER "patented"/"granted" (published application,
-  A1 kind code). Exclusive license from UTSA, terms still finalizing.
+  A1 kind code). Exclusive license from UT System, stated plainly, no negotiation qualifier.
 - Page is `noindex`. Originally because the round was not public; now because Dane shares it
   by direct link only. Confirm before removing.
 - Page is UNLINKED from the homepage. Not yet decided whether to add a footer link.

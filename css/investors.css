@@ -446,11 +446,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   max-width: 720px; margin-top: 26px;
   font-size: 17.5px; line-height: 1.75; color: var(--muted);
 }
+/* Solid violet, not the title gradient: these are figures, and they need to
+   read as one emphatic colour rather than as a heading treatment. */
 .cost-brief b {
-  font-weight: 800; font-size: 1.1em; white-space: nowrap;
-  letter-spacing: -0.01em;
-  background: linear-gradient(90deg, var(--uv), var(--cyan));
-  -webkit-background-clip: text; background-clip: text; color: transparent;
+  font-weight: 800; font-size: 1.12em; white-space: nowrap;
+  letter-spacing: -0.01em; color: #B99BFF;
 }
 .cost-brief-link { margin-top: 16px; font-size: 15px; }
 .cost-brief-link a {
@@ -502,6 +502,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   margin-bottom: 10px; letter-spacing: -0.01em;
 }
 .pdms-sum p { font-size: 14.5px; color: var(--muted); line-height: 1.6; }
+
+/* The wait card sits under the 2x2 grid at full width, because elapsed time
+   is the consequence of everything in those four cards. */
+.pdms-wait {
+  margin-top: 18px; padding: 28px 30px;
+  border: 1px solid rgba(139, 92, 246, 0.32); border-radius: 16px;
+  background: linear-gradient(120deg, rgba(139, 92, 246, 0.10), rgba(34, 211, 238, 0.04) 70%, transparent);
+}
+.pdms-wait-k {
+  font-size: 15.5px; font-weight: 700; color: var(--uv);
+  margin-bottom: 10px; letter-spacing: -0.01em;
+}
+.pdms-wait p { font-size: 15px; color: var(--muted); line-height: 1.65; }
+.pdms-wait b { color: #B99BFF; font-weight: 800; white-space: nowrap; }
 
 .pdms-cta-row {
   display: flex; align-items: center; gap: 18px; flex-wrap: wrap;

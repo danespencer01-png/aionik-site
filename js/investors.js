@@ -4,11 +4,12 @@
    Both stay OFF while their value is an empty string, so the page never
    ships a broken beacon. Filling one in activates only that one.
 
-   CF_BEACON_TOKEN
+   CF_BEACON_TOKEN  (SET 30 Aug 2026)
      Cloudflare dashboard -> Analytics & Logs -> Web Analytics -> Add a site
-     (use danespencer01-png.github.io) -> copy the value of "token" out of
-     the snippet it gives you. It is a 32 character hex string.
-     Counts visits. No cookies, so no consent banner needed.
+     -> aioniklabs.com -> MANUAL / JS snippet path -> the "token" value.
+     Manual is required: the DNS records are grey cloud (DNS only) so traffic
+     never passes through Cloudflare's proxy, and automatic setup would
+     measure nothing. Counts visits, no cookies, no consent banner needed.
 
    CLARITY_PROJECT_ID
      clarity.microsoft.com -> sign in -> New project -> copy the id out of
@@ -17,7 +18,7 @@
      expect EU visitors you likely need a consent banner. Clarity masks form
      input by default, so what people type is not recorded.
    ================================================================== */
-const CF_BEACON_TOKEN    = '';
+const CF_BEACON_TOKEN    = 'dc964eef76044a8b9c527ac23f86b6d6';
 const CLARITY_PROJECT_ID = '';
 
 (() => {

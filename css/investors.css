@@ -69,18 +69,9 @@ a.logo:hover .logo-mark { opacity: 0.82; }
 /* footer lockup sits quieter than the nav */
 .footer-logo .logo-mark { color: var(--muted); opacity: 0.85; }
 
-/* Trademark mark on the wordmark. Aionik is unregistered, so TM is correct
-   and R would not be. Kept small and slightly faded so it reads as a legal
-   mark rather than as part of the logo, and letter-spacing is zeroed out so
-   it does not inherit the logo's 0.14em tracking. */
-.logo .tm {
-  font-size: 0.38em;
-  font-weight: 700;
-  letter-spacing: 0;
-  vertical-align: super;
-  margin-left: 3px;
-  opacity: 0.7;
-}
+/* NOTE: the base `.logo .tm` sizing/positioning moved to styles.css so every
+   page (including the future main site) shares it. The `.logo .logo-word .tm`
+   rule above only tunes the TM colour for this page's option-B lockup. */
 
 /* ---------- Hero (calm, no canvas) ---------- */
 .inv-hero {

@@ -45,6 +45,18 @@ nav {
   background: linear-gradient(90deg, var(--violet), var(--cyan));
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
+/* Trademark mark on the wordmark. Aionik is unregistered, so TM is correct
+   and R would not be. Kept small and slightly faded so it reads as a legal
+   mark rather than as part of the logo, and letter-spacing is zeroed out so
+   it does not inherit the logo's 0.14em tracking. Shared by all pages. */
+.logo .tm {
+  font-size: 0.38em;
+  font-weight: 700;
+  letter-spacing: 0;
+  vertical-align: super;
+  margin-left: 3px;
+  opacity: 0.7;
+}
 .nav-links { display: flex; gap: 34px; align-items: center; }
 .nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; transition: color 0.2s; }
 .nav-links a:hover { color: var(--uv); }

@@ -68,6 +68,7 @@ market are not.
 |---|---|
 | `index.html` | The homepage. This is the investor page; it became the root on 30 Aug 2026. |
 | `pdms.html` | Deep dive on how a PDMS chip is made, what it costs, how long it takes, how it fails. |
+| `cleanrooms.html` | Deep dive on cleanrooms: what one is, the ISO classes, which industries need one, what it costs to build and to keep open, and why microfluidics needs it only for the mold. Added 31 Aug 2026. Linked from `index.html` and `pdms.html`, not in either nav, same as `pdms.html`. |
 | `investors.html` | Redirect stub to `/`. Keeps links shared before the restructure working. **Do not delete.** |
 | `main-site-draft.html` | The parked v1 marketing homepage. `noindex`, unlinked. Still has a placeholder contact address (`contact@aionik.example`). Kept for when the main site is resumed. |
 | `css/styles.css` | Base design system. Shared. |
@@ -106,9 +107,20 @@ and what we need → what making a chip actually takes (summary, links to pdms.h
 evidence → contact form.
 
 **pdms.html** — hero → eleven process steps in two phases, each with a failure note → bonding
-window diagram → elapsed time timeline → the operator skill problem → six failure modes →
+window diagram → elapsed time timeline → the operator skill problem → six failure modes plus
+the small molecule absorption block →
 service life + seam cross-section diagram → cost (production, research bench, injection
-molding, cleanroom) → video references → closing.
+molding, the room the mold is made in) → video references → closing.
+
+**cleanrooms.html** — hero → how a cleanroom works (air changes, pressure, personnel) → the
+ISO class table → six industries that require one → where a cleanroom is required in PDMS
+fabrication (two phase rows, then why the master requires it, how clean it has to be, where
+the requirement is avoidable) → what it costs → closing.
+
+The microfluidics section sits between Applications and Cost on purpose (Dane, 31 Aug 2026):
+the page reads what a room is, how it is graded, who needs one, where it lands in our process,
+then what it costs. Section backgrounds alternate plain and `team-section` down the page, so
+moving a section means moving that class too.
 
 ## HARD RULES — do not break these
 
@@ -124,6 +136,25 @@ molding, cleanroom) → video references → closing.
 - **Confirm before pushing to main.** (Standing exception: Dane went autonomous on 30 Aug 2026
   for the analytics and handoff work.)
 - **No business plan detail.** No beachhead, adjacency, market strategy, hiring plans, roadmap.
+- **Small molecule absorption: the site may state the material class argument, never a measured
+  result.** `pdms.html` documents absorption as a PDMS limitation, sourced, then notes that
+  uptake is characteristic of elastomers while glassy materials (thermoplastics and cured
+  printed resins) show mainly surface adsorption, so lower uptake is an **expected** benefit of
+  a resin chip. That sentence ends with "one we have not yet measured against a PDMS control"
+  and **that qualifier stays until the test exists.** Never upgrade this to a demonstrated
+  result, and never put a number on it. See RESEARCH NOTES for the mechanism and the test.
+- **The cleanroom belongs to the master mold, not to chip casting.** Dane flagged 31 Aug 2026
+  that an informed scientist or investor would catch an overbroad claim here. Photolithography
+  on the silicon wafer is the step that needs the room. Casting, curing, and bonding do not.
+  Never widen this back out.
+- **Never cite a single ISO class for master fabrication.** There is no mandated class, and
+  saying "ISO 7" flatly is the kind of claim a scientist would challenge. The site states the
+  requirement as scaling with the finest feature: ISO 5 to ISO 6 for fine geometry, ISO 7 for
+  channels in the tens of microns, and a standard lab with a laminar flow hood over the
+  exposure steps for less demanding work. Corresponding build cost is $250 to $1,000 per sq ft.
+  This wording appears in three places and must stay consistent: `index.html` cost brief,
+  `pdms.html` "The room the mold is made in", and the "How clean it has to be" subsection of
+  `cleanrooms.html`.
 - **73 µm and 13.1 µm in the proof figure are printed in the source patent image. Do not alter.**
 - **The figure image itself says "Spinning Desicurer Method."** The caption says "Aionik curing
   process" and names the figure's label, so a reader can reconcile them. Dane does not want the
@@ -136,14 +167,94 @@ molding, cleanroom) → video references → closing.
 | Research bench $30k–$65k; aligner ~$50k, exposer ~$15k, plasma ~$7k, spin coater ~$7k | [Micromachines 2018 (PMC6187812)](https://pmc.ncbi.nlm.nih.gov/articles/PMC6187812/), peer reviewed |
 | Production aligners and bonders $150k–$500k+, quote only | Market ranges. [ClassOne SUSS+EVG catalogue](https://www.classoneequipment.com/suss-and-evg) cited as proof the class is quote only |
 | PVA TePla 660 $35,000 / ION-100 $29,500, used | [BidService](https://bidservice.com/collections/pva-tepla) listings, independently verified |
-| Cleanroom per sq ft by ISO class | [Labs USA](https://labs-usa.com/blog/prefabricated-cleanroom-cost/) |
+| Cleanroom per sq ft by ISO class, prefabricated | [Labs USA](https://labs-usa.com/blog/prefabricated-cleanroom-cost/) |
+| Cleanroom per sq ft by ISO class, constructed; ISO 7 at 60 to 90 ACH; HVAC and filtration 35 to 55% of build budget; validation adds 8 to 18% | [Terrapin Consulting Group, 2026](https://terrapincg.com/news/cleanroom-construction-cost-per-square-foot-2026) |
+| ISO 14644-1 particle limits (3,520 / 35,200 / 352,000 / 3,520,000 at 0.5 µm for ISO 5/6/7/8) | [ISO 14644-1:2015](https://www.iso.org/standard/53394.html), tabulated by [GMP Insiders](https://gmpinsiders.com/iso-cleanroom-classification/) |
+| Masters have been fabricated outside a cleanroom with dry film photoresist, and features to 5 µm replicated without one | [PMC6471384](https://pmc.ncbi.nlm.nih.gov/articles/PMC6471384/), [PMC8622653](https://pmc.ncbi.nlm.nih.gov/articles/PMC8622653/) |
+| ISO 5 to ISO 6 for fine master geometry, ISO 7 for tens of microns, laminar flow hood for less demanding work | **Dane's figure**, supplied 31 Aug 2026. No single published standard mandates a class for this, which is exactly why the site states it as a range tied to feature size rather than one number. Searched for a citable source and none exists in those terms. |
 | Injection tooling $15k–$100k+ | [Meridian Medical](https://www.meridian-medical.com/how-much-do-injection-moulding-tools-for-medical-devices-cost/), [Formlabs](https://formlabs.com/blog/injection-molding-cost/) |
 | Lead times: 1–12 weeks outsourced, days in house | [uFluidix](https://www.ufluidix.com/microfluidics-technical-notes/purchase-pdms-chips-or-diy/) |
 | Market: $27B median today, $67B median forecast, 8.3–24% CAGR | Dane's 8-firm analyst workbook, all eight linked on the page |
 | Plasma bonding window ~15 min to 1 hr | [Harrick Plasma](https://harrickplasma.com/pdms-bonding/), [Langmuir 2024](https://pubs.acs.org/doi/10.1021/acs.langmuir.4c03086) |
 | Bonding failure modes | [PMC11618810](https://pmc.ncbi.nlm.nih.gov/articles/PMC11618810/) |
+| PDMS absorbs small hydrophobic molecules; over 90% of a dye into the walls in 24 hrs | [Toepke and Beebe, Lab Chip 2006, 6(12):1484](https://doi.org/10.1039/b612140c), review in [Micromachines 2022](https://doi.org/10.3390/mi13050713). **Caveat:** both the paper and PubMed were captcha or paywall blocked, so the 90% figure is corroborated from two independent search summaries rather than read in the primary source. Verify before leaning on the number harder than the page currently does. |
 | 30 usable chips in 4 hrs, one operator, two printers, two Aionik curing devices | **Dane's own figure.** Not externally verifiable. Was 4.5 hrs; Dane simplified it to 4 on 31 Aug 2026 and reframed the bullet around scalable capacity rather than a chip count. |
 | "Lowest cost per chip" | **Dane's claim.** Unsourced superlative; the only one on the site. |
+
+**Revised 31 Aug 2026:** the cleanroom build range went from "$250 to $650 per sq ft" to
+"$250 to $1,000" after Dane supplied the ISO 5 to ISO 6 detail, since the tighter classes cost
+more. The earlier draft of these pages cited ISO 7 alone; that was too narrow and is corrected.
+
+**Removed 31 Aug 2026:** the homepage cost brief claimed the cleanroom "bills up to $390,000 a
+year." No source for it existed on either page and none could be found, and the sourced tables
+are build cost per square foot, not annual operating cost. It was replaced with the sourced
+ISO 7 build range plus a qualitative statement about the recurring bill. If that figure came
+from Dane, it can go back with a note saying so.
+
+## RESEARCH NOTES, not on the site
+
+Gathered 31 Aug 2026 at Dane's request. **None of this is published on any page.** It is here
+so the next session does not re-derive it.
+
+### Thermoplastic hot embossing
+
+The press based route to a chip, and the missing third option next to soft lithography and
+injection molding.
+
+- **Process:** a thermoplastic sheet is heated just above its glass transition, pressed against
+  a mold insert under high force, held while the polymer flows into the features, cooled under
+  pressure, and demolded. Ports are drilled and a lid is bonded on afterwards.
+- **Reported parameters:** PMMA around 180°C at 240 bar for 6 minutes, roughly 11 minutes total
+  cycle per chip. Another study reports 115°C and 10 kN for 8 minutes on features 56 µm wide and
+  120 µm deep. Inserts are nickel shims, brass, or micromilled aluminum.
+- **Materials:** PMMA, COC, COP, polycarbonate, polystyrene. COC matters most: low
+  autofluorescence, good chemical resistance, and far lower small molecule absorption than PDMS.
+- **Economics:** tooling roughly $5,000 to $50,000 per mold, an order of magnitude under
+  injection molding. Viable above about a thousand units, uneconomic for one offs. Cycle is
+  minutes per part, against seconds for injection molding.
+- **Used for:** diagnostic cartridges, capillary electrophoresis devices, point of care
+  consumables, and pilot runs before committing to injection molding tooling.
+- **Geometric limit, and it is decisive for us.** Embossing is surface replication demolded
+  along a single axis, so it cannot produce undercuts, internal voids, or enclosed volumes. It
+  makes open relief in a flat sheet, which is why every embossed chip needs a separate bonding
+  step. **Dane confirmed 31 Aug 2026 that the organoid housings are not shallow and cannot be
+  made shallow, so hot embossing cannot produce them at all.** A printed part is built in
+  layers and has no demolding constraint. This is a real and defensible differentiator.
+
+### Small molecule absorption, and Dane's hypothesis
+
+The mechanism, which is the part worth understanding before making any claim:
+
+- PDMS is a rubbery elastomer far above its glass transition, with loosely crosslinked chains
+  and high free volume. Small hydrophobic molecules diffuse into the bulk. This is **absorption**
+  and it is why PDMS is unusually bad here.
+- In glassy thermosets and thermoplastics the dominant mechanism is instead **adsorption**, at
+  the surface, with much less bulk uptake. A cured SLA resin is a glassy thermoset.
+
+**Dane's hypothesis (31 Aug 2026), explicitly a hypothesis and not for the site:** the Aionik
+surface is smoother, so uptake should be lower; and he believes SLA resins absorb less than PDMS
+regardless. The literature supports the mechanism behind both halves:
+
+1. Moving from elastomer to glassy thermoset removes most of the bulk absorption term. This
+   follows from material class, not from anything Aionik does.
+2. The residual term in a glassy thermoset is surface adsorption, which scales with surface
+   area, so a smoother surface plausibly reduces it. This is the part that would be Aionik's
+   own contribution.
+
+**Caveats before this ever becomes a claim:**
+- Not all SLA resins behave alike. Researchers specifically developed PEGDA-co-PEGMEMA for low
+  drug absorptivity, which implies baseline methacrylates have enough of a problem to be worth
+  solving.
+- The opposite direction is the known weakness of printed resins: uncured monomer and
+  photoinitiator leaching out, which is cytotoxic. Aionik's existing biocompatibility claim
+  speaks to that, and it is the better supported story today.
+- **The test is cheap and would settle it:** a hydrophobic dye at fixed concentration, time
+  course, measure depletion in an Aionik chip against a PDMS control. That is essentially the
+  Toepke and Beebe protocol. Good candidate for the outstanding third party test data item.
+
+Sources: [Micromachines 2022 on partitioning](https://doi.org/10.3390/mi13050713),
+[Toepke and Beebe 2006](https://doi.org/10.1039/b612140c),
+[Scientific Reports 2025, sorption in PDMS vs COC](https://www.nature.com/articles/s41598-025-97111-2).
 
 ## The contact form
 

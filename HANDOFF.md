@@ -139,7 +139,7 @@ molding, cleanroom) → video references → closing.
 | Market: $27B median today, $67B median forecast, 8.3–24% CAGR | Dane's 8-firm analyst workbook, all eight linked on the page |
 | Plasma bonding window ~15 min to 1 hr | [Harrick Plasma](https://harrickplasma.com/pdms-bonding/), [Langmuir 2024](https://pubs.acs.org/doi/10.1021/acs.langmuir.4c03086) |
 | Bonding failure modes | [PMC11618810](https://pmc.ncbi.nlm.nih.gov/articles/PMC11618810/) |
-| 30 usable chips in 4.5 hrs, two printers, two Aionik curing devices | **Dane's own figure.** Not externally verifiable. |
+| 30 usable chips in 4 hrs, one operator, two printers, two Aionik curing devices | **Dane's own figure.** Not externally verifiable. Was 4.5 hrs; Dane simplified it to 4 on 31 Aug 2026 and reframed the bullet around scalable capacity rather than a chip count. |
 | "Lowest cost per chip" | **Dane's claim.** Unsourced superlative; the only one on the site. |
 
 ## The contact form

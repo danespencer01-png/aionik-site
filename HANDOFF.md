@@ -97,9 +97,11 @@ the eye. It applies to `.cost-table .price` (equipment, tooling, cleanroom build
 - **Never use amber for a neutral quantity.** Non-cost numbers that happen to live in a
   `.cost-table` use `.count`, which stays violet. The ISO particle counts on `cleanrooms.html`
   are the existing example, and they were moved off `.price` when this rule landed.
-- Still open: time figures like the "one to twelve weeks" lead time in `.pdms-wait b` are
-  incumbent costs in every sense except currency, and they are still violet. Dane has not
-  ruled on whether they should go amber too.
+- **The rule is broader than money.** Dane, 31 Aug 2026: any key point that is negative about
+  the incumbent takes amber, "within reason, not overused, to maintain exclusivity." Lead time
+  (`.pdms-wait b`, the one to twelve week wait) is amber for this reason. There are five amber
+  points on the site in total, and that is roughly the ceiling: past about eight the colour
+  stops carrying meaning. Add one only by removing one.
 
 **Logo lockup:** the AK monogram carries the gradient and the AIONIK wordmark is plain white
 (option B of four Dane reviewed on 30 Aug 2026). The `.logo .logo-word` rule in
@@ -169,6 +171,14 @@ moving a section means moving that class too.
   `pdms.html` "The room the mold is made in", and the "How clean it has to be" subsection of
   `cleanrooms.html`.
 - **73 µm and 13.1 µm in the proof figure are printed in the source patent image. Do not alter.**
+- **Rhetoric audit, 31 Aug 2026.** Dane reviewed every heading and bold lead-in for tone.
+  Changed: "A chip is two pieces pretending to be one" became "A chip is two pieces bonded at
+  an interface"; "The comparison above is easy to read past" became "The comparison is worth
+  unpacking". Deliberately KEPT, so do not "fix" them: the hero ("The bottleneck in research
+  isn't ideas"), "Soft lithography iterates but cannot produce. Molding produces but cannot
+  iterate. We hold both", "Regulators set a clock", "And then you wait", "Printing finally
+  caught up", "The wait is the real constraint", "The seam carries the load". A homepage is
+  allowed voice; the deep dives are where neutral register matters most.
 - **`pdms.html` closing headline.** It read "None of this is anyone's fault" until 31 Aug 2026,
   when Dane pointed out that absolution is not the page's point. It is now "The constraint is
   built into the process," which matches the body copy underneath it: the mold, the room, and

@@ -539,7 +539,10 @@ a.logo:hover .logo-mark { opacity: 0.82; }
   margin-bottom: 10px; letter-spacing: -0.01em;
 }
 .pdms-wait p { font-size: 15px; color: var(--muted); line-height: 1.65; }
-.pdms-wait b { color: #B99BFF; font-weight: 800; white-space: nowrap; }
+/* Lead time is an incumbent cost in every sense except currency, so it takes the
+   same amber as money. Dane's rule, 31 Aug 2026: key competitor negatives get
+   amber, used sparingly so it keeps its force. */
+.pdms-wait b { color: var(--cost); font-weight: 800; white-space: nowrap; }
 
 .pdms-cta-row {
   display: flex; align-items: center; gap: 18px; flex-wrap: wrap;

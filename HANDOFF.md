@@ -28,10 +28,13 @@ const CLARITY_PROJECT_ID = 'yaet5grufy';                        // Microsoft Cla
 - CTA clicks and form submits fire as Clarity custom events, so the funnel shows up next to
   the replays.
 
-**Working copy:** `~/Documents/aionik-site` is the live clone, clean and in sync with
-`origin/main`. A second clone at `~/aionik-site` is stale and its `origin/main` ref is
-unfetched, so `git status` there reads clean when it is not. Pull it or delete it before
-using it.
+**Working copy: `~/aionik-site`, and only that one.** From 28 to 31 Aug 2026 two clones
+existed, the second at `~/Documents/aionik-site`, because sessions started in different
+directories and cloned fresh instead of finding the existing copy. Both were genuinely used
+and they forked on 30 Aug, which is what merge commit `31e1096` reconciles. The duplicate
+was retired on 31 Aug 2026 after both trees were confirmed byte identical and fully pushed;
+it sits in the Trash as `aionik-site-duplicate-clone-31aug2026` until emptied.
+**Before starting work, `cd ~/aionik-site` and `git pull`. Do not clone a second copy.**
 
 ---
 

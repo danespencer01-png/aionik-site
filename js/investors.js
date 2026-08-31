@@ -14,15 +14,15 @@
    CLARITY_PROJECT_ID  (SET 30 Aug 2026)
      clarity.microsoft.com -> sign in -> New project -> copy the id out of
      the install snippet (the last argument, a short alphanumeric string).
-     Heatmaps and session replay. NOTE: Clarity does set cookies, so if you
-     expect EU visitors you likely need a consent banner. Clarity masks form
+     Heatmaps and session replay. Clarity sets a cookie, so it loads only
+     after the visitor accepts the consent bar below. Clarity masks form
      input by default, so what people type is not recorded.
    ================================================================== */
 const CF_BEACON_TOKEN    = 'dc964eef76044a8b9c527ac23f86b6d6';
 const CLARITY_PROJECT_ID = 'yaet5grufy';
 
 (() => {
-  // Cloudflare Web Analytics
+  // Cloudflare Web Analytics. No cookies, no consent required, always on.
   if (CF_BEACON_TOKEN) {
     const s = document.createElement('script');
     s.defer = true;
@@ -30,14 +30,62 @@ const CLARITY_PROJECT_ID = 'yaet5grufy';
     s.setAttribute('data-cf-beacon', JSON.stringify({ token: CF_BEACON_TOKEN }));
     document.head.appendChild(s);
   }
-  // Microsoft Clarity
-  if (CLARITY_PROJECT_ID) {
+
+  /* Microsoft Clarity, gated behind consent.
+
+     Clarity sets a cookie and records sessions, so it stays asleep until the
+     visitor accepts. The answer is remembered per browser, so the bar shows
+     once. Everything below is a no-op while CLARITY_PROJECT_ID is empty: no
+     bar appears and nothing is stored, so blanking the id still fully
+     disables the feature.
+
+     To see the bar again while testing:
+       localStorage.removeItem('aionik-consent')
+     localStorage throws in some privacy modes, so every access is guarded.
+     A browser that refuses to store the answer simply asks again next time. */
+  if (!CLARITY_PROJECT_ID) return;
+
+  const KEY = 'aionik-consent';
+  const recall = () => { try { return localStorage.getItem(KEY); } catch (e) { return null; } };
+  const remember = v => { try { localStorage.setItem(KEY, v); } catch (e) {} };
+
+  const startClarity = () => {
     (function (c, l, a, r, i, t, y) {
       c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
       t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i;
       y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
     })(window, document, 'clarity', 'script', CLARITY_PROJECT_ID);
-  }
+  };
+
+  const answered = recall();
+  if (answered === 'yes') { startClarity(); return; }
+  if (answered === 'no') return;
+
+  const bar = document.createElement('div');
+  bar.className = 'consent';
+  bar.setAttribute('role', 'dialog');
+  bar.setAttribute('aria-label', 'Cookie choice');
+  bar.innerHTML =
+    '<p>We count visits anonymously. With your permission we also record how visitors move ' +
+    'through the page so we can improve it, which sets a cookie. Nothing you type is recorded.</p>' +
+    '<div class="consent-btns">' +
+      '<button type="button" class="consent-no">Decline</button>' +
+      '<button type="button" class="consent-yes">Accept</button>' +
+    '</div>';
+
+  bar.querySelector('.consent-yes').addEventListener('click', () => {
+    remember('yes'); bar.remove(); startClarity();
+  });
+  bar.querySelector('.consent-no').addEventListener('click', () => {
+    remember('no'); bar.remove();
+  });
+
+  const show = () => {
+    document.body.appendChild(bar);
+    requestAnimationFrame(() => bar.classList.add('in'));
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', show);
+  else show();
 })();
 
 /* Investor page — CTA click tracking.

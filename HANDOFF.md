@@ -88,6 +88,19 @@ Tokens in `css/styles.css`: `--bg #07070E`, `--surface #0E0E1A`, `--violet #8B5C
 
 `.grad` is the violet→cyan gradient used for **headings only**.
 
+**Cost figures are amber (`--cost: #F0A94C`), and that is an argument, not a decoration.**
+Dane's rule, 31 Aug 2026: any cost that separates Aionik from the incumbent, meaning every
+cost the incumbent carries and we do not, is set in amber so it reads as a warning and pulls
+the eye. It applies to `.cost-table .price` (equipment, tooling, cleanroom builds on
+`pdms.html` and `cleanrooms.html`) and to `.cost-brief b` on the homepage.
+- **Never use amber for an Aionik figure.** If we ever publish our own cost, it is not amber.
+- **Never use amber for a neutral quantity.** Non-cost numbers that happen to live in a
+  `.cost-table` use `.count`, which stays violet. The ISO particle counts on `cleanrooms.html`
+  are the existing example, and they were moved off `.price` when this rule landed.
+- Still open: time figures like the "one to twelve weeks" lead time in `.pdms-wait b` are
+  incumbent costs in every sense except currency, and they are still violet. Dane has not
+  ruled on whether they should go amber too.
+
 **Logo lockup:** the AK monogram carries the gradient and the AIONIK wordmark is plain white
 (option B of four Dane reviewed on 30 Aug 2026). The `.logo .logo-word` rule in
 `investors.css` deliberately overrides the `.logo span` gradient in `styles.css`, which would
@@ -156,6 +169,10 @@ moving a section means moving that class too.
   `pdms.html` "The room the mold is made in", and the "How clean it has to be" subsection of
   `cleanrooms.html`.
 - **73 µm and 13.1 µm in the proof figure are printed in the source patent image. Do not alter.**
+- **`pdms.html` closing headline.** It read "None of this is anyone's fault" until 31 Aug 2026,
+  when Dane pointed out that absolution is not the page's point. It is now "The constraint is
+  built into the process," which matches the body copy underneath it: the mold, the room, and
+  the trained hands are each a structural limit, and we removed the step that forces them.
 - **The figure image itself says "Spinning Desicurer Method."** The caption says "Aionik curing
   process" and names the figure's label, so a reader can reconcile them. Dane does not want the
   Spinning Desicurer name used as branding.

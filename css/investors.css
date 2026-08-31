@@ -474,7 +474,7 @@ a.logo:hover .logo-mark { opacity: 0.82; }
    read as one emphatic colour rather than as a heading treatment. */
 .cost-brief b {
   font-weight: 800; font-size: 1.12em; white-space: nowrap;
-  letter-spacing: -0.01em; color: #B99BFF;
+  letter-spacing: -0.01em; color: var(--cost);
 }
 .cost-brief-link { margin-top: 16px; font-size: 15px; }
 .cost-brief-link a {

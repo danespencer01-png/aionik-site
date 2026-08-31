@@ -83,7 +83,9 @@
   padding: 15px 16px; color: var(--muted); vertical-align: top;
   border-bottom: 1px solid var(--line);
 }
-.cost-table .price { color: var(--uv); font-weight: 700; white-space: nowrap; }
+.cost-table .price { color: var(--cost); font-weight: 700; white-space: nowrap; }
+/* Non-cost figures in a cost-table layout stay violet: they are data, not our argument. */
+.cost-table .count { color: var(--uv); font-weight: 700; white-space: nowrap; }
 .cost-table tbody tr:hover { background: rgba(255, 255, 255, 0.02); }
 .tag-v, .tag-e {
   display: inline-block; font-size: 10px; font-weight: 700;

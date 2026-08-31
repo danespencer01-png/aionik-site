@@ -7,6 +7,10 @@
   --text: #E7E7F2;
   --muted: #8A8AA3;
   --line: rgba(139, 92, 246, 0.18);
+  /* Incumbent cost figures only. Amber reads as a warning and pulls the eye,
+     which is the point: every one of these numbers is part of our case. Never
+     use it for an Aionik figure or for a neutral quantity. */
+  --cost: #F0A94C;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }

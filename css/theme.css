@@ -126,3 +126,15 @@ section:not(.inv-hero):not(.pdms-hero) .kicker { color: var(--uv); }
 /* Anything inside the dark band that would otherwise take the light-ground mark. */
 .inv-hero .rs-item b, .inv-hero .round-status .dot { color: var(--hero-mark); }
 .inv-hero .logo-word, .pdms-hero .logo-word { color: var(--hero-text); }
+
+/* ---------- 8. Hero stage. Built for near-black; the reflection and the
+     horizon line both read as artifacts on navy, so they go. The photo keeps
+     mix-blend-mode: lighten, which is what knocks its black background out
+     against the band. ---------- */
+.stage-floor, .stage-horizon { display: none !important; }
+.stage-glow {
+  background: radial-gradient(ellipse 58% 50% at 50% 52%,
+    rgba(110, 168, 216, 0.22), rgba(110, 168, 216, 0.06) 55%, transparent 74%) !important;
+  filter: blur(46px) !important;
+}
+.hero-photo .stage-img { filter: contrast(1.05) saturate(1.04) brightness(1.02) !important; }

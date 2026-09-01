@@ -87,16 +87,17 @@
 /* Non-cost figures in a cost-table layout stay violet: they are data, not our argument. */
 .cost-table .count { color: var(--uv); font-weight: 700; white-space: nowrap; }
 .cost-table tbody tr:hover { background: rgba(var(--fill-rgb), 0.02); }
+/* Two states only. "listed" means the figure was verified against a real
+   current listing. "estimate" means no published price exists, which for
+   capital equipment in this class is the normal case, not a research gap. */
 .tag-v, .tag-e {
   display: inline-block; font-size: 10px; font-weight: 700;
   letter-spacing: 0.1em; text-transform: uppercase;
-  padding: 2px 7px; border-radius: 5px; margin-left: 8px; vertical-align: middle;
+  padding: 3px 8px; border-radius: 2px; margin-left: 9px;
+  vertical-align: 1px; white-space: nowrap;
 }
-.tag-v { color: var(--cyan); border: 1px solid rgba(var(--cyan-rgb), 0.4); background: rgba(var(--cyan-rgb), 0.07); }
-.tag-e { color: var(--muted); border: 1px solid rgba(var(--fill-rgb), 0.14); }
-/* "on inquiry" marks equipment that is genuinely not price listed anywhere,
-   which is a fact about the market, not a gap in the research. */
-.tag-q { color: var(--uv); border: 1px solid rgba(var(--uv-rgb), 0.45); background: rgba(var(--violet-rgb), 0.10); }
+.tag-v { color: var(--cyan); border: 1px solid rgba(var(--cyan-rgb), 0.45); background: rgba(var(--cyan-rgb), 0.07); }
+.tag-e { color: var(--muted); border: 1px solid var(--line); background: var(--surface); }
 
 .cost-note {
   margin-top: 18px; font-size: 12.5px; line-height: 1.65; color: var(--muted);

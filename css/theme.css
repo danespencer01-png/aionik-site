@@ -8,7 +8,8 @@
 
    To revert the whole restyle, remove the theme.css link from the pages.
    ================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
+/* Fonts are linked from each page head with preconnect, not @import.
+   An @import here would serialise the download behind theme.css. */
 
 :root {
   /* ---------- Palette ---------- */
@@ -19,7 +20,8 @@
   --hero-muted: #A9BECD;
   --violet: #051C2C;          /* the accent role: navy */
   --uv: #2D4A64;
-  --cyan: #6EA8D8;            /* kickers and small marks */
+  --cyan: #2D6CA8;            /* label and mark colour on light ground */
+  --hero-mark: #6EA8D8;       /* the same role on the dark hero band */
   --text: #161616;
   --muted: #525252;
 
@@ -30,7 +32,7 @@
   --fill-rgb: 22, 22, 22;
   --violet-rgb: 5, 28, 44;
   --uv-rgb: 45, 74, 100;
-  --cyan-rgb: 110, 168, 216;
+  --cyan-rgb: 45, 108, 168;
   --shadow-rgb: 0, 0, 0;
   --warn-rgb: 138, 83, 16;
   --warn-edge-rgb: 194, 104, 63;
@@ -88,7 +90,7 @@
 .inv-hero .hero-tag { color: var(--hero-text); }
 .inv-hero .round-status { border-top-color: rgba(242,245,248,.22); color: var(--hero-muted); }
 .inv-hero .round-status b, .pdms-hero .back-link { color: var(--hero-text); }
-.inv-hero .kicker, .pdms-hero .kicker { color: var(--cyan); }
+.inv-hero .kicker, .pdms-hero .kicker { color: var(--hero-mark); }
 .inv-hero .btn-primary { background: var(--on-accent) !important; color: var(--hero) !important; }
 
 /* ---------- 4. Nav sits on white ---------- */
@@ -119,6 +121,8 @@ section:not(.inv-hero):not(.pdms-hero) .kicker { color: var(--uv); }
 
 /* On the dark hero the accent is invisible, so emphasis spans take the light mark. */
 .inv-hero .grad, .pdms-hero .grad, .inv-hero h1 .grad, .pdms-hero h1 .grad {
-  color: var(--cyan) !important;
+  color: var(--hero-mark) !important;
 }
+/* Anything inside the dark band that would otherwise take the light-ground mark. */
+.inv-hero .rs-item b, .inv-hero .round-status .dot { color: var(--hero-mark); }
 .inv-hero .logo-word, .pdms-hero .logo-word { color: var(--hero-text); }

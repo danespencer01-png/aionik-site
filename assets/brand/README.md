@@ -23,6 +23,11 @@ LinkedIn's circular crop.
 - aionik-wordmark-navy-transparent.png
 - aionik-wordmark-white-transparent.png
 
+## LinkedIn, ready to upload
+- aionik-linkedin-logo-400x400.png     company page logo, circular crop safe
+- aionik-linkedin-banner-1584x396.png  company page banner; content starts
+  right of the left edge because the profile logo overlaps the lower left
+
 ## Vector source
 mark-*.svg are the monogram as vector, for any size. The site itself
 uses assets/aionik-mark.svg, which inherits currentColor.

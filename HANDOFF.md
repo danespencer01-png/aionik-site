@@ -77,39 +77,45 @@ market are not.
 | `js/main.js` | Shared; canvas/network code self-guards and stays dormant on these pages. |
 | `js/investors.js` | Analytics config, self-updating footer date, and the whole inquiry form. |
 | `assets/aionik-mark.svg` | The AK monogram, vectorised. Traced from a PNG screenshot of the original logo (`~/Documents/Screenshots/Aionik Logo.png`) by boundary-walking the bitmap, since no vector source was available. 19-point outline plus the A's counter. Uses `currentColor` so it themes per placement. **If the designer's original vector ever turns up, prefer it over this trace.** |
-| `assets/favicon.svg` | Same mark in the violet-to-cyan gradient, with padding. Browser tab icon. |
+| `assets/favicon.svg` | Same mark in navy, with padding. Browser tab icon. |
+| `assets/brand/` | Logo and wordmark as **separate** files, never combined. Monogram 1000x1000 at 60% canvas width, matching the previous version so a LinkedIn circular crop lands identically. See the README in that folder. |
 | `assets/` | hero-device.jpg, proof-droplets.jpg, og-investors.png, team-{dane,gongchen,henry,guillermo,gabriel}.jpg |
 
 ## Design system
 
-Tokens in `css/styles.css`: `--bg #07070E`, `--surface #0E0E1A`, `--violet #8B5CF6`,
-`--uv #A78BFA`, `--cyan #22D3EE`, `--text #E7E7F2`, `--muted #8A8AA3`,
-`--line rgba(139,92,246,0.18)`.
+**The palette lives in `css/theme.css`, not in the component stylesheets.** Phase 1 of the
+restyle moved every colour, alpha overlay and typeface into tokens; `theme.css` loads last on
+every page and holds the values. A restyle is an edit to that one block. To revert the whole
+look, remove the `theme.css` link from the seven pages.
 
-`.grad` is the violet→cyan gradient used for **headings only**.
+Current values: `--bg #FFFFFF`, `--surface #F4F4F4`, `--hero #051C2C` (the dark hero band),
+`--text #161616`, `--muted #525252`, `--line #E0E0E0`, `--accent #051C2C` (headings, buttons),
+`--cyan #2D6CA8` (small labels and marks on light), `--hero-mark #6EA8D8` (the same role on the
+dark band), `--good #0F7B5F`, `--cost #7E2B33`. Type is IBM Plex Sans throughout, via
+`--font-body` and `--font-head`.
 
-**Cost figures are amber (`--cost: #F0A94C`), and that is an argument, not a decoration.**
-Dane's rule, 31 Aug 2026: any cost that separates Aionik from the incumbent, meaning every
-cost the incumbent carries and we do not, is set in amber so it reads as a warning and pulls
-the eye. It applies to `.cost-table .price` (equipment, tooling, cleanroom builds on
-`pdms.html` and `cleanrooms.html`) and to `.cost-brief b` on the homepage.
-- **Never use amber for an Aionik figure.** If we ever publish our own cost, it is not amber.
-- **Never use amber for a neutral quantity.** Non-cost numbers that happen to live in a
-  `.cost-table` use `.count`, which stays violet. The ISO particle counts on `cleanrooms.html`
-  are the existing example, and they were moved off `.price` when this rule landed.
-- **The rule is broader than money.** Dane, 31 Aug 2026: any key point that is negative about
-  the incumbent takes amber, "within reason, not overused, to maintain exclusivity." Lead time
-  (`.pdms-wait b`, the one to twelve week wait) is amber for this reason. There are five amber
-  points on the site in total, and that is roughly the ceiling: past about eight the colour
-  stops carrying meaning. Add one only by removing one.
+The `*-rgb` triplet tokens exist so translucent variants follow the palette. A literal
+`rgba(139, 92, 246, 0.18)` would not survive a palette change; `rgba(var(--violet-rgb), 0.18)`
+does. Never reintroduce a colour literal outside `:root`.
 
-**Logo lockup:** the AK monogram carries the gradient and the AIONIK wordmark is plain white
-(option B of four Dane reviewed on 30 Aug 2026). The `.logo .logo-word` rule in
-`investors.css` deliberately overrides the `.logo span` gradient in `styles.css`, which would
-otherwise make the whole wordmark transparent. Footer mark stays muted and solid. Money figures use solid
-`#B99BFF` on purpose, so they read as figures rather than as a heading treatment. Kicker
-labels, glass cards, `.sheen` hover, `.reveal` scroll-in. Sentence case, active voice.
-No hero canvas, no ticker, no animated backgrounds on these pages.
+**Cost figures are oxblood (`--cost: #7E2B33`), and that is an argument, not a decoration.**
+Dane's rule: any key point that is negative about the incumbent takes the cost colour so it
+reads as a burden and pulls the eye. It applies to `.cost-table .price`, `.cost-brief b`, and
+`.pdms-wait b` (lead time is an incumbent cost in every sense except currency).
+- **Never use it for an Aionik figure.** If we publish our own cost, it is not oxblood.
+- **Never use it for a neutral quantity.** Non-cost numbers inside a `.cost-table` use `.count`.
+  The ISO particle counts on `cleanrooms.html` are the standing example.
+- Used sparingly, "within reason, not overused, to maintain exclusivity." Roughly five points
+  on the site. Adding one means removing one.
+- The matrix legends on `ecosystem.html` and `printing-types.html` name the colours in prose.
+  **If the palette changes, those sentences change too** — they said "amber" until 1 Sep 2026.
+
+**No gradients.** The violet to cyan gradient was the site's strongest generic signal and it is
+gone. `.grad` now resolves to a solid accent. On the dark hero it takes `--hero-mark`, or it
+would render navy on navy and vanish.
+
+**Contrast is measured, not eyeballed.** All fourteen text pairs pass WCAG AA. `--cyan` was
+`#6EA8D8` at first and failed at 2.54:1 on white across 41 rules; it is now `#2D6CA8` at 5.49:1.
 
 **House style: no em dashes and no hyphens in prose.** Bullets over paragraphs.
 

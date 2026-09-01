@@ -3,8 +3,9 @@
 Paste this whole file as your first message in a new Claude Code session on another machine
 (after cloning the repo), or save it as HANDOFF.md and say "read HANDOFF.md and continue."
 
-_Last updated: 31 Aug 2026. The site is LIVE on its own domain, and analytics is on. The
-structure described here is current; anything older is not._
+_Last updated: 1 Sep 2026, after a full restructure and restyle. The site is LIVE on its own
+domain. Everything below is current; anything describing a dark violet site, a single scroll
+homepage, or two deep dive pages is out of date._
 
 ---
 
@@ -12,6 +13,25 @@ structure described here is current; anything older is not._
 
 **Nothing is blocking.** The site is live, analytics is running behind a consent bar, and no
 task is waiting on an input from Dane.
+
+**The 31 Aug to 1 Sep session did three large things, all shipped:**
+
+1. **Restructured the homepage** into nine sections in a deliberate order, with **Brief and
+   Full reading modes** and a contents block. Brief is the whole argument in about five
+   minutes; Full adds the sources, tables and figures. See "Reading layers" below.
+2. **Added three deep dive pages**: `ecosystem.html` (five fabrication routes compared),
+   `printing.html` (where we sit in SLA printing), `printing-types.html` (the families of 3D
+   printing). Total is now five deep dives.
+3. **Restyled the whole site** from violet on near-black to a **deep navy hero over white,
+   IBM Plex Sans, oxblood cost figures, Carbon grid discipline, square corners, no gradients**.
+   Done as a two phase migration, described under "Design system".
+
+**How the restyle was done, because it is repeatable.** Phase 1 moved every colour, alpha
+overlay and typeface into tokens and was verified as a **provable no-op**: all seven pages
+screenshotted at two widths before and after, pixel diffed, zero differing pixels across
+fourteen images. Phase 2 then changed token values in one file. **The next restyle is a token
+block, not a project.** If you change the palette, re-run that same before/after pixel diff on
+the tokenization step only; the value swap is meant to change pixels.
 
 **Analytics is on** (switched on 30 Aug 2026). Both IDs sit at the top of `js/investors.js`:
 
@@ -69,6 +89,12 @@ market are not.
 | `index.html` | The homepage. This is the investor page; it became the root on 30 Aug 2026. |
 | `pdms.html` | Deep dive on how a PDMS chip is made, what it costs, how long it takes, how it fails. |
 | `cleanrooms.html` | Deep dive on cleanrooms: what one is, the ISO classes, which industries need one, what it costs to build and to keep open, and why microfluidics needs it only for the mold. Added 31 Aug 2026. Linked from `index.html` and `pdms.html`, not in either nav, same as `pdms.html`. |
+| `ecosystem.html` | Five fabrication routes compared on one matrix, tinted by what each route is good at, plus the scope section. Added 31 Aug 2026. |
+| `printing.html` | Where we sit in the SLA 3D printing process. Six steps, two of them ours outright and a third partly ours. Added 31 Aug 2026. |
+| `printing-types.html` | The families of 3D printing and which reach microfluidics, with an equipment cost sheet. Added 31 Aug 2026. |
+| `css/theme.css` | **The whole restyle.** Loaded last on every page. Token values plus the three things tokens cannot express: flattened gradients, removed glows, the dark hero band. Remove its link from the seven pages to revert the look entirely. |
+| `css/layers.css` | Brief and Full reading modes, the contents block, the section claim line. |
+| `assets/brand/` | Logo and wordmark as **separate** files, never combined, plus LinkedIn ready sizes. See the README in that folder. |
 | `investors.html` | Redirect stub to `/`. Keeps links shared before the restructure working. **Do not delete.** |
 | `main-site-draft.html` | The parked v1 marketing homepage. `noindex`, unlinked. Still has a placeholder contact address (`contact@aionik.example`). Kept for when the main site is resumed. |
 | `css/styles.css` | Base design system. Shared. |
@@ -119,29 +145,63 @@ would render navy on navy and vanish.
 
 **House style: no em dashes and no hyphens in prose.** Bullets over paragraphs.
 
+## Reading layers, Brief and Full
+
+The homepage carries the same content at two depths. `css/layers.css` holds the mechanism and
+`js` at the foot of `index.html` holds the toggle. The choice persists per browser in
+`localStorage` under `aionik-readmode`; Brief is the default.
+
+- `.l-brief` shows in **both** modes. Most content lives here.
+- `.l-full` shows in Full only. Sources, tables, the analyst spread, the proof figure.
+- `.l-briefonly` shows in Brief only. Use sparingly; it exists for a line that carries a
+  section in Brief but would duplicate fuller copy in Full.
+
+**Brief is not a truncation of Full.** Every paragraph has to work standalone in Brief and in
+sequence in Full, so a `.l-full` block must ADD detail and must never restate a point a
+`.l-brief` block already made. Adding copy means choosing a layer. There is an end-of-brief
+handoff block near the contact section, brief only, that tells a reader the sourced version
+exists and offers a button to switch.
+
+**Watch for layer orphans.** A deep link or a lead line placed inside `.l-full` disappears
+entirely in Brief. This has bitten twice: the ecosystem link in the cost section vanished from
+Brief until a `.l-briefonly` twin was added, and a section lead was left without its paragraph.
+When you add anything, check it in both modes.
+
 ## Page structure
 
-**index.html** — hero (device photo on a built product stage; status strip of IP / License /
-Origin) → mission band → why now (regulators, fabrication gap, wider demand, market sizing,
-cost comparison table, printing caught up) → the insight + patent proof figure → what we have
-and what we need → what making a chip actually takes (summary, links to pdms.html) → team →
-evidence → contact form.
+**index.html** — nine sections in this order, chosen so the problem is stated once and in full
+before the fix appears:
 
-**pdms.html** — hero → eleven process steps in two phases, each with a failure note → bonding
-window diagram → elapsed time timeline → the operator skill problem → six failure modes plus
-the small molecule absorption block →
-service life + seam cross-section diagram → cost (production, research bench, injection
-molding, the room the mold is made in) → video references → closing.
+1. **The bottleneck** — what we do, in one screen. Dark hero band with the device photo.
+2. **Why now** — seven regulator rows, the demand argument, the analyst market spread.
+3. **Current microfluidic process** — eleven steps, hand work, the cleanroom, the wait.
+4. **Cost of fabrication** — the comparison table and the bill. All the oxblood is here.
+5. **The Aionik process** — what changed and the four results, with the patent figure.
+6. **Development status** — what we have, what we need.
+7. **The team**  8. **Evidence**  9. **Contact**, the inquiry form.
 
-**cleanrooms.html** — hero → how a cleanroom works (air changes, pressure, personnel) → the
-ISO class table → six industries that require one → where a cleanroom is required in PDMS
-fabrication (two phase rows, then why the master requires it, how clean it has to be, where
-the requirement is avoidable) → what it costs → closing.
+The order matters and was set deliberately: "why now" was split from "what that costs" so the
+problem is not told twice, and the incumbent process moved up so it is stated once before the
+solution. Do not reorder without a reason.
 
-The microfluidics section sits between Applications and Cost on purpose (Dane, 31 Aug 2026):
-the page reads what a room is, how it is graded, who needs one, where it lands in our process,
-then what it costs. Section backgrounds alternate plain and `team-section` down the page, so
-moving a section means moving that class too.
+**pdms.html** — eleven process steps in two phases, bonding window diagram, elapsed time
+timeline, the operator skill problem, six failure modes plus the small molecule absorption
+block, the seam diagram, cost tables, the room the mold is made in, video references, closing.
+
+**cleanrooms.html** — how a cleanroom works, the ISO class table, industries that require one,
+where a cleanroom is required in PDMS fabrication, what it costs.
+
+**ecosystem.html** — the five route matrix, per route detail blocks, the iterate versus produce
+split, the outsourcing paragraph, and the scope section.
+
+**printing.html** — SLA and FDM, the six step workflow with ours marked, why the wash is the
+problem, why our step composes with the printer's, the CADworks positioning.
+
+**printing-types.html** — six printing families, which reach microfluidics, an equipment cost
+sheet.
+
+Section backgrounds alternate plain and `team-section` down each page. Moving a section means
+moving that class too, or the alternation breaks.
 
 ## HARD RULES — do not break these
 
@@ -156,6 +216,16 @@ moving a section means moving that class too.
   and "Aionik curing process" in the proof caption. Marking every instance reads as amateurish.
 - **Confirm before pushing to main.** (Standing exception: Dane went autonomous on 30 Aug 2026
   for the analytics and handoff work.)
+- **Never reintroduce a colour literal outside `:root`.** Phase 1 removed 145 of them. A literal
+  does not follow a palette change; a token does. This includes **inline SVG attributes**, which
+  Phase 1 missed on `pdms.html` and which survived the restyle in the old palette until caught.
+- **Check both reading modes after any change to the homepage.** See "Reading layers".
+- **The matrix legends name colours in prose.** If the palette changes, those sentences change
+  too. They said "amber" until 1 Sep 2026.
+- **Word choice matters to this audience.** A *theory* is a substantiated explanation; an
+  untested prediction is a *hypothesis*; an expectation from material class is *reasoning*.
+  Using "theory" loosely was caught and corrected. Same care with "hard ceiling" for something
+  that is a working range, and with calling a known fact "unproven".
 - **No business plan detail.** No beachhead, adjacency, market strategy, hiring plans, roadmap.
 - **Small molecule absorption: the site may state the material class argument, never a measured
   result.** `pdms.html` documents absorption as a PDMS limitation, sourced, then notes that
@@ -334,15 +404,24 @@ linked Google Sheet (Dane owns it). People never leave the site.
 
 ## OPEN ITEMS
 
-1. **`main-site-draft.html`** still has the placeholder address `contact@aionik.example`
-   (line 7 comment and the mailto on line 404). That page is parked and `noindex`, so this
-   only matters before it is ever unparked.
-2. **Optional:** carry TM onto the rebuilt main site when it exists.
-3. **Would strengthen the site if obtained:** independent third party test data with
-   methodology, and methodology for each of the four demonstrated results.
+1. **OG descriptions still describe the old positioning.** The share *image* was regenerated in
+   navy and now mentions organoid housings; the `og:description` meta on each page still reads
+   "with no cleanroom and no tooling". Accurate but written before the hero changed. Image and
+   description now say slightly different things.
+2. **`main-site-draft.html`** still has the placeholder address `contact@aionik.example`. Parked
+   and `noindex`, so it only matters before that page is ever unparked. It has NOT been restyled
+   or checked in the new theme.
+3. **Hot embossing equipment cost sourcing is weaker than the rest of the site.** The lab press
+   versus six figure split came from a ResearchGate discussion. A vendor quote would firm it up.
+4. **The absorption comparison and the finer printer test** are both underway per Dane and both
+   are listed under "what we need". When results exist, the scope section on `ecosystem.html`
+   changes and so does the matrix cell that currently reads "not measured".
+5. **Would strengthen the site:** independent third party test data with methodology.
 
-_Closed since the last rewrite: analytics IDs pasted and live, the consent bar built, real
-PDMS video titles set, `.logo .tm` moved from `investors.css` into `styles.css`._
+_Closed 31 Aug to 1 Sep: the homepage restructure, three new deep dive pages, the full restyle,
+the launch rename, brand assets regenerated, the double digit growth error corrected on the live
+site, link previews repaired (og:image was relative and therefore ignored by LinkedIn and Slack),
+and the apple-touch-icon replaced with a real PNG._
 
 ## HOW DANE WORKS
 

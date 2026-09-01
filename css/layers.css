@@ -1,0 +1,109 @@
+/* ------------------------------------------------------------------
+   Reading layers: Brief and Full.
+
+   Brief is not a truncation of Full. Every paragraph is written to work
+   standalone in Brief AND in sequence in Full, so `.l-full` blocks must
+   ADD detail (sourcing, caveats, numbers) and must never restate a point
+   a `.l-brief` block already made. Adding copy means choosing a layer.
+   ------------------------------------------------------------------ */
+body.mode-brief .l-full { display: none !important; }
+/* Brief-only: a line that carries a section in Brief but duplicates fuller copy
+   in Full. Use sparingly; most content should be shared, not forked. */
+body.mode-full .l-briefonly { display: none !important; }
+
+/* ---------- Mode bar + contents ---------- */
+.readbar { padding: 40px 0 0; }
+.readbar-inner { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.mode-btn {
+  font: inherit; font-size: 13px; font-weight: 600; cursor: pointer;
+  padding: 9px 20px; border-radius: 999px; transition: all 0.25s;
+  background: none; color: var(--muted); border: 1px solid rgba(255, 255, 255, 0.14);
+}
+.mode-btn:hover { color: var(--text); border-color: rgba(255, 255, 255, 0.34); }
+.mode-btn[aria-pressed="true"] {
+  background: linear-gradient(90deg, var(--violet), #6D28D9);
+  color: #fff; border-color: transparent;
+}
+.readtime { font-size: 12.5px; color: var(--muted); margin-left: 6px; }
+
+.readnote {
+  border-left: 2px solid var(--violet); padding: 14px 0 14px 18px;
+  margin: 26px 0 0; font-size: 14.5px; color: var(--muted); max-width: 680px;
+  line-height: 1.7;
+}
+.readnote strong { color: var(--text); font-weight: 600; }
+
+.toc {
+  border: 1px solid var(--line); border-radius: 16px;
+  padding: 26px 26px 20px; background: rgba(255, 255, 255, 0.02);
+  margin: 34px 0 0;
+}
+.toc-h {
+  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--cyan); font-weight: 700; margin-bottom: 14px;
+}
+.toc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 34px; }
+.toc-grid a {
+  display: flex; gap: 12px; align-items: baseline;
+  font-size: 14.5px; color: var(--muted); text-decoration: none;
+  padding: 9px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: color 0.2s;
+}
+.toc-grid a:hover { color: var(--cyan); }
+.toc-grid .n { font-size: 11px; color: var(--violet); font-weight: 700; letter-spacing: 0.1em; }
+.toc-deep { margin-top: 18px; font-size: 13.5px; color: var(--muted); }
+.toc-deep a { color: var(--uv); text-decoration: none; }
+.toc-deep a:hover { text-decoration: underline; }
+
+/* investors.css constrains .wn-block only inside .whynow. The reading layers
+   reuse that block in other sections, so give it the same treatment everywhere.
+   The .whynow rule is more specific and still wins where it applies. */
+.wn-block { max-width: 720px; margin-top: 54px; }
+.wn-block[style*="max-width:none"] { max-width: none; }
+
+/* ---------- Section claim line: the one sentence that carries the section ---------- */
+.claim {
+  font-size: 19px; line-height: 1.55; color: var(--text); font-weight: 500;
+  max-width: 720px; margin: 0 0 26px; letter-spacing: -0.01em;
+}
+
+/* Team bios collapse in Brief, so the grid reads as names and roles only. */
+body.mode-brief .team-card p { display: none; }
+body.mode-brief .team-card { padding-bottom: 26px; }
+
+@media (max-width: 720px) {
+  .toc-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- Full width lead, for attribution lines that should span the column ---------- */
+.lead-wide {
+  max-width: none;
+  border-top: 1px solid var(--line);
+  padding-top: 22px;
+  margin-top: 34px;
+}
+
+/* ---------- Regulator list: four separate actions, not one paragraph ---------- */
+.src-list { list-style: none; margin-top: 18px; }
+.src-list li {
+  display: grid; grid-template-columns: 132px 1fr; gap: 16px;
+  padding: 13px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 16px; color: var(--muted);
+}
+.src-list .who {
+  font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--cyan); font-weight: 700; padding-top: 4px;
+}
+
+/* ---------- Quiet forward pointer. Deliberately small: it must not compete
+     with the section it sits under, and must not pre-empt "Where we are". ---------- */
+.quiet-note {
+  margin-top: 22px; padding-left: 16px;
+  border-left: 2px solid rgba(139, 92, 246, 0.45);
+  font-size: 14px; line-height: 1.7; color: var(--muted); max-width: 640px;
+}
+.quiet-note b { color: var(--text); font-weight: 600; }
+
+/* ---------- End-of-brief handoff ---------- */
+.readmore { padding: 10px 0 70px; }
+.readmore .readnote { margin-top: 0; }

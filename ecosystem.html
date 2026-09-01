@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The five ways a microfluidic chip gets made, what each is good at, where each breaks down, and where the Aionik process sits between prototyping and production.">
+
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Where Aionik sits in chip fabrication">
+<meta property="og:description" content="Five fabrication routes, their strengths and limits, and the gap between iterating and producing.">
+<meta property="og:image" content="assets/og-investors.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Where Aionik sits in chip fabrication">
+<meta name="twitter:description" content="Five fabrication routes, their strengths and limits, and the gap between iterating and producing.">
+<meta name="twitter:image" content="assets/og-investors.png">
+
+<title>Where Aionik sits in chip fabrication — Aionik Technologies</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/favicon.svg">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/investors.css">
+<link rel="stylesheet" href="css/pdms.css">
+<style>
+  .method { border: 1px solid var(--line); border-radius: 16px; padding: 28px 26px; background: rgba(255,255,255,0.02); margin-top: 20px; }
+  .method.us { border-color: rgba(139,92,246,0.45); background: rgba(139,92,246,0.06); }
+  .method h3 { font-size: 19px; margin-bottom: 6px; }
+  .method .what { font-size: 15px; color: var(--muted); margin-bottom: 20px; max-width: 760px; }
+  .pc { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .pc h4 { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; margin-bottom: 10px; }
+  .pc .good h4 { color: #6EE7B7; }
+  .pc .bad h4 { color: var(--cost); }
+  .pc ul { list-style: none; }
+  .pc li { font-size: 14.5px; color: var(--muted); padding: 6px 0 6px 16px; position: relative; }
+  .pc li::before { content: ""; position: absolute; left: 0; top: 15px; width: 6px; height: 1px; background: currentColor; opacity: .5; }
+  .m-good { color: #6EE7B7; }
+  .m-bad  { color: var(--cost); }
+  .m-mid  { color: var(--muted); }
+  .matrix tbody td { color: var(--muted); }
+  @media (max-width: 700px) { .pc { grid-template-columns: 1fr; gap: 18px; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="logo"><svg class="logo-mark" viewBox="0 0 100 68.48" aria-hidden="true" focusable="false"><defs><linearGradient id="akmark" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#A78BFA"/><stop offset="100%" stop-color="#22D3EE"/></linearGradient></defs><path fill="url(#akmark)" fill-rule="evenodd" d="M24.68,0.00 L43.81,0.00 L58.87,42.52 L61.45,39.35 L90.58,0.10 L97.82,0.00 L84.04,18.43 L82.85,20.32 L100.00,68.48 L81.27,68.38 L70.17,37.26 L61.25,49.06 L68.19,68.48 L49.45,68.48 L42.12,48.07 L13.68,48.46 L6.54,68.38 L0.00,68.48 Z M28.15,8.82 L14.97,45.00 L40.93,44.60 Z"/></svg><span class="logo-word">AION<span>IK</span><sup class="tm">&trade;</sup></span></a>
+    <div class="nav-links">
+      <a href="./">Home</a>
+      <a href="#methods">The methods</a>
+      <a href="#gap">The gap</a>
+      <a href="#limits">Evidence and hypothesis</a>
+      <a href="./#book" class="nav-cta" data-cta="book-call-ecosystem-nav">Book a call</a>
+    </div>
+    <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+  </div>
+</nav>
+
+<header class="pdms-hero">
+  <div class="container">
+    <a href="./" class="back-link">&larr; Back to Aionik</a>
+    <h1>Where Aionik sits in <span class="grad">chip fabrication</span></h1>
+    <p class="positioning">There are a handful of established ways to make a microfluidic chip. Each is good at something and each breaks down somewhere, and the pattern in where they break is the reason this company exists. This page sets out the landscape at the level of what each method can and cannot do.</p>
+  </div>
+</header>
+
+<section id="methods">
+  <div class="container">
+    <div class="kicker reveal">The landscape</div>
+    <h2 class="reveal">Five ways a chip gets made</h2>
+    <p class="lead muted reveal">The matrix compares every route on the same variables. The detail for each follows underneath. Costs and lead times are sourced on the <a href="pdms.html">process deep dive</a> and the <a href="cleanrooms.html">cleanroom page</a>.</p>
+
+    <div class="cmp-wrap reveal">
+    <table class="cost-table matrix" style="min-width:1080px;">
+      <thead>
+        <tr><th scope="col">Route</th><th scope="col">Capital overhead</th><th scope="col">Iteration</th><th scope="col">Production scale</th><th scope="col">Geometry limits</th><th scope="col">Organoid housings</th><th scope="col">Small molecule uptake</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">PDMS soft lithography</th><td data-label="Capital overhead"><span class="m-bad">Cleanroom, aligner, trained operator</span></td><td data-label="Iteration"><span class="m-good">Hours to days in house</span></td><td data-label="Production scale"><span class="m-bad">Cannot scale to production</span></td><td data-label="Geometry limits"><span class="m-bad">Surface relief only, bonded lid</span></td><td data-label="Organoid housings"><span class="m-bad">Yes, layered, but the material absorbs media components</span></td><td data-label="Small molecule uptake"><span class="m-bad">High, plus protein adsorption and oligomer leaching</span></td></tr>
+        <tr><th scope="row">Hot embossing</th><td data-label="Capital overhead"><span class="m-bad">Lab press from a few thousand; commercial systems quote only, roughly $150k to $350k, plus a $5k to $50k insert per design</span></td><td data-label="Iteration"><span class="m-bad">Weeks per new insert</span></td><td data-label="Production scale"><span class="m-good">Yes, from roughly a thousand units</span></td><td data-label="Geometry limits"><span class="m-bad">Thin sheet, surface relief only</span></td><td data-label="Organoid housings"><span class="m-bad">No, thin sheet only</span></td><td data-label="Small molecule uptake"><span class="m-good">Low in COC</span></td></tr>
+        <tr><th scope="row">Injection molding</th><td data-label="Capital overhead"><span class="m-bad">Steel tool per design</span></td><td data-label="Iteration"><span class="m-bad">Weeks per new tool</span></td><td data-label="Production scale"><span class="m-good">Yes, seconds per part</span></td><td data-label="Geometry limits"><span class="m-bad">Surface relief only, draft angles required</span></td><td data-label="Organoid housings"><span class="m-bad">No, undercuts cannot demold</span></td><td data-label="Small molecule uptake"><span class="m-good">Low in COC</span></td></tr>
+        <tr><th scope="row">Glass and silicon</th><td data-label="Capital overhead"><span class="m-bad">Semiconductor facility access</span></td><td data-label="Iteration"><span class="m-bad">Weeks</span></td><td data-label="Production scale"><span class="m-bad">Yes, but cost per chip stays high at every volume</span></td><td data-label="Geometry limits"><span class="m-bad">Planar, etched</span></td><td data-label="Organoid housings"><span class="m-bad">No, planar etch</span></td><td data-label="Small molecule uptake"><span class="m-good">None</span></td></tr>
+        <tr class="us"><th scope="row">Resin printing, Aionik&trade; cure</th><td data-label="Capital overhead"><span class="m-good">Desktop printer and our unit</span></td><td data-label="Iteration"><span class="m-good">Print 20 min to 2 hrs by size and printer; cure 1 to 3 min</span></td><td data-label="Production scale"><span class="m-good">Same process at any volume</span></td><td data-label="Geometry limits"><span class="m-good">Full 3D, enclosed volumes included</span></td><td data-label="Organoid housings"><span class="m-good">Yes, printed in one piece</span></td><td data-label="Small molecule uptake"><span class="m-mid">Low across printed resins generally; ours not yet measured</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="cost-note reveal"><span class="m-good">Green</span> is an advantage, <span class="m-bad">amber</span> is a limitation, and grey is neutral or unknown. COC is cyclic olefin copolymer, a glassy thermoplastic used where PDMS absorption is unacceptable. Our own uptake figure is grey because we have not measured it, not because it is good.</p>
+
+    <div class="method reveal">
+      <h3>PDMS soft lithography</h3>
+      <p class="what">Cast silicone against a photolithographic master mold. The academic standard for two decades, and the route most published microfluidics is built on.</p>
+      <div class="pc">
+        <div class="good"><h4>Strengths</h4><ul>
+          <li>Optically clear and gas permeable, which suits live cell work</li>
+          <li>A mold is reusable, so the cost of the master is amortized across castings</li>
+          <li>Enormous published body of protocols and known geometry</li>
+          <li>Fine feature resolution, set by photolithography rather than by the casting</li>
+        </ul></div>
+        <div class="bad"><h4>Limits</h4><ul>
+          <li>The master needs a cleanroom, which is a large fixed cost carried by one step</li>
+          <li>Every chip after the mold is hand work: pouring, degassing, punching, bonding</li>
+          <li>The plasma bond is a single attempt inside a window of roughly 15 minutes to an hour</li>
+          <li>Absorbs small hydrophobic molecules, which distorts drug and assay work</li>
+          <li>Adsorbs <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4110918/" target="_blank" rel="noopener noreferrer">proteins onto the channel surface</a>, which affects cell adhesion and depletes media components</li>
+          <li>Uncrosslinked oligomers <a href="https://elveflow.com/microfluidic-reviews/pdms-in-biology-researches-a-critical-review-on-pdms-lithography-for-biological-studies/" target="_blank" rel="noopener noreferrer">leach out into the culture medium</a>, so the material is not inert in a long running organoid experiment</li>
+          <li>Does not scale to production, and the seam remains the weak point</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <div class="method reveal">
+      <h3>Hot embossing</h3>
+      <p class="what">A thermoplastic sheet heated just above its glass transition and pressed against a mold insert, then cooled and demolded. The middle route between soft lithography and injection molding.</p>
+      <div class="pc">
+        <div class="good"><h4>Strengths</h4><ul>
+          <li>Tooling runs roughly $5,000 to $50,000, an order of magnitude below injection molding</li>
+          <li>Labs often improvise with a heated laboratory press costing a few thousand dollars, but commercial hot embossing and wafer bonding systems are sold on a <a href="https://www.evgroup.com/products/nanoimprint-lithography/hot-embossing" target="_blank" rel="noopener noreferrer">quote basis</a>, estimated at $150,000 to $350,000</li>
+          <li>Materials such as COC absorb far less than PDMS</li>
+          <li>Micron scale features with good replication fidelity</li>
+          <li>Economic from roughly a thousand units, so it bridges prototype and production</li>
+        </ul></div>
+        <div class="bad"><h4>Limits</h4><ul>
+          <li>Still an insert per design, so a revision is new tooling</li>
+          <li>Surface replication only: no undercuts, no internal voids, and every part needs a separate bonding step, as with PDMS</li>
+          <li>High aspect ratio features are damaged on demold and need generous draft angles</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <div class="method reveal">
+      <h3>Thermoplastic injection molding</h3>
+      <p class="what">Melted polymer injected into a hardened steel tool. The route a device takes once the design is frozen and the volume justifies the tooling.</p>
+      <div class="pc">
+        <div class="good"><h4>Strengths</h4><ul>
+          <li>Genuine production scale, with parts produced in seconds</li>
+          <li>Very low cost per part once the tool exists</li>
+          <li>Materials such as COC, cyclic olefin copolymer, absorb far less than PDMS, which suits assay work</li>
+          <li>Repeatable enough for regulated manufacturing</li>
+        </ul></div>
+        <div class="bad"><h4>Limits</h4><ul>
+          <li>Tooling is priced per design and a revision means a new block of steel</li>
+          <li>Locks the design before it has been validated, which inverts the research order</li>
+          <li>Weeks of lead time per iteration</li>
+          <li>Cannot produce enclosed or undercut three dimensional geometry in one part</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <div class="method reveal">
+      <h3>Glass and silicon</h3>
+      <p class="what">Etched substrates using semiconductor fabrication. The route for chemistry, pressure, or optical requirements that polymers cannot meet.</p>
+      <div class="pc">
+        <div class="good"><h4>Strengths</h4><ul>
+          <li>Chemical and thermal resistance beyond any polymer</li>
+          <li>The finest feature resolution available</li>
+          <li>No absorption of small molecules, and optically stable</li>
+        </ul></div>
+        <div class="bad"><h4>Limits</h4><ul>
+          <li>Requires semiconductor facility access, which few labs have</li>
+          <li>Weeks per iteration</li>
+          <li>Cost per chip stays high at every volume</li>
+          <li>Brittle, and difficult to integrate with soft components</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <div class="method us reveal">
+      <h3>Resin printing with the Aionik&trade; cure</h3>
+      <p class="what">Print the part on standard SLA hardware, then run our patent pending post process in place of the chemical wash. No master, no mold, no cleanroom for the part itself.</p>
+      <div class="pc">
+        <div class="good"><h4>Strengths</h4><ul>
+          <li>No master mold, so no cleanroom step and no tooling to amortize</li>
+          <li>A revision is a file edit, not a new tool, so the design loop closes in an afternoon</li>
+          <li>Cure runs 1 to 3 minutes for current production and does not exceed 15, whatever the part</li>
+          <li>True three dimensional geometry, including enclosed volumes that no mold based route can demold</li>
+          <li>Optical clarity, smooth surfaces, and biocompatibility from general purpose resins</li>
+          <li>The same process at prototype and at production volume</li>
+          <li>A post process, so it composes with whatever the printer can resolve (<a href="printing.html">how that works</a>, and <a href="printing-types.html">which printers apply</a>)</li>
+        </ul></div>
+        <div class="bad"><h4>Limits</h4><ul>
+          <li>Feature resolution is set by the printer, so the finest photolithographic geometry is still lithography's domain</li>
+          <li>Resin viscosity is a hard ceiling. Bottom up SLA and DLP work reliably up to roughly <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12526929/" target="_blank" rel="noopener noreferrer">2,000 to 3,000 mPa&middot;s</a>, and thicker proprietary formulations have given us poor prints. Most resins we have run work; a few have not</li>
+          <li>Solvent compatibility follows the resin, not the process. Printed resins <a href="https://pubs.acs.org/acsodf/article/doi/10.1021/acsomega.6c02218/5253643/Defining-Operational-Limits-of-Low-Cost-MSLA-3D" target="_blank" rel="noopener noreferrer">swell in DMSO, THF and toluene</a>, which changes channel dimensions, though water, alcohols and nonpolar solvents are unaffected</li>
+          <li>Printed resin is not gas permeable the way PDMS is, which matters for cell culture that depends on oxygen exchange through the device wall</li>
+          <li>Autofluorescence can run <a href="https://pubs.rsc.org/en/content/articlehtml/2022/bm/d1bm01794b" target="_blank" rel="noopener noreferrer">slightly above PDMS</a>, which is among the lowest of any polymer, and that matters for some fluorescence imaging</li>
+          <li>The full limits are not mapped. These are the ones we have hit or found published; more work is needed to know where the rest are</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gap" class="team-section">
+  <div class="container">
+    <div class="kicker reveal">The pattern</div>
+    <h2 class="reveal">Every route is good at iterating or at producing, not both</h2>
+    <p class="lead muted reveal">Read the table above column by column rather than row by row and the same shape appears each time. The methods that let a researcher change a design quickly cannot make the part at volume. The methods that make it at volume require the design to stop changing first.</p>
+
+    <table class="cost-table reveal">
+      <thead>
+        <tr><th scope="col">Route</th><th scope="col">Can it iterate quickly?</th><th scope="col">Can it produce at volume?</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">PDMS soft lithography</th><td data-label="Iterate">Yes, once the master exists</td><td data-label="Produce">No</td></tr>
+        <tr><th scope="row">Injection molding</th><td data-label="Iterate">No, a revision is a new tool</td><td data-label="Produce">Yes</td></tr>
+        <tr><th scope="row">Glass and silicon</th><td data-label="Iterate">No</td><td data-label="Produce">At high cost per chip</td></tr>
+        <tr><th scope="row">Resin printing with our cure</th><td data-label="Iterate">Yes</td><td data-label="Produce">Yes, same process throughout</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="reveal" style="font-size:17px;margin-top:52px;">These routes are stages, not rivals</h3>
+    <p class="lead muted reveal" style="margin-top:14px;">In practice a lab does not choose one of these. It uses several in sequence: prototype in PDMS because iteration is possible there, then move to hot embossing or injection molding when volume is needed. The routes depend on each other, and that dependency is the expensive part. The handoff costs a redesign for a new process, fresh tooling, and revalidation of a device that is no longer quite the device that was tested. Our process is meant to remove the handoff rather than any one of these routes, by holding the same material and the same process on both sides of it.</p>
+
+    <h3 class="reveal" style="font-size:17px;margin-top:52px;">If you own none of it, you wait</h3>
+    <p class="lead muted reveal" style="margin-top:14px;">Most labs own none of these processes, so they send the design to a contract manufacturer and buy finished chips. That is a sourcing decision rather than a fabrication method, which is why it is not in the matrix: the foundry runs one of the routes above on your behalf, and you inherit its limits along with its capabilities.</p>
+    <p class="lead muted reveal">What you also inherit is the queue. Buying custom devices takes <a href="https://www.ufluidix.com/microfluidics-technical-notes/purchase-pdms-chips-or-diy/" target="_blank" rel="noopener noreferrer">one to twelve weeks</a> depending on the vendor and the complexity of the design, and every revision starts that clock again. Setup and tooling are charged per design, so cost moves with how unusual your geometry is and supply moves with how busy the vendor is. Researchers routinely wait months to hold a design they drew in an afternoon. <strong>The wait, not the invoice, is what actually limits how many questions a lab can ask in a year.</strong></p>
+
+    <p class="wn-closing reveal" style="max-width:760px;margin-top:38px;">That split is the reason a device gets validated in one material and shipped in another. It is a structural feature of how these processes work, not a failure of anyone using them, and it is the specific gap our process is built to close.</p>
+  </div>
+</section>
+
+<section id="limits">
+  <div class="container">
+    <div class="kicker reveal">Evidence and hypothesis</div>
+    <h2 class="reveal">What is demonstrated, and what is hypothesis</h2>
+    <p class="lead muted reveal">Some of what we believe about this process is demonstrated and some of it is reasoning we have not yet tested. Which is which, stated per item.</p>
+    <div class="results">
+      <div class="result-card reveal">
+        <span class="num">01</span>
+        <h3>Hypothesis: finer printers, same cure</h3>
+        <p>Ours is a post process, so in principle it applies to any resin printed part, including output from the highest resolution microfluidic printers on the market. If that holds, the finest printed geometry becomes curable the same way. We are testing it now, though not at the rate we could, and it is one of the things we <a href="./#today">need capacity for</a>.</p>
+      </div>
+      <div class="result-card reveal">
+        <span class="num">02</span>
+        <h3>Lithography still owns the finest features</h3>
+        <p>Today, where a design needs geometry finer than a printer resolves, photolithography and silicon remain the right tools. The hypothesis above is how that boundary could move, not a claim that it already has.</p>
+      </div>
+      <div class="result-card reveal">
+        <span class="num">03</span>
+        <h3>Independent validation is a need, not a result</h3>
+        <p>Our results are our own. Third party test data with methodology is one of the things we are seeking, and it is listed among <a href="./#today">what we need</a> on the homepage.</p>
+      </div>
+      <div class="result-card reveal">
+        <span class="num">04</span>
+        <h3>Lab on a chip is adjacent, not addressed</h3>
+        <p>Integrated devices such as electrode bearing organoid chips look like a geometry and materials problem rather than new chemistry, which is why we want to test the process against them. We have built none, we claim nothing here, and the access to try is among <a href="./#today">what we need</a>.</p>
+      </div>
+      <div class="result-card reveal">
+        <span class="num">05</span>
+        <h3>Absorption is theory, not measurement</h3>
+        <p>Material class suggests a glassy printed resin takes up far less than an elastomer such as PDMS. That comparison is underway and is another of the things we <a href="./#today">need capacity for</a>. We do not present our own results as validation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="close" class="team-section">
+  <div class="container">
+    <div class="cta-band">
+      <div class="inner reveal">
+        <div class="kicker">Where that leaves it</div>
+        <h2>The gap is between iterating and <span class="grad">producing</span></h2>
+        <p class="muted" style="max-width:640px;margin:0 auto 36px;">Every established route sits on one side of it. Holding both sides in one material, with one process, is what we built.</p>
+        <a href="./" class="btn btn-primary" data-cta="ecosystem-back-home">See what we built</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="logo footer-logo" style="font-size:15px;"><svg class="logo-mark" viewBox="0 0 100 68.48" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="M24.68,0.00 L43.81,0.00 L58.87,42.52 L61.45,39.35 L90.58,0.10 L97.82,0.00 L84.04,18.43 L82.85,20.32 L100.00,68.48 L81.27,68.38 L70.17,37.26 L61.25,49.06 L68.19,68.48 L49.45,68.48 L42.12,48.07 L13.68,48.46 L6.54,68.38 L0.00,68.48 Z M28.15,8.82 L14.97,45.00 L40.93,44.60 Z"/></svg><span class="logo-word">AION<span>IK</span></span></span>
+      <p>&copy; 2026 Aionik Technologies. All rights reserved.</p>
+    </div>
+    <p class="updated" id="updated">Last updated 31 August 2026</p>
+    <p class="legal">
+      Comparisons describe commonly published characteristics of each fabrication route and are not a criticism of any specific laboratory, vendor, or manufacturer. Costs and lead times referenced here are sourced on the linked deep dive pages. Statements about our own process reflect results to date.
+    </p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/investors.js"></script>
+</body>
+</html>

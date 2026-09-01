@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How resin 3D printing actually works, why the post process decides whether a printed part is usable in biology, and where the Aionik cure sits in that workflow.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Where we sit in the SLA 3D printing process">
+<meta property="og:description" content="The print decides the shape. The post process decides the surface, the clarity, and whether the part can hold cells.">
+<meta property="og:image" content="assets/og-investors.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Where we sit in the SLA 3D printing process">
+<meta name="twitter:description" content="The print decides the shape. The post process decides everything else.">
+<meta name="twitter:image" content="assets/og-investors.png">
+<title>Where we sit in the SLA 3D printing process — Aionik Technologies</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/favicon.svg">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/investors.css">
+<link rel="stylesheet" href="css/pdms.css">
+<style>
+  .flow { margin-top: 40px; }
+  .fstep {
+    display: grid; grid-template-columns: 54px 1fr; gap: 20px;
+    padding: 20px 22px; border: 1px solid var(--line); border-radius: 14px;
+    background: rgba(255,255,255,0.02); margin-bottom: 12px;
+  }
+  .fstep.ours { border-color: rgba(139,92,246,0.5); background: rgba(139,92,246,0.07); }
+  .fstep .fn { font-size: 12px; font-weight: 700; letter-spacing: .12em; color: var(--violet); padding-top: 3px; }
+  .fstep.ours .fn { color: var(--uv); }
+  .fstep h4 { font-size: 16px; margin-bottom: 5px; }
+  .fstep p { font-size: 14.5px; color: var(--muted); max-width: 720px; }
+  .fstep .tag {
+    display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; padding: 2px 8px; border-radius: 5px; margin-left: 10px;
+    color: var(--uv); border: 1px solid rgba(167,139,250,0.45); background: rgba(167,139,250,0.1);
+    vertical-align: middle;
+  }
+  .expand { font-size: .5em; font-weight: 400; color: var(--muted); letter-spacing: 0; vertical-align: middle; }
+  @media (max-width: 640px) { .fstep { grid-template-columns: 1fr; gap: 8px; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="logo"><svg class="logo-mark" viewBox="0 0 100 68.48" aria-hidden="true" focusable="false"><defs><linearGradient id="akmark" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#A78BFA"/><stop offset="100%" stop-color="#22D3EE"/></linearGradient></defs><path fill="url(#akmark)" fill-rule="evenodd" d="M24.68,0.00 L43.81,0.00 L58.87,42.52 L61.45,39.35 L90.58,0.10 L97.82,0.00 L84.04,18.43 L82.85,20.32 L100.00,68.48 L81.27,68.38 L70.17,37.26 L61.25,49.06 L68.19,68.48 L49.45,68.48 L42.12,48.07 L13.68,48.46 L6.54,68.38 L0.00,68.48 Z M28.15,8.82 L14.97,45.00 L40.93,44.60 Z"/></svg><span class="logo-word">AION<span>IK</span><sup class="tm">&trade;</sup></span></a>
+    <div class="nav-links">
+      <a href="./">Home</a>
+      <a href="#flow">The workflow</a>
+      <a href="#printers">SLA and FDM</a>
+      <a href="#wash">The wash</a>
+      <a href="#separable">Why it scales with the printer</a>
+      <a href="./#book" class="nav-cta" data-cta="book-call-printing-nav">Book a call</a>
+    </div>
+    <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+  </div>
+</nav>
+
+<header class="pdms-hero">
+  <div class="container">
+    <a href="./" class="back-link">&larr; Back to Aionik</a>
+    <h1>Where we sit in the <span class="grad">SLA 3D printing</span> process <span class="expand">SLA, stereolithography</span></h1>
+    <p class="positioning">Resin printing is not one operation. It is a print followed by a post process, and the two decide different things. The print decides the shape. The post process decides the surface, the optical clarity, and whether the part can be used in biology at all. We are the second step.</p>
+  </div>
+</header>
+
+<section id="flow">
+  <div class="container">
+    <div class="kicker reveal">The workflow</div>
+    <h2 class="reveal">Six steps, and we replace two of them</h2>
+    <p class="lead muted reveal">This is the standard route for a stereolithography or DLP part, from file to finished device. The two highlighted steps are the ones our process takes over.</p>
+
+    <div class="flow">
+      <div class="fstep reveal"><span class="fn">01</span><div>
+        <h4>Design and slice</h4>
+        <p>The geometry is drawn and cut into layers. This is where a revision costs an afternoon rather than a new tool, and it is the whole reason printing is attractive for iteration.</p></div></div>
+      <div class="fstep reveal"><span class="fn">02</span><div>
+        <h4>Print</h4>
+        <p>Light cures liquid resin layer by layer. The printer sets the feature resolution, and nothing downstream can recover detail the printer did not produce.</p></div></div>
+      <div class="fstep reveal"><span class="fn">03</span><div>
+        <h4>Drain and remove supports</h4>
+        <p>The part comes off the plate wet, with liquid resin still on every surface and inside every channel.</p></div></div>
+      <div class="fstep ours reveal"><span class="fn">04</span><div>
+        <h4>Wash <span class="tag">Ours</span></h4>
+        <p>Conventionally an IPA bath to dissolve the uncured resin off the part. For a microfluidic chip this is the hard step, because the resin has to be cleared out of enclosed channels rather than wiped off a surface. Our process replaces this step entirely, with no solvent.</p></div></div>
+      <div class="fstep ours reveal"><span class="fn">05</span><div>
+        <h4>Post cure <span class="tag">Ours</span></h4>
+        <p>Conventionally UV and heat to finish polymerizing the part. This is where surface quality, optical clarity, and biocompatibility are won or lost, and it is the step we changed.</p></div></div>
+      <div class="fstep ours reveal"><span class="fn">06</span><div>
+        <h4>Finish and use <span class="tag">Partly ours</span></h4>
+        <p>Ports, tubing, and whatever the experiment needs. We produce our own threaded ports, so part of this step is ours too. With our process the part reaches it 1 to 3 minutes after the print rather than after a wash and a cure cycle.</p></div></div>
+    </div>
+    <p class="wn-closing reveal" style="max-width:760px;margin-top:34px;">Two of the six steps are ours outright and a third is partly ours. What happens inside those steps is the technology, and it is described on this page. How we intend to build a business around it is commercial strategy, and that is not public.</p>
+  </div>
+</section>
+
+<section id="printers">
+  <div class="container">
+    <div class="kicker reveal">The two families</div>
+    <h2 class="reveal">SLA and FDM are not the same tool</h2>
+    <p class="lead muted reveal">Consumer 3D printing is mostly FDM, which is why the phrase carries a reputation microfluidics cannot use. The distinction matters, because only one of the two families reaches these features at all.</p>
+    <div class="glass-grid">
+      <div class="glass reveal">
+        <span class="num">01</span>
+        <h3>FDM, fused deposition modeling</h3>
+        <p>A heated nozzle lays down molten filament in beads, line by line. Resolution is set by the nozzle diameter and the layer height, and the finished part is a stack of fused strands.</p>
+      </div>
+      <div class="glass reveal">
+        <span class="num">02</span>
+        <h3>SLA, stereolithography</h3>
+        <p>Light cures liquid resin. Resolution is set by the optics rather than by a nozzle, which is what puts microfluidic features in reach, and the part comes out as one solid rather than as bonded strands.</p>
+      </div>
+      <div class="glass reveal">
+        <span class="num">03</span>
+        <h3>Why FDM does not apply here</h3>
+        <p>Bead geometry leaves seams between strands, so a channel wall is neither smooth nor reliably sealed, and the finish is opaque. For a device that has to hold fluid at micron scale and be looked through, that rules it out before cost or speed enter the argument.</p>
+      </div>
+    </div>
+    <p class="lead muted reveal" style="margin-top:34px;">The reason this work requires SLA is not preference. Curing liquid resin with light places a feature wherever the optics can focus, so precision is bounded by the light path rather than by the width of a bead or the size of a powder grain. That is what puts a smooth, sealed, optically clear channel at micron scale within reach. No deposition or powder based family can produce that geometry at all, which is why every other route is out before cost, speed, or materials are discussed.</p>
+    <p class="wn-closing reveal" style="max-width:760px;margin-top:38px;">Everything on this page is about SLA and the DLP variants alongside it. <a href="printing-types.html">The full range of 3D printing methods, and where each one lands, is here &rarr;</a></p>
+  </div>
+</section>
+
+<section id="wash" class="team-section">
+  <div class="container">
+    <div class="kicker reveal">The hard step</div>
+    <h2 class="reveal">Why the wash is the problem in SLA <span class="expand">(stereolithography)</span> printed microfluidics</h2>
+    <p class="lead muted reveal">A printed part leaves the plate coated in liquid resin. On a solid object that is a surface problem and a solvent solves it. A microfluidic chip is not a solid object.</p>
+    <div class="glass-grid">
+      <div class="glass reveal">
+        <span class="num">01</span>
+        <h3>The resin is inside the part</h3>
+        <p>Channels are enclosed, often tens of microns across. Getting uncured resin out of them is a different problem from washing a surface, and it gets harder as the channel gets smaller.</p>
+      </div>
+      <div class="glass reveal">
+        <span class="num">02</span>
+        <h3>Geometry fights the solvent</h3>
+        <p>The features that make a chip useful, narrow channels and enclosed volumes, are the same features that make a bath ineffective at reaching them.</p>
+      </div>
+      <div class="glass reveal">
+        <span class="num">03</span>
+        <h3>What is left behind matters</h3>
+        <p>Anything not cured and not removed stays in the device, which is why this step, rather than the resin alone, has kept printed parts out of a lot of biological work.</p>
+      </div>
+    </div>
+    <figure class="proof-figure reveal" style="margin-top:44px;">
+      <img src="assets/hero-device.jpg" alt="Two microfluidic chips side by side. The chip finished with the Aionik method is optically clear and the printed text beneath it is legible. The chip finished by the conventional method is hazy and the same text is distorted and unreadable." width="970" height="768" loading="lazy">
+      <figcaption>
+        <strong>The same part, two finishing routes.</strong> Both chips were printed from the same resin. The one finished with our process (left) is optically clear enough to read printed text through it. The one taken through the conventional route (right) is hazy and distorts the same text. This is the step being described above, photographed rather than argued.
+      </figcaption>
+    </figure>
+
+    <p class="wn-closing reveal" style="max-width:760px;margin-top:40px;">Our process removes the solvent step rather than optimizing it, and combines the clearing and the cure into one operation of 1 to 3 minutes.</p>
+  </div>
+</section>
+
+<section id="separable">
+  <div class="container">
+    <div class="kicker reveal">How far it reaches</div>
+    <h2 class="reveal">Our step is separate from the printer's step</h2>
+    <p class="lead muted reveal">The printer’s step and ours do not overlap. That separation is what sets how far the process can reach.</p>
+    <div class="results">
+      <div class="result-card reveal">
+        <span class="num">01</span>
+        <h3>The printer sets resolution</h3>
+        <p>How fine a feature can be made is a property of the machine and the resin, decided at step 02 and fixed from then on.</p>
+      </div>
+      <div class="result-card reveal">
+        <span class="num">02</span>
+        <h3>We set what happens after</h3>
+        <p>Clearing and curing happen at steps 04 and 05, downstream of geometry. Our process does not compete with the printer, it finishes what the printer made.</p>
+      </div>
+      <div class="result-card reveal">
+        <span class="num">03</span>
+        <h3>So the two should compose</h3>
+        <p>A higher resolution printer should produce a finer part that our process finishes the same way, which would extend the reach of both without changing either.</p>
+      </div>
+      <div class="result-card reveal">
+        <span class="num">04</span>
+        <h3>Stated as a hypothesis</h3>
+        <p>We have demonstrated the process on standard and specialized SLA hardware. We have not tested it against the highest resolution microfluidic printers, and we do not claim that result.</p>
+      </div>
+    </div>
+    <h3 class="reveal" style="font-size:17px;margin-top:52px;">Resolution is bought with capital</h3>
+    <p class="lead muted reveal" style="margin-top:14px;">Purpose built microfluidic resin printers reach finer geometry than the general purpose SLA hardware we have used. The <a href="https://darwin-microfluidics.com/products/microfluidics-3d-printer-profluidics-285d/" target="_blank" rel="noopener noreferrer">CADworks3D ProFluidics 285D</a>, for example, publishes a 28.5&nbsp;µm pixel resolution with closed channels down to 80&nbsp;µm. Machines in that class are sold on a quote basis rather than a list price, in the way production equipment usually is.</p>
+    <p class="lead muted reveal">That floor is real, and for the designs that need it there is no substitute. It is also lower than a large share of microfluidic work actually requires: a great many devices run channels in the hundreds of microns, where general purpose SLA hardware costing a fraction as much already resolves the geometry. The cost of that capability scales far faster than the number of applications that need it.</p>
+    <p class="lead muted reveal">Our position is not opposite theirs. Our step happens after the print whatever produced it, so finer hardware should widen what the process reaches rather than compete with it. We have not yet run our process on parts from a machine in that class, and getting that access is exactly what the hypothesis above needs to become a result.</p>
+
+    <p class="wn-closing reveal" style="max-width:760px;margin-top:40px;">If it holds, the ceiling on printed microfluidics stops being the cure and becomes the printer, which is a problem the printing industry is already working on and improving every year without us.</p>
+    <p class="cost-brief-link reveal"><a href="ecosystem.html">How printing compares with the other fabrication routes &rarr;</a></p>
+  </div>
+</section>
+
+<section id="close" class="team-section">
+  <div class="container">
+    <div class="cta-band">
+      <div class="inner reveal">
+        <div class="kicker">In short</div>
+        <h2>Printing made the shape. We made it <span class="grad">usable</span></h2>
+        <p class="muted" style="max-width:640px;margin:0 auto 36px;">The industry spent years improving resins and printers. The step between the print and the part was the one still holding microfluidics back, and that is the step we changed.</p>
+        <a href="./" class="btn btn-primary" data-cta="printing-back-home">See what we built</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="logo footer-logo" style="font-size:15px;"><svg class="logo-mark" viewBox="0 0 100 68.48" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="M24.68,0.00 L43.81,0.00 L58.87,42.52 L61.45,39.35 L90.58,0.10 L97.82,0.00 L84.04,18.43 L82.85,20.32 L100.00,68.48 L81.27,68.38 L70.17,37.26 L61.25,49.06 L68.19,68.48 L49.45,68.48 L42.12,48.07 L13.68,48.46 L6.54,68.38 L0.00,68.48 Z M28.15,8.82 L14.97,45.00 L40.93,44.60 Z"/></svg><span class="logo-word">AION<span>IK</span></span></span>
+      <p>&copy; 2026 Aionik Technologies. All rights reserved.</p>
+    </div>
+    <p class="updated" id="updated">Last updated 31 August 2026</p>
+    <p class="legal">
+      Descriptions of the conventional resin printing workflow reflect commonly published practice and are not a criticism of any specific printer, resin, or manufacturer. Statements about our own process reflect results to date, and items described as hypotheses are untested.
+    </p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/investors.js"></script>
+</body>
+</html>

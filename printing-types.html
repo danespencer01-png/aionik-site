@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The main families of 3D printing, how each one builds a part, the resolution and surface each produces, and which of them can reach microfluidic features at all.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The types of 3D printing, and which reach microfluidics">
+<meta property="og:description" content="FDM, SLA, DLP, LCD, SLS and material jetting compared on how they build, what they resolve, and whether they can make a sealed micron scale channel.">
+<meta property="og:image" content="assets/og-investors.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The types of 3D printing, and which reach microfluidics">
+<meta name="twitter:description" content="How each printing family builds a part, and which can make a sealed micron scale channel.">
+<meta name="twitter:image" content="assets/og-investors.png">
+<title>Types of 3D printing — Aionik Technologies</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/favicon.svg">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/investors.css">
+<link rel="stylesheet" href="css/pdms.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/theme.css">
+<style>
+  .m-good { color: var(--good); } .m-bad { color: var(--cost); } .m-mid { color: var(--muted); }
+  .fam { border: 1px solid var(--line); border-radius: 16px; padding: 26px 24px; background: rgba(var(--fill-rgb), 0.02); margin-top: 18px; }
+  .fam.us { border-color: rgba(var(--violet-rgb), 0.45); background: rgba(var(--violet-rgb), 0.06); }
+  .fam h3 { font-size: 18px; margin-bottom: 4px; }
+  .fam .abbr { font-size: 13px; color: var(--muted); font-weight: 400; }
+  .fam p { font-size: 14.5px; color: var(--muted); margin-top: 12px; max-width: 780px; }
+  .verdict-line { margin-top: 14px; font-size: 13.5px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="./" class="logo"><svg class="logo-mark" viewBox="0 0 100 68.48" aria-hidden="true" focusable="false"><defs><linearGradient id="akmark" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#A78BFA"/><stop offset="100%" stop-color="#22D3EE"/></linearGradient></defs><path fill="url(#akmark)" fill-rule="evenodd" d="M24.68,0.00 L43.81,0.00 L58.87,42.52 L61.45,39.35 L90.58,0.10 L97.82,0.00 L84.04,18.43 L82.85,20.32 L100.00,68.48 L81.27,68.38 L70.17,37.26 L61.25,49.06 L68.19,68.48 L49.45,68.48 L42.12,48.07 L13.68,48.46 L6.54,68.38 L0.00,68.48 Z M28.15,8.82 L14.97,45.00 L40.93,44.60 Z"/></svg><span class="logo-word">AION<span>IK</span><sup class="tm">&trade;</sup></span></a>
+    <div class="nav-links">
+      <a href="./">Home</a>
+      <a href="#families">The families</a>
+      <a href="#matrix">Side by side</a>
+      <a href="#cost">What they cost</a>
+      <a href="printing.html">Where we sit</a>
+      <a href="./#book" class="nav-cta" data-cta="book-call-ptypes-nav">Book a call</a>
+    </div>
+    <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+  </div>
+</nav>
+
+<header class="pdms-hero">
+  <div class="container">
+    <a href="printing.html" class="back-link">&larr; Back to SLA printing for microfluidics</a>
+    <h1>The types of <span class="grad">3D printing</span></h1>
+    <p class="positioning">"3D printing" covers several unrelated ways of building a part, and they are not interchangeable. Most people picture the desktop filament machines, which is the family least able to do this work. This page sets out how each family builds, what it resolves, and which of them can produce a sealed channel at micron scale.</p>
+  </div>
+</header>
+
+<section id="families">
+  <div class="container">
+    <div class="kicker reveal">How each one builds</div>
+    <h2 class="reveal">Six families, two mechanisms</h2>
+    <p class="lead muted reveal">Everything below either deposits material and fuses it, or solidifies a liquid or powder in place. That mechanical difference is what decides whether a part comes out as one solid or as bonded pieces, and it is why only part of this list is relevant to microfluidics.</p>
+
+    <div class="fam reveal">
+      <h3>FDM <span class="abbr">fused deposition modeling</span></h3>
+      <p>A heated nozzle extrudes molten filament in beads, line by line, layer by layer. This is the desktop machine most people mean by 3D printing. Resolution is bounded by nozzle diameter and layer height, and the part is a stack of fused strands rather than a continuous solid.</p>
+      <p class="verdict-line"><span class="m-bad">Not usable for microfluidics.</span> Seams between beads leave channel walls neither smooth nor reliably sealed, and the finish is opaque.</p>
+    </div>
+
+    <div class="fam us reveal">
+      <h3>SLA <span class="abbr">stereolithography</span></h3>
+      <p>A laser traces each layer in a vat of liquid photopolymer, curing it in place. Resolution is set by the optics rather than by a nozzle, and the finished part is a single continuous solid. This is the family our process is built for.</p>
+      <p class="verdict-line"><span class="m-good">Reaches microfluidic features.</span> Clear resins, smooth walls, and no seam between strands.</p>
+    </div>
+
+    <div class="fam us reveal">
+      <h3>DLP and LCD <span class="abbr">digital light processing, masked stereolithography</span></h3>
+      <p>The same chemistry as SLA, but a whole layer is projected at once by a digital micromirror device or an LCD panel instead of being traced by a laser. That makes them faster per layer, and resolution is set by the pixel pitch of the projector or screen. Purpose built microfluidic printers usually sit here.</p>
+      <p class="verdict-line"><span class="m-good">Reaches microfluidic features.</span> Same post processing problem as SLA, and the same solution.</p>
+    </div>
+
+    <div class="fam reveal">
+      <h3>SLS and MJF <span class="abbr">selective laser sintering, multi jet fusion</span></h3>
+      <p>A laser or a fusing agent sinters powdered polymer bed layer by layer, with unfused powder supporting the part. Excellent for functional mechanical parts with complex geometry and no support structures.</p>
+      <p class="verdict-line"><span class="m-bad">Not usable for microfluidics.</span> The surface is porous and grainy by nature, and loose powder cannot be cleared from an enclosed micron scale channel.</p>
+    </div>
+
+    <div class="fam reveal">
+      <h3>Material jetting <span class="abbr">PolyJet and similar</span></h3>
+      <p>Print heads spray droplets of photopolymer and cure them immediately, often with a dissolvable support material printed alongside. Very fine layers, multiple materials in one part.</p>
+      <p class="verdict-line"><span class="m-mid">Partially applicable.</span> Resolution is there, but support material has to be cleared from inside the channels, which is the same clearing problem in a different form, and the machines are expensive.</p>
+    </div>
+
+    <div class="fam reveal">
+      <h3>Two photon polymerization <span class="abbr">2PP, direct laser writing</span></h3>
+      <p>Two photons converge to cure a point inside the resin volume, writing structures well below a micron. The finest additive resolution available.</p>
+      <p class="verdict-line"><span class="m-mid">Applicable but not scalable.</span> Build volumes and write speeds put it in the research instrument category rather than the production one.</p>
+    </div>
+  </div>
+</section>
+
+<section id="matrix" class="team-section">
+  <div class="container">
+    <div class="kicker reveal">Side by side</div>
+    <h2 class="reveal">Which families reach microfluidics</h2>
+    <div class="cmp-wrap reveal">
+    <table class="cost-table" style="min-width:920px;">
+      <thead>
+        <tr>
+          <th scope="col">Family</th>
+          <th scope="col">How it builds</th>
+          <th scope="col">Surface</th>
+          <th scope="col">Optical clarity</th>
+          <th scope="col">Sealed micron channels</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">FDM</th><td data-label="How it builds"><span class="m-mid">Extruded beads</span></td><td data-label="Surface"><span class="m-bad">Ridged, seamed</span></td><td data-label="Clarity"><span class="m-bad">Opaque</span></td><td data-label="Sealed channels"><span class="m-bad">No</span></td></tr>
+        <tr class="us"><th scope="row">SLA</th><td data-label="How it builds"><span class="m-good">Laser cured resin</span></td><td data-label="Surface"><span class="m-good">Smooth, continuous</span></td><td data-label="Clarity"><span class="m-good">Clear</span></td><td data-label="Sealed channels"><span class="m-good">Yes</span></td></tr>
+        <tr class="us"><th scope="row">DLP and LCD</th><td data-label="How it builds"><span class="m-good">Projected layer cure</span></td><td data-label="Surface"><span class="m-good">Smooth, continuous</span></td><td data-label="Clarity"><span class="m-good">Clear</span></td><td data-label="Sealed channels"><span class="m-good">Yes</span></td></tr>
+        <tr><th scope="row">SLS and MJF</th><td data-label="How it builds"><span class="m-mid">Sintered powder</span></td><td data-label="Surface"><span class="m-bad">Porous, grainy</span></td><td data-label="Clarity"><span class="m-bad">Opaque</span></td><td data-label="Sealed channels"><span class="m-bad">No, powder trapped</span></td></tr>
+        <tr><th scope="row">Material jetting</th><td data-label="How it builds"><span class="m-mid">Jetted droplets</span></td><td data-label="Surface"><span class="m-good">Smooth</span></td><td data-label="Clarity"><span class="m-mid">Varies by material</span></td><td data-label="Sealed channels"><span class="m-mid">Support must be cleared</span></td></tr>
+        <tr><th scope="row">Two photon</th><td data-label="How it builds"><span class="m-good">Point cure in volume</span></td><td data-label="Surface"><span class="m-good">Sub micron</span></td><td data-label="Clarity"><span class="m-good">Clear</span></td><td data-label="Sealed channels"><span class="m-mid">Yes, but not at scale</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="cost-note reveal"><span class="m-good">Green</span> means suitable for this work, <span class="m-bad">oxblood</span> rules it out, and grey is conditional. Characteristics described here are general properties of each family, not measurements of specific machines.</p>
+
+    <p class="wn-closing reveal" style="max-width:760px;margin-top:40px;">Only the resin families produce a clear, smooth, continuous part with a sealed channel inside it, which is why the whole conversation about printed microfluidics is a conversation about SLA, DLP and LCD. Every one of them ends with the same unsolved step: clearing the uncured resin and curing what is left.</p>
+    <p class="cost-brief-link reveal"><a href="printing.html">That step, and where we sit in it &rarr;</a></p>
+  </div>
+</section>
+
+<section id="cost">
+  <div class="container">
+    <div class="kicker reveal">Equipment cost</div>
+    <h2 class="reveal">What each family costs to own</h2>
+    <p class="lead muted reveal">Capital cost tracks the mechanism, not the marketing. The families that cannot make a microfluidic part are the cheap ones, and the families that make the finest features are sold the way production equipment is sold, on a quote.</p>
+
+    <div class="cmp-wrap reveal">
+    <table class="cost-table" style="min-width:1000px;">
+      <thead>
+        <tr>
+          <th scope="col">Family</th>
+          <th scope="col">Entry cost</th>
+          <th scope="col">Professional and industrial</th>
+          <th scope="col">The limitation you are paying around</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">FDM</th>
+          <td data-label="Entry cost"><span class="m-good">$200 to $500</span></td>
+          <td data-label="Professional"><span class="m-mid">$5,000 into six figures</span></td>
+          <td data-label="Limitation"><span class="m-bad">No amount of money makes a bead into a sealed micron channel</span></td></tr>
+        <tr class="us"><th scope="row">SLA</th>
+          <td data-label="Entry cost"><span class="m-good">Low thousands</span></td>
+          <td data-label="Professional"><span class="m-mid">$2,000 to over $200,000</span></td>
+          <td data-label="Limitation"><span class="m-mid">Resolution rises with the optics, and so does the price</span></td></tr>
+        <tr class="us"><th scope="row">DLP and LCD</th>
+          <td data-label="Entry cost"><span class="m-good">Low thousands</span></td>
+          <td data-label="Professional"><span class="m-bad">Microfluidic specific machines quote only</span></td>
+          <td data-label="Limitation"><span class="m-bad">The finest closed channels carry production equipment pricing</span></td></tr>
+        <tr><th scope="row">SLS and MJF</th>
+          <td data-label="Entry cost"><span class="m-bad">None; bureau access only</span></td>
+          <td data-label="Professional"><span class="m-bad">$5,000 into six figures</span></td>
+          <td data-label="Limitation"><span class="m-bad">Porous surface and trapped powder, at any price</span></td></tr>
+        <tr><th scope="row">Material jetting</th>
+          <td data-label="Entry cost"><span class="m-bad">None at desktop scale</span></td>
+          <td data-label="Professional"><span class="m-bad">Five to six figures</span></td>
+          <td data-label="Limitation"><span class="m-bad">Support material still has to be cleared from inside the channel</span></td></tr>
+        <tr><th scope="row">Two photon</th>
+          <td data-label="Entry cost"><span class="m-bad">None</span></td>
+          <td data-label="Professional"><span class="m-bad">Quote only, research instrument tier</span></td>
+          <td data-label="Limitation"><span class="m-bad">Build volume and write speed, not resolution</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="cost-note reveal">General ranges as published by <a href="https://3dprinting.com/how-much-does-3d-printing-cost/" target="_blank" rel="noopener noreferrer">3dprinting.com's 2026 cost guide</a>. Microfluidic specific DLP hardware such as the <a href="https://darwin-microfluidics.com/products/microfluidics-3d-printer-profluidics-285d/" target="_blank" rel="noopener noreferrer">CADworks3D ProFluidics 285D</a> carries no public list price; that page publishes 28.5&nbsp;µm pixel resolution and 80&nbsp;µm closed channels but quotes on request. These are industry guide figures rather than vendor quotations, and they are wider and softer than the equipment figures on our <a href="pdms.html">PDMS</a> and <a href="cleanrooms.html">cleanroom</a> pages.</p>
+
+    <p class="wn-closing reveal" style="max-width:760px;margin-top:38px;">The pattern worth noticing: cost buys resolution, and nothing else on this list. It does not buy a way out of the finishing step. Every resin machine in every tier hands back a part still coated in uncured resin, and the price of the printer has no bearing on that.</p>
+  </div>
+</section>
+
+<section id="close">
+  <div class="container">
+    <div class="cta-band">
+      <div class="inner reveal">
+        <div class="kicker">The short version</div>
+        <h2>Three of six families can make the part. <span class="grad">One step finishes it</span></h2>
+        <p class="muted" style="max-width:640px;margin:0 auto 36px;">The printing industry solved the geometry. What it did not solve was what happens to the part after the print, and that is the step we changed.</p>
+        <a href="./" class="btn btn-primary" data-cta="ptypes-back-home">See what we built</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="logo footer-logo" style="font-size:15px;"><svg class="logo-mark" viewBox="0 0 100 68.48" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="M24.68,0.00 L43.81,0.00 L58.87,42.52 L61.45,39.35 L90.58,0.10 L97.82,0.00 L84.04,18.43 L82.85,20.32 L100.00,68.48 L81.27,68.38 L70.17,37.26 L61.25,49.06 L68.19,68.48 L49.45,68.48 L42.12,48.07 L13.68,48.46 L6.54,68.38 L0.00,68.48 Z M28.15,8.82 L14.97,45.00 L40.93,44.60 Z"/></svg><span class="logo-word">AION<span>IK</span></span></span>
+      <p>&copy; 2026 Aionik Technologies. All rights reserved.</p>
+    </div>
+    <p class="updated" id="updated">Last updated 31 August 2026</p>
+    <p class="legal">
+      Descriptions of each printing family reflect commonly published characteristics of the technology and are not measurements of, or comparisons between, specific machines or manufacturers.
+    </p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/investors.js"></script>
+</body>
+</html>

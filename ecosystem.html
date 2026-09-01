@@ -23,18 +23,18 @@
 <link rel="stylesheet" href="css/investors.css">
 <link rel="stylesheet" href="css/pdms.css">
 <style>
-  .method { border: 1px solid var(--line); border-radius: 16px; padding: 28px 26px; background: rgba(255,255,255,0.02); margin-top: 20px; }
-  .method.us { border-color: rgba(139,92,246,0.45); background: rgba(139,92,246,0.06); }
+  .method { border: 1px solid var(--line); border-radius: 16px; padding: 28px 26px; background: rgba(var(--fill-rgb), 0.02); margin-top: 20px; }
+  .method.us { border-color: rgba(var(--violet-rgb), 0.45); background: rgba(var(--violet-rgb), 0.06); }
   .method h3 { font-size: 19px; margin-bottom: 6px; }
   .method .what { font-size: 15px; color: var(--muted); margin-bottom: 20px; max-width: 760px; }
   .pc { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
   .pc h4 { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; margin-bottom: 10px; }
-  .pc .good h4 { color: #6EE7B7; }
+  .pc .good h4 { color: var(--good); }
   .pc .bad h4 { color: var(--cost); }
   .pc ul { list-style: none; }
   .pc li { font-size: 14.5px; color: var(--muted); padding: 6px 0 6px 16px; position: relative; }
   .pc li::before { content: ""; position: absolute; left: 0; top: 15px; width: 6px; height: 1px; background: currentColor; opacity: .5; }
-  .m-good { color: #6EE7B7; }
+  .m-good { color: var(--good); }
   .m-bad  { color: var(--cost); }
   .m-mid  { color: var(--muted); }
   .matrix tbody td { color: var(--muted); }

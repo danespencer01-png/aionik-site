@@ -24,9 +24,9 @@
   .fstep {
     display: grid; grid-template-columns: 54px 1fr; gap: 20px;
     padding: 20px 22px; border: 1px solid var(--line); border-radius: 14px;
-    background: rgba(255,255,255,0.02); margin-bottom: 12px;
+    background: rgba(var(--fill-rgb), 0.02); margin-bottom: 12px;
   }
-  .fstep.ours { border-color: rgba(139,92,246,0.5); background: rgba(139,92,246,0.07); }
+  .fstep.ours { border-color: rgba(var(--violet-rgb), 0.5); background: rgba(var(--violet-rgb), 0.07); }
   .fstep .fn { font-size: 12px; font-weight: 700; letter-spacing: .12em; color: var(--violet); padding-top: 3px; }
   .fstep.ours .fn { color: var(--uv); }
   .fstep h4 { font-size: 16px; margin-bottom: 5px; }
@@ -34,7 +34,7 @@
   .fstep .tag {
     display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .1em;
     text-transform: uppercase; padding: 2px 8px; border-radius: 5px; margin-left: 10px;
-    color: var(--uv); border: 1px solid rgba(167,139,250,0.45); background: rgba(167,139,250,0.1);
+    color: var(--uv); border: 1px solid rgba(var(--uv-rgb), 0.45); background: rgba(var(--uv-rgb), 0.1);
     vertical-align: middle;
   }
   .expand { font-size: .5em; font-weight: 400; color: var(--muted); letter-spacing: 0; vertical-align: middle; }

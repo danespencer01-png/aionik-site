@@ -240,6 +240,20 @@ moving that class too, or the alternation breaks.
   Using "theory" loosely was caught and corrected. Same care with "hard ceiling" for something
   that is a working range, and with calling a known fact "unproven".
 - **No business plan detail.** No beachhead, adjacency, market strategy, hiring plans, roadmap.
+- **The three question test before any technical limit goes public.** Added 2 Sep 2026 after
+  the Aionik row on `ecosystem.html` was found publishing failure boundaries.
+  1. *Is it a property of the material or of physics?* Publish it. Solvent swelling, gas
+     permeability, printer bound resolution. These cost nothing, they are already published
+     elsewhere, and a limits list with no real limits reads worse than one with them.
+  2. *Is it a boundary of our process that we found by hitting it?* Do not publish. That is
+     the expensive knowledge and it is a research plan for a competitor. What was removed:
+     "a few of those have printed poorly for us", the 15 minute cure ceiling, and the
+     autofluorescence deficit against PDMS.
+  3. *Does it say we do not know?* Never. Scope the list to the reader's use case instead of
+     confessing the gap. "These are the limits that matter most for microfluidic and organoid
+     work" replaced "the full limits are not mapped".
+  Deflect to the material where that is true and useful: the solvent line already says
+  "follows the resin, not the process", and autofluorescence now says "varies with the resin".
 - **No development status, gap list, process envelope, or production capacity.** Removed
   2 Sep 2026 and it stays removed. Scientific scope limits are fine and belong on
   `ecosystem.html`; operational deficits are investor material and are not public.

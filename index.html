@@ -91,9 +91,9 @@
     <div class="readbar-inner">
       <button class="mode-btn" type="button" data-mode="brief" aria-pressed="true">Brief</button>
       <button class="mode-btn" type="button" data-mode="full" aria-pressed="false">Full</button>
-      <span class="readtime" id="readtime">about 5 minutes</span>
+      <span class="readtime" id="readtime">about 8 minutes</span>
     </div>
-    <p class="readnote"><strong>This page is long on purpose.</strong> The science is genuinely nuanced and the market case depends on details that do not compress well, so instead of cutting it down we let you choose how much you want. The brief is the whole argument in about five minutes. The full page is everything, with the sources shown and two deeper pages linked throughout.</p>
+    <p class="readnote"><strong>This page is long on purpose.</strong> The science is genuinely nuanced and the market case depends on details that do not compress well, so instead of cutting it down we let you choose how much you want. The brief is the whole argument in about eight minutes. The full page adds the sourcing, the cost comparison, the analyst spread and the proof figure, with five deeper pages linked throughout.</p>
     <div class="toc" role="navigation" aria-label="Contents">
       <div class="toc-h">Contents</div>
       <div class="toc-grid">
@@ -461,7 +461,7 @@
      is told plainly that the sourced version exists, rather than assuming this was all. -->
 <section class="readmore l-briefonly">
   <div class="container">
-    <p class="readnote"><strong>That is the whole argument.</strong> What the brief leaves out is the evidence: every source behind every number, the full comparison of fabrication routes, the analyst spread, and the proof figure from the patent application. If you are evaluating this seriously, the full version is the one to read.</p>
+    <p class="readnote"><strong>That is the whole argument.</strong> What the brief leaves out is the supporting detail: the full comparison of fabrication routes, the eight analyst estimates as published, the proof figure from the patent application, and the sourcing behind the cost and market numbers. If you are evaluating this seriously, the full version is the one to read.</p>
     <button class="mode-btn" type="button" data-mode="full" style="margin-top:18px;">Read the full page</button>
   </div>
 </section>
@@ -561,7 +561,7 @@
   const body = document.body;
   const btns = [...document.querySelectorAll('[data-mode]')];
   const rt = document.getElementById('readtime');
-  const times = { brief: 'about 5 minutes', full: 'about 15 minutes, everything' };
+  const times = { brief: 'about 8 minutes', full: 'about 11 minutes, with the sources' };
 
   const recall = () => { try { return localStorage.getItem(KEY); } catch (e) { return null; } };
   const remember = v => { try { localStorage.setItem(KEY, v); } catch (e) {} };

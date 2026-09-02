@@ -169,7 +169,7 @@ When you add anything, check it in both modes.
 
 ## Page structure
 
-**index.html** — nine sections in this order, chosen so the problem is stated once and in full
+**index.html** — eight sections in this order, chosen so the problem is stated once and in full
 before the fix appears:
 
 1. **The bottleneck** — what we do, in one screen. Dark hero band with the device photo.
@@ -177,12 +177,25 @@ before the fix appears:
 3. **Current microfluidic process** — eleven steps, hand work, the cleanroom, the wait.
 4. **Cost of fabrication** — the comparison table and the bill. All the oxblood is here.
 5. **The Aionik process** — what changed and the four results, with the patent figure.
-6. **Development status** — what we have, what we need.
-7. **The team**  8. **Evidence**  9. **Contact**, the inquiry form.
+6. **The team**  7. **Evidence**  8. **Contact**, the inquiry form.
 
 The order matters and was set deliberately: "why now" was split from "what that costs" so the
 problem is not told twice, and the incumbent process moved up so it is stated once before the
 solution. Do not reorder without a reason.
+
+**Development status was section 06 and was REMOVED on 2 Sep 2026.** It carried a "what we have
+/ what we need" split that published the company's gap list, its unknown process envelope, and
+its production capacity (30 chips in 4 hours, one operator, two printers, two curing devices).
+Under a per-chip business model the site's primary audience is customers and collaborators, and
+that section answered an investor question while handing competitors a map. On removal:
+`#today` was dropped from the nav and the contents, contents renumbered 01 to 08, and **`team`
+was flipped to `team-section` and `evidence` to plain to restore the background alternation the
+removed section was carrying.** Four scope cards in `ecosystem.html` linked into the dead anchor
+and were rewritten to keep the scientific limits and drop the operational deficit framing.
+
+That material now lives in `~/Downloads/desi aionik/Investor docs/` and in a private artifact.
+**Do not put it back on the public site.** If a section is wanted in that slot later, it should
+be "what we can make" for customers, not "what we need" for investors.
 
 **pdms.html** — eleven process steps in two phases, bonding window diagram, elapsed time
 timeline, the operator skill problem, six failure modes plus the small molecule absorption
@@ -227,6 +240,9 @@ moving that class too, or the alternation breaks.
   Using "theory" loosely was caught and corrected. Same care with "hard ceiling" for something
   that is a working range, and with calling a known fact "unproven".
 - **No business plan detail.** No beachhead, adjacency, market strategy, hiring plans, roadmap.
+- **No development status, gap list, process envelope, or production capacity.** Removed
+  2 Sep 2026 and it stays removed. Scientific scope limits are fine and belong on
+  `ecosystem.html`; operational deficits are investor material and are not public.
 - **Small molecule absorption: the site may state the material class argument, never a measured
   result.** `pdms.html` documents absorption as a PDMS limitation, sourced, then notes that
   uptake is characteristic of elastomers while glassy materials (thermoplastics and cured

@@ -434,19 +434,19 @@ linked Google Sheet (Dane owns it). People never leave the site.
 
 ## OPEN ITEMS
 
-1. **OG descriptions still describe the old positioning.** The share *image* was regenerated in
-   navy and now mentions organoid housings; the `og:description` meta on each page still reads
-   "with no cleanroom and no tooling". Accurate but written before the hero changed. Image and
-   description now say slightly different things.
-2. **`main-site-draft.html`** still has the placeholder address `contact@aionik.example`. Parked
+1. **`main-site-draft.html`** still has the placeholder address `contact@aionik.example`. Parked
    and `noindex`, so it only matters before that page is ever unparked. It has NOT been restyled
    or checked in the new theme.
-3. **Hot embossing equipment cost sourcing is weaker than the rest of the site.** The lab press
+2. **Hot embossing equipment cost sourcing is weaker than the rest of the site.** The lab press
    versus six figure split came from a ResearchGate discussion. A vendor quote would firm it up.
-4. **The absorption comparison and the finer printer test** are both underway per Dane and both
+3. **The absorption comparison and the finer printer test** are both underway per Dane and both
    are listed under "what we need". When results exist, the scope section on `ecosystem.html`
    changes and so does the matrix cell that currently reads "not measured".
-5. **Would strengthen the site:** independent third party test data with methodology.
+4. **Would strengthen the site:** independent third party test data with methodology.
+
+_Closed 1 to 3 Sep: the homepage meta descriptions, which still described the site as it read
+before organoid housings entered the hero; the search description, the og:description and the
+twitter:description now match the sentence printed on the share image itself._
 
 _Closed 31 Aug to 1 Sep: the homepage restructure, three new deep dive pages, the full restyle,
 the launch rename, brand assets regenerated, the double digit growth error corrected on the live

@@ -61,7 +61,7 @@
   color: var(--accent) !important;
   -webkit-text-fill-color: currentColor !important;
 }
-.btn-primary, .nav-cta, .consent-yes, .mode-btn[aria-pressed="true"] {
+.btn-primary, .nav-cta, .consent-yes {
   background: var(--accent) !important;
   color: var(--on-accent) !important;
   border-radius: 0 !important;
@@ -72,7 +72,7 @@
   transform: none !important;
   box-shadow: none !important;
 }
-.btn-ghost, .mode-btn, .consent-no { border-radius: 0 !important; }
+.btn-ghost, .consent-no { border-radius: 0 !important; }
 
 /* ---------- 2. Glows are a dark-ground device ---------- */
 .glass:hover, .team-card:hover, .result-card, .scope-card, .stage,
@@ -115,7 +115,7 @@ section:not(.inv-hero):not(.pdms-hero) .kicker { color: var(--uv); }
 /* ---------- 6. Cost figures: oxblood, everywhere they appear ---------- */
 .cost-brief b, .pdms-wait b, .cost-table .price, .fig { color: var(--cost) !important; }
 
-/* ---------- 7. Reading-layer controls ---------- */
+/* ---------- 7. Contents block ---------- */
 .readnote, .quiet-note { border-left-color: var(--accent); }
 .toc-grid .n { color: var(--cyan); }
 

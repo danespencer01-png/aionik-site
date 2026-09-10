@@ -34,7 +34,7 @@
 <link rel="stylesheet" href="css/theme.css">
 </head>
 
-<body class="mode-brief">
+<body>
 
 <nav>
   <div class="nav-inner">
@@ -84,16 +84,12 @@
 </header>
 
 
-<!-- ============ READING LAYER CONTROLS ============ -->
-<!-- Brief and Full are one document at two depths, not two documents. See css/layers.css. -->
+<!-- ============ CONTENTS ============ -->
+<!-- One document at one depth. The Brief and Full reading modes were removed on
+     9 Sep 2026; everything that was Full only now simply shows. -->
 <section class="readbar">
   <div class="container">
-    <div class="readbar-inner">
-      <button class="mode-btn" type="button" data-mode="brief" aria-pressed="true">Brief</button>
-      <button class="mode-btn" type="button" data-mode="full" aria-pressed="false">Full</button>
-      <span class="readtime" id="readtime">about 8 minutes</span>
-    </div>
-    <p class="readnote"><strong>This page is long on purpose.</strong> The science is genuinely nuanced and the market case depends on details that do not compress well, so instead of cutting it down we let you choose how much you want. The brief is the whole argument in about eight minutes. The full page adds the sourcing, the cost comparison, the analyst spread and the proof figure, with five deeper pages linked throughout.</p>
+    <p class="readnote"><strong>This page is long on purpose.</strong> The science is genuinely nuanced and the market case depends on details that do not compress well, so nothing has been cut. The whole argument, with its sourcing, runs about eleven minutes. Underneath it sit five deeper pages, listed at the foot of the contents below and linked from the sections they support.</p>
     <div class="toc" role="navigation" aria-label="Contents">
       <div class="toc-h">Contents</div>
       <div class="toc-grid">
@@ -117,12 +113,8 @@
   <div class="container">
     <div class="kicker reveal">Why it matters</div>
     <h2 class="reveal">The bottleneck</h2>
-    <div class="l-brief">
       <p class="mission-lead reveal">Every breakthrough starts as a concept, but concepts do not answer questions or save lives. Prototypes do. We are building the technology that turns a researcher's idea into something real in minutes instead of weeks, so the best minds in biomedical science spend less time waiting and more time discovering.</p>
-    </div>
-    <div class="l-full">
       <p class="mission-sub reveal">Our patent pending curing process strips away the chemicals, the solvents, and the delays that have slowed micromanufacturing for decades.</p>
-    </div>
   </div>
 </section>
 
@@ -133,7 +125,6 @@
     <div class="kicker reveal">The moment</div>
     <h2 class="reveal">Why now</h2>
     <p class="claim reveal">Regulators moved off animal testing, demand runs wider than biology, and all eight analyst houses have the market compounding through the next decade.</p>
-    <div class="l-brief">
       <div class="wn-block reveal prose">
 <p class="wn-lead">Regulators set a clock.</p>
       <ul class="src-list">
@@ -147,31 +138,21 @@
       </ul>
     
       </div>
-    </div>
-    <div class="l-brief">
       <div class="wn-block reveal prose">
 <p class="wn-lead">Capacity did not move with demand.</p>
       <p class="wn-para">Microfluidic chips are still cast by hand. Soft lithography needs a cleanroom to build the mold, then, in rough order of what they cost, a mask aligner, a wafer bonder, an automated coater track, a mask exposer, a plasma system, and a spin coater, plus a vacuum desiccator, a developer bench, hot plates, a curing oven, a profilometer to check what you actually made, and the fume hood and consumables around all of it. It needs someone trained to run the whole chain. That is why the capability lives inside a small number of institutions.</p>
       <p class="wn-para">The process itself is <a href="https://www.nature.com/articles/s41598-025-16863-z" target="_blank" rel="noopener noreferrer">slow and operator dependent, with cure conditions that shift batch to batch</a>. And labs <a href="https://pubmed.ncbi.nlm.nih.gov/39687794/" target="_blank" rel="noopener noreferrer">prototype in PDMS while manufacturing in thermoplastic</a>, so the device they validate is never the device they ship.</p>
       </div>
-    </div>
-    <div class="l-brief">
       <div class="wn-block reveal prose">
         <p class="wn-lead">The demand runs wider than biology, and it has to scale with AI.</p>
         <p class="wn-para">Regulation set the clock for organ on chip work, but it is not the only pressure. When Microsystems and Nanoengineering surveyed scholars and industry for its <a href="https://www.nature.com/articles/s41378-025-01153-5" target="_blank" rel="noopener noreferrer">ten ground challenges for the field</a>, fabrication ran through the answers. Several of the ten stall not on ideas but on access to fast, high fidelity, biocompatible microfabrication: functional organ on chip reconstruction, affordable point of care diagnostics, precision that survives the print in high performance devices, and the AI guided design to fabrication loop that only closes when iteration is cheap.</p>
       </div>
-    </div>
-    <div class="l-full">
       <div class="wn-block reveal prose">
         <p class="wn-para">Every one of those sits on the same microfluidic and additive foundation we build for. A process that turns a standard printer into a source of clear, biocompatible parts in minutes moves the fabrication half of each problem at once. The pull is not a single market. It is a field wide shift toward tools that let a lab hold an idea in its hands the week it has it, across diagnostics, computing, and medicine alike.</p>
       </div>
-    </div>
-    <div class="l-brief">
       <div class="wn-block reveal prose">
         <p class="quiet-note">Underneath all of them sits the same dependency: fabrication fast enough to prototype, cheap enough to repeat, consistent enough to automate, and able to scale without switching process. <b>Where our process fits is the rest of this page.</b> How we intend to commercialize it is deliberately not public, and we share that under NDA with investors and partners who need it.</p>
       </div>
-    </div>
-    <div class="l-brief">
       <div class="wn-block reveal prose">
         <p class="wn-lead">The market is large, and the analysts disagree about how large.</p>
         <p class="wn-para">Eight research firms publish a microfluidics market size. For nominally the same market they report figures between $9.4 billion and $41.9 billion, a spread of more than four times. That gap is about scope, whether a report counts diagnostics alone or the full device, component, and instrumentation ecosystem, rather than about growth.</p>
@@ -193,8 +174,6 @@
         </div>
       </div>
       </div>
-    </div>
-    <div class="l-full">
       <div class="wn-block reveal prose">
         <p class="wn-para">What the eight agree on matters more than what they dispute. All of them project sustained growth, North America leading, and medical and diagnostics as the largest application. Six of the eight put compound growth in double digits, and the two lowest are 8.3 and 8.7 percent. Mordor Intelligence carves out organ on chip as the fastest growing sub technology in the field at 22.7 percent, which is the segment our biocompatible housings serve.</p>
         <p class="wn-para">Growth at those rates runs straight into the constraint described above. A market cannot compound at double digits for a decade while the parts it depends on are still cast by hand in a cleanroom. That is the bottleneck, and it is the one we removed.</p>
@@ -213,7 +192,6 @@
         <p class="mkt-note">Figures as published by each firm, with no normalization across differing scope definitions. Base years differ, so these are not strictly like for like. Treat the range as an indication of scale, not as a precise market size.</p>
       </div>
       </div>
-    </div>
   </div>
 </section>
 
@@ -225,7 +203,6 @@
     <h2 class="reveal">The current microfluidic process</h2>
     <p class="claim reveal">Eleven steps, two days of hand work, a cleanroom for the mold, and one attempt at the bond.</p>
     <p class="lead muted reveal">Soft lithography is the standard way to make a microfluidic chip, and it has been for two decades. What it involves is the reason the capability lives inside a small number of institutions.</p>
-    <div class="l-brief">
       <div class="pdms-summary reveal">
 <div class="pdms-sum-grid">
         <div class="pdms-sum">
@@ -254,7 +231,6 @@
         <span class="pdms-cta-note">Eleven steps, the failure modes, and what the equipment actually costs.</span>
       </div>
       </div>
-    </div>
   </div>
 </section>
 
@@ -264,8 +240,6 @@
   <div class="container">
     <div class="kicker reveal">Cost</div>
     <h2 class="reveal">What the current process costs</h2>
-    <div class="l-briefonly"><p class="claim reveal">A research bench starts at $65,000, a production line runs past $1.6 million, and the room bills every year it stays open.</p></div>
-    <div class="l-full">
       <div class="wn-block reveal prose" style="max-width:none;">
         <p class="wn-lead">What the alternatives cost.</p>
 <div class="cmp-wrap">
@@ -310,17 +284,11 @@
         <p class="cost-brief-link reveal"><a href="ecosystem.html">Where Aionik sits in the chip fabrication ecosystem, route by route &rarr;</a></p>
         <p class="wn-para" style="margin-top:26px;max-width:720px;">Most labs own none of this, so they send the design out and buy finished chips. That is not a fabrication method, it is a way of paying for one, which is why it is not in the table. It removes the capital cost and replaces it with a queue: <b>one to twelve weeks</b> per revision, priced per order, with setup and tooling charged against every new design.</p>
       </div>
-    </div>
-    <div class="l-brief">
       <div class="wn-block reveal prose" style="max-width:none;">
         <p class="cost-brief reveal">The tradeoff is also a bill. A research bench that cannot produce at volume starts at <b>$65,000</b>. A line that can runs <b>$650,000 to $1.67&nbsp;million</b> in equipment, and the cleanroom the mold step needs costs <b>$250 to $1,000 per square foot</b> to build, depending on how fine the features are, then carries an operating cost every year it stays in service, in energy, filters, maintenance, and recertification.</p>
         <p class="cost-brief-link reveal"><a href="pdms.html">See how each number is built, and the full process for both PDMS and injection molding, with sources &rarr;</a></p>
         <p class="cost-brief-link reveal"><a href="cleanrooms.html">What a cleanroom is, which industries need one, and what it costs &rarr;</a></p>
-        <!-- Brief-only twin. In Full this link sits under the tradeoff paragraph above,
-             which lives in the l-full block, so Brief would otherwise lose it entirely. -->
-        <p class="cost-brief-link reveal l-briefonly"><a href="ecosystem.html">Where Aionik sits in the chip fabrication ecosystem, route by route &rarr;</a></p>
       </div>
-    </div>
   </div>
 </section>
 
@@ -331,14 +299,11 @@
     <div class="kicker reveal">Our process</div>
     <h2 class="reveal">One process change, <span class="grad">four results</span></h2>
     <p class="claim reveal">Resin was never the obstacle. The cure was, and removing the chemicals from it changed four things at once.</p>
-    <div class="l-brief">
       <div class="wn-block reveal prose">
 <p class="wn-lead">Printing finally caught up. The cure was the last obstacle.</p>
       <p class="wn-para">Resin printers now resolve features small enough for microfluidics at a fraction of the cost and time. What kept those parts out of biology was never the resin, though that is where the field has spent its effort, formulating clearer and more biocompatible materials one at a time. The obstacle is the cure. We changed the process, and now get optical clarity and biocompatibility out of affordable, general purpose resins, not the specialized biocompatible formulations the field has been chasing.</p>
     
       </div>
-    </div>
-    <div class="l-brief">
       <div class="results">
       <div class="result-card reveal">
         <span class="num">01</span>
@@ -361,8 +326,6 @@
         <p>Depending on the print.</p>
       </div>
     </div>
-    </div>
-    <div class="l-full">
       <p class="lead muted lead-wide reveal">By removing chemicals from the curing step, our method delivers what resin printing could not before. Core method developed at UTSA — US&nbsp;2026/0131529&nbsp;A1, patent pending.</p>
       <figure class="proof-figure reveal">
       <img src="assets/proof-droplets.jpg" alt="Microscopy comparison of droplet generation in the same channel geometry. Top row, traditional method: large, uneven droplets about 73 microns across with rough, blurred channel walls. Bottom row, the Aionik curing process, labeled Spinning Desicurer Method in the figure: fine, uniform droplets about 13 microns across with clean, sharply defined walls." width="1600" height="641" loading="lazy">
@@ -370,7 +333,6 @@
         <strong>Same geometry, sharper result.</strong> Droplet generation in an identical flow focusing junction. The traditional method (top row) produces large, uneven droplets near 73&nbsp;µm against rough, blurred walls. Our Aionik&trade; curing process (bottom row, labeled Spinning Desicurer Method in the source figure) produces fine, uniform droplets near 13&nbsp;µm against clean, sharply defined channel walls. Figures from US&nbsp;2026/0131529&nbsp;A1.
       </figcaption>
     </figure>
-    </div>
   </div>
 </section>
 
@@ -440,31 +402,18 @@
     <h2 class="reveal">What we can show</h2>
     <p class="claim reveal">A published patent application, an exclusive license from the UT System, and results developed at UTSA.</p>
     <div class="ev-list">
-    <div class="l-brief">
       <div class="ev-row reveal">
         <div class="cat">Intellectual property</div>
         <div class="body"><strong>US 2026/0131529 A1 — patent pending.</strong> Core post-processing method, filed July 2025 and published May 2026, assigned to the University of Texas System. Exclusive license to Aionik.</div>
       </div>
-    </div>
-    <div class="l-full">
       <div class="ev-row reveal">
         <div class="cat">Origin</div>
         <div class="body">Developed in the Sun Lab at UTSA. Comparative droplet generation data is shown above under <a href="#insight">The insight</a>.</div>
       </div>
     </div>
-    </div>
   </div>
 </section>
 
-
-<!-- Brief-only handoff. Sits at the end of the brief so a reader who has finished it
-     is told plainly that the sourced version exists, rather than assuming this was all. -->
-<section class="readmore l-briefonly">
-  <div class="container">
-    <p class="readnote"><strong>That is the whole argument.</strong> What the brief leaves out is the supporting detail: the full comparison of fabrication routes, the eight analyst estimates as published, the proof figure from the patent application, and the sourcing behind the cost and market numbers. If you are evaluating this seriously, the full version is the one to read.</p>
-    <button class="mode-btn" type="button" data-mode="full" style="margin-top:18px;">Read the full page</button>
-  </div>
-</section>
 
 <!-- ============ CLOSING CTA ============ -->
 <section id="book" class="cta-band">
@@ -553,43 +502,5 @@
 
 <script src="js/main.js"></script>
 <script src="js/investors.js"></script>
-<script>
-/* Reading layers. Choice is remembered per browser; localStorage is guarded
-   because it throws in some privacy modes. Default is Brief. */
-(() => {
-  const KEY = 'aionik-readmode';
-  const body = document.body;
-  const btns = [...document.querySelectorAll('[data-mode]')];
-  const rt = document.getElementById('readtime');
-  const times = { brief: 'about 8 minutes', full: 'about 11 minutes, with the sources' };
-
-  const recall = () => { try { return localStorage.getItem(KEY); } catch (e) { return null; } };
-  const remember = v => { try { localStorage.setItem(KEY, v); } catch (e) {} };
-
-  /* Elements hidden at load never intersect, so reveal them explicitly once shown. */
-  function catchUpReveals() {
-    document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
-      if (el.offsetParent !== null && el.getBoundingClientRect().top < innerHeight) {
-        el.classList.add('visible');
-      }
-    });
-  }
-
-  function setMode(m, scroll) {
-    body.classList.toggle('mode-brief', m === 'brief');
-    body.classList.toggle('mode-full', m === 'full');
-    btns.forEach(b => b.setAttribute('aria-pressed', b.dataset.mode === m));
-    if (rt) rt.textContent = times[m];
-    remember(m);
-    requestAnimationFrame(catchUpReveals);
-    if (scroll) window.scrollTo({ top: 0, behavior: 'smooth' });
-    if (window.clarity) window.clarity('event', 'readmode_' + m);
-  }
-
-  btns.forEach(b => b.addEventListener('click', () => setMode(b.dataset.mode, true)));
-  setMode(recall() === 'full' ? 'full' : 'brief', false);
-  addEventListener('scroll', catchUpReveals, { passive: true });
-})();
-</script>
 </body>
 </html>

@@ -3,9 +3,9 @@
 Paste this whole file as your first message in a new Claude Code session on another machine
 (after cloning the repo), or save it as HANDOFF.md and say "read HANDOFF.md and continue."
 
-_Last updated: 1 Sep 2026, after a full restructure and restyle. The site is LIVE on its own
-domain. Everything below is current; anything describing a dark violet site, a single scroll
-homepage, or two deep dive pages is out of date._
+_Last updated: 9 Sep 2026, after the Brief and Full reading modes were removed. The site is
+LIVE on its own domain. Everything below is current; anything describing a dark violet site, a
+single scroll homepage, two deep dive pages, or a Brief and Full toggle is out of date._
 
 ---
 
@@ -14,11 +14,15 @@ homepage, or two deep dive pages is out of date._
 **Nothing is blocking.** The site is live, analytics is running behind a consent bar, and no
 task is waiting on an input from Dane.
 
+**9 Sep 2026: the Brief and Full reading modes were removed** at Dane's instruction. The
+homepage is now one document at one depth, which is what Full used to show. The note under
+the hero and the contents block point the reader at the five deeper pages instead. See
+"Reading depth" below for what was removed and why it does not come back by accident.
+
 **The 31 Aug to 1 Sep session did three large things, all shipped:**
 
-1. **Restructured the homepage** into nine sections in a deliberate order, with **Brief and
-   Full reading modes** and a contents block. Brief is the whole argument in about five
-   minutes; Full adds the sources, tables and figures. See "Reading layers" below.
+1. **Restructured the homepage** into nine sections in a deliberate order, with a contents
+   block. (It also added Brief and Full reading modes, since removed.)
 2. **Added three deep dive pages**: `ecosystem.html` (five fabrication routes compared),
    `printing.html` (where we sit in SLA printing), `printing-types.html` (the families of 3D
    printing). Total is now five deep dives.
@@ -60,7 +64,7 @@ it sits in the Trash as `aionik-site-duplicate-clone-31aug2026` until emptied.
 
 ## What this site is
 
-One public page plus one deep-dive page, on `aioniklabs.com`. The homepage is an investor
+One homepage plus five deep dive pages, on `aioniklabs.com`. The homepage is an investor
 brief in substance, framed as a company page: it argues from insight, evidence, and team.
 
 It deliberately contains **no ask, no terms, no roadmap, and no market strategy**. Aionik is
@@ -93,7 +97,7 @@ market are not.
 | `printing.html` | Where we sit in the SLA 3D printing process. Six steps, two of them ours outright and a third partly ours. Added 31 Aug 2026. |
 | `printing-types.html` | The families of 3D printing and which reach microfluidics, with an equipment cost sheet. Added 31 Aug 2026. |
 | `css/theme.css` | **The whole restyle.** Loaded last on every page. Token values plus the three things tokens cannot express: flattened gradients, removed glows, the dark hero band. Remove its link from the seven pages to revert the look entirely. |
-| `css/layers.css` | Brief and Full reading modes, the contents block, the section claim line. |
+| `css/layers.css` | The contents block, the section claim line, and the list and note styles the homepage sections share. The filename is historical: it carried the Brief and Full reading modes until 9 Sep 2026. |
 | `assets/brand/` | Logo and wordmark as **separate** files, never combined, plus LinkedIn ready sizes. See the README in that folder. |
 | `investors.html` | Redirect stub to `/`. Keeps links shared before the restructure working. **Do not delete.** |
 | `main-site-draft.html` | The parked v1 marketing homepage. `noindex`, unlinked. Still has a placeholder contact address (`contact@aionik.example`). Kept for when the main site is resumed. |
@@ -145,27 +149,26 @@ would render navy on navy and vanish.
 
 **House style: no em dashes and no hyphens in prose.** Bullets over paragraphs.
 
-## Reading layers, Brief and Full
+## Reading depth
 
-The homepage carries the same content at two depths. `css/layers.css` holds the mechanism and
-`js` at the foot of `index.html` holds the toggle. The choice persists per browser in
-`localStorage` under `aionik-readmode`; Brief is the default.
+The homepage is **one document at one depth**. From 1 to 9 Sep 2026 it carried Brief and Full
+reading modes (`.l-brief`, `.l-full`, `.l-briefonly` wrappers, a `body.mode-*` class, two
+buttons, a read time, a toggle script and an end of brief handoff block). Dane removed them on
+9 Sep 2026: everything Full showed now simply shows, and nothing was cut.
 
-- `.l-brief` shows in **both** modes. Most content lives here.
-- `.l-full` shows in Full only. Sources, tables, the analyst spread, the proof figure.
-- `.l-briefonly` shows in Brief only. Use sparingly; it exists for a line that carries a
-  section in Brief but would duplicate fuller copy in Full.
+- The note under the hero says the page is long on purpose, gives the measured read time
+  (about eleven minutes, from the 2 Sep word count of 2,421 words) and points at the five
+  deeper pages listed at the foot of the contents block.
+- The contents block and its "Deeper reading" line are the pointer. Keep that line current
+  when a deep dive is added.
+- Two things went with the modes and are not to be missed: the cost section's claim line was
+  Brief only and is gone, so that section opens on "What the alternatives cost." and the
+  table; the team bios no longer collapse.
+- `localStorage` key `aionik-readmode` is no longer read. A returning browser that still has
+  it stored sees the same page as everyone else.
 
-**Brief is not a truncation of Full.** Every paragraph has to work standalone in Brief and in
-sequence in Full, so a `.l-full` block must ADD detail and must never restate a point a
-`.l-brief` block already made. Adding copy means choosing a layer. There is an end-of-brief
-handoff block near the contact section, brief only, that tells a reader the sourced version
-exists and offers a button to switch.
-
-**Watch for layer orphans.** A deep link or a lead line placed inside `.l-full` disappears
-entirely in Brief. This has bitten twice: the ecosystem link in the cost section vanished from
-Brief until a `.l-briefonly` twin was added, and a section lead was left without its paragraph.
-When you add anything, check it in both modes.
+If the modes are ever wanted back, the mechanism is in the history at `de6de21`. Do not
+reintroduce them piecemeal.
 
 ## Page structure
 
@@ -232,7 +235,6 @@ moving that class too, or the alternation breaks.
 - **Never reintroduce a colour literal outside `:root`.** Phase 1 removed 145 of them. A literal
   does not follow a palette change; a token does. This includes **inline SVG attributes**, which
   Phase 1 missed on `pdms.html` and which survived the restyle in the old palette until caught.
-- **Check both reading modes after any change to the homepage.** See "Reading layers".
 - **The matrix legends name colours in prose.** If the palette changes, those sentences change
   too. They said "amber" until 1 Sep 2026.
 - **Word choice matters to this audience.** A *theory* is a substantiated explanation; an
@@ -443,6 +445,9 @@ linked Google Sheet (Dane owns it). People never leave the site.
    are listed under "what we need". When results exist, the scope section on `ecosystem.html`
    changes and so does the matrix cell that currently reads "not measured".
 4. **Would strengthen the site:** independent third party test data with methodology.
+
+_Closed 9 Sep: the Brief and Full reading modes, removed at Dane's instruction; the homepage
+now shows what Full showed, and the note under the hero points at the deeper pages._
 
 _Closed 1 to 3 Sep: the homepage meta descriptions, which still described the site as it read
 before organoid housings entered the hero; the search description, the og:description and the

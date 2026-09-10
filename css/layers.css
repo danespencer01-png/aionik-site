@@ -1,30 +1,14 @@
 /* ------------------------------------------------------------------
-   Reading layers: Brief and Full.
+   Homepage contents block, section claim line, and the list and note
+   styles the homepage sections share.
 
-   Brief is not a truncation of Full. Every paragraph is written to work
-   standalone in Brief AND in sequence in Full, so `.l-full` blocks must
-   ADD detail (sourcing, caveats, numbers) and must never restate a point
-   a `.l-brief` block already made. Adding copy means choosing a layer.
+   This file used to carry the Brief and Full reading modes. They were
+   removed on 9 Sep 2026: the page is now one document at one depth,
+   and the deeper pages are pointed to from the contents block.
    ------------------------------------------------------------------ */
-body.mode-brief .l-full { display: none !important; }
-/* Brief-only: a line that carries a section in Brief but duplicates fuller copy
-   in Full. Use sparingly; most content should be shared, not forked. */
-body.mode-full .l-briefonly { display: none !important; }
 
-/* ---------- Mode bar + contents ---------- */
+/* ---------- Note + contents ---------- */
 .readbar { padding: 40px 0 0; }
-.readbar-inner { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-.mode-btn {
-  font: inherit; font-size: 13px; font-weight: 600; cursor: pointer;
-  padding: 9px 20px; border-radius: 999px; transition: all 0.25s;
-  background: none; color: var(--muted); border: 1px solid rgba(var(--fill-rgb), 0.14);
-}
-.mode-btn:hover { color: var(--text); border-color: rgba(var(--fill-rgb), 0.34); }
-.mode-btn[aria-pressed="true"] {
-  background: linear-gradient(90deg, var(--violet), var(--accent-deep));
-  color: var(--on-accent); border-color: transparent;
-}
-.readtime { font-size: 12.5px; color: var(--muted); margin-left: 6px; }
 
 .readnote {
   border-left: 2px solid var(--violet); padding: 14px 0 14px 18px;
@@ -67,10 +51,6 @@ body.mode-full .l-briefonly { display: none !important; }
   max-width: 720px; margin: 0 0 26px; letter-spacing: -0.01em;
 }
 
-/* Team bios collapse in Brief, so the grid reads as names and roles only. */
-body.mode-brief .team-card p { display: none; }
-body.mode-brief .team-card { padding-bottom: 26px; }
-
 @media (max-width: 720px) {
   .toc-grid { grid-template-columns: 1fr; }
 }
@@ -103,7 +83,3 @@ body.mode-brief .team-card { padding-bottom: 26px; }
   font-size: 14px; line-height: 1.7; color: var(--muted); max-width: 640px;
 }
 .quiet-note b { color: var(--text); font-weight: 600; }
-
-/* ---------- End-of-brief handoff ---------- */
-.readmore { padding: 10px 0 70px; }
-.readmore .readnote { margin-top: 0; }

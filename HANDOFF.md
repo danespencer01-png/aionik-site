@@ -223,8 +223,12 @@ moving that class too, or the alternation breaks.
 
 - **"Patent pending" only. NEVER "patented" or "granted."** It is a published application,
   US 2026/0131529 A1, A1 kind code.
-- **Exclusive license from UT System, stated plainly.** The "terms in final negotiation"
-  qualifier was removed 30 Aug 2026 at Dane's instruction. Do not reinstate it.
+- **The UT System license is NOT SIGNED. Always qualify it as under negotiation.** The
+  qualifier was removed 30 Aug 2026 and restored 10 Sep 2026 at Dane's instruction, because
+  Aionik is now considering a friends and family round and the license is the single most
+  material fact about the company. It appears in three places on the homepage: the hero
+  round-status strip, the Evidence claim line, and the Evidence IP row. Never state or imply
+  that the license is held, granted, or executed until Dane confirms signature.
 - **Never invent numbers, dates, patent status, or test results.** Leave a visible TODO chip
   instead. Every number on the site is either sourced with a link or came from Dane.
 - **TM, never R.** Aionik is unregistered. TM appears in exactly three places on the homepage
